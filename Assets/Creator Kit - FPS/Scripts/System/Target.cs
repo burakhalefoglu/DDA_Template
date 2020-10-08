@@ -30,31 +30,21 @@ public class Target : MonoBehaviour
         if(DestroyedEffect)
             PoolSystem.Instance.InitPool(DestroyedEffect, 16);
         
-        m_CurrentHealth = health;
+        m_CurrentHealth = SelectHealth(this.gameObject.tag);
         if(IdleSource != null)
             IdleSource.time = Random.Range(0.0f, IdleSource.clip.length);
     }
 
     public void Got(float damage)
     {
+        Debug.Log("Canım yandı");
         m_CurrentHealth -= damage;
-        
-        if(HitPlayer != null)
-            HitPlayer.PlayRandom();
+        Debug.Log(m_CurrentHealth);
         
         if(m_CurrentHealth > 0)
             return;
 
         Vector3 position = transform.position;
-        
-        //the audiosource of the target will get destroyed, so we need to grab a world one and play the clip through it
-        if (HitPlayer != null)
-        {
-            var source = WorldAudioPool.GetWorldSFXSource();
-            source.transform.position = position;
-            source.pitch = HitPlayer.source.pitch;
-            source.PlayOneShot(HitPlayer.GetRandomClip());
-        }
 
         if (DestroyedEffect != null)
         {
@@ -65,9 +55,47 @@ public class Target : MonoBehaviour
         }
 
         m_Destroyed = true;
-        
+
         gameObject.SetActive(false);
-       
+
         GameSystem.Instance.TargetDestroyed(pointValue);
+    }
+    
+    public void killyourself()
+    {
+        Debug.Log("kİLL mEE");
+        Vector3 position = transform.position;
+        var effect = PoolSystem.Instance.GetInstance<ParticleSystem>(DestroyedEffect);
+        effect.time = 0.0f;
+        effect.Play();
+        effect.transform.position = position;
+        m_Destroyed = true;
+        gameObject.SetActive(false);
+        GameSystem.Instance.TargetDestroyed(pointValue);
+
+    }
+
+    private float SelectHealth(string tag)
+    {
+        
+        
+        if (tag == "Virus")
+        {
+            return PlayerPrefs.GetFloat("Virus_Health");
+        }
+        else if (tag == "GermSlim")
+        {
+            return PlayerPrefs.GetFloat("GermSlime_Health");
+
+        }
+        else if (tag == "GermSpike")
+        {
+            return PlayerPrefs.GetFloat("GermSpike_Health");
+
+        }
+        else
+        {
+            return 1.0f;
+        }
     }
 }

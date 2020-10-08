@@ -3,7 +3,42 @@ guid: ae094262605080345a37eceb7fa6a852
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 453c925dd539dd645aadd9f11e5364e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye white
+    second: {fileID: 2100000, guid: fa0be75332a65674799eecb4786da7ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leggs
+    second: {fileID: 2100000, guid: 2cef320eb8f22254590d587d2ee382ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UnderBody
+    second: {fileID: 2100000, guid: aaf1e67ed0b87a04796d4ed6dfd05c62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lumps
+    second: {fileID: 2100000, guid: 6cb2cec3116470e41947492b7d60aafc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mouth
+    second: {fileID: 2100000, guid: 7914f5a9f66e5f041b5e0e138036a46a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pupil
+    second: {fileID: 2100000, guid: 4f0c049a39f05d940abe7104d38651b8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
