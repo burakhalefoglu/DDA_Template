@@ -16,7 +16,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 97524ea5090447f429d9c7ce95e54c53, type: 2}
+      objectReference: {fileID: 2100000, guid: edc80c0a97e5a8e42913d624e64a6738, type: 2}
+    - target: {fileID: 1104679420147784266, guid: 0183aeed358847a43b87f203d28ea1e9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edc80c0a97e5a8e42913d624e64a6738, type: 2}
     - target: {fileID: 1104679420149553322, guid: 0183aeed358847a43b87f203d28ea1e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 1104679420149712010, guid: 0183aeed358847a43b87f203d28ea1e9,
         type: 3}
       propertyPath: m_Name
-      value: FatTunnel (2) Variant
+      value: shit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0183aeed358847a43b87f203d28ea1e9, type: 3}
