@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class CalculatingDifficulty : MonoBehaviour, ICalculate
 {
-    public int CalculateEnemyCount(int CurrentLevel, float IncreaseAmount, int DifficultyOneParameter)
+    public int CalculateEnemyCount(float DifficultyLevel, float IncreaseAmount, int DifficultyOneParameter)
     {
 
-       int RanomizationCount = RandomizationCount(CurrentLevel);
-       float FloatDifficultyParamMedyan = DifficultyOneParameter + (IncreaseAmount * (CurrentLevel - 1));
+       int RanomizationCount = RandomizationCount(DifficultyLevel);
+       float FloatDifficultyParamMedyan = DifficultyOneParameter + (IncreaseAmount * (DifficultyLevel - 1));
        int DifficultyParamMedyan= (int)Math.Round(FloatDifficultyParamMedyan, MidpointRounding.AwayFromZero);
 
         return UnityEngine.Random.Range((int)(DifficultyParamMedyan - RanomizationCount), (int)(DifficultyParamMedyan + RanomizationCount));
@@ -24,7 +24,7 @@ public class CalculatingDifficulty : MonoBehaviour, ICalculate
         return IncreaseAmount;
     }
 
-    public int RandomizationCount(int CurrentLevel)
+    public int RandomizationCount(float CurrentLevel)
     {
         if (CurrentLevel > 0 && CurrentLevel < 5)
         {

@@ -20,7 +20,14 @@ public class SaveManager : MonoBehaviour
 
         SavePlayerParams();
 
+        SaveOtherParams();
+
+        PlayerPrefs.Save();
+
+
     }
+
+
 
     void CheckSaveSystemFloat(bool checkPrefs, float playerPrefKey, string playerPrefName )
     {
@@ -52,7 +59,8 @@ public class SaveManager : MonoBehaviour
         bool IsValidVirus_Health;
         bool IsValidVirus_Attack;
         bool IsValidVırus_Density;
-        
+        bool IsValidVırus_Level;
+
 
         IsValidVirus_Health = PlayerPrefs.HasKey("Virus_Health");
         CheckSaveSystemFloat(IsValidVirus_Health, 10, "Virus_Health");
@@ -63,13 +71,17 @@ public class SaveManager : MonoBehaviour
         IsValidVırus_Density = PlayerPrefs.HasKey("Vırus_Density");
         CheckSaveSystemFloat(IsValidVırus_Density, 5, "Vırus_Density");
 
-        
+        IsValidVırus_Level = PlayerPrefs.HasKey("Vırus_Level");
+        CheckSaveSystemFloat(IsValidVırus_Level, 1, "Vırus_Level");
+
+
     }
     void SaveGermSlimParams()
     {
         bool IsValidGermSlime_Health;
         bool IsValidGermSlime_Attack;
         bool IsValidGermSlime_Density;
+        bool IsValidGermSlime_Level;
 
         IsValidGermSlime_Health = PlayerPrefs.HasKey("GermSlime_Health");
         CheckSaveSystemFloat(IsValidGermSlime_Health, 10, "GermSlime_Health");
@@ -79,6 +91,9 @@ public class SaveManager : MonoBehaviour
 
         IsValidGermSlime_Density = PlayerPrefs.HasKey("GermSlime_Density");
         CheckSaveSystemFloat(IsValidGermSlime_Density, 10, "GermSlime_Density");
+
+        IsValidGermSlime_Level = PlayerPrefs.HasKey("GermSlime_Level");
+        CheckSaveSystemFloat(IsValidGermSlime_Level, 1, "GermSlime_Level");
 
     }
     void SaveGermSpikeParams()
@@ -127,9 +142,14 @@ public class SaveManager : MonoBehaviour
         bool IsValidPlayer_GermOBlasterBullet;
         bool IsValidPlayer_Healmatic500Bullet;
         bool IsValidPlayer_PillCount;
+        bool IsValidPlayer_CharLevel;
+        bool IsValidPlayer_Flow;
 
         IsValidPlayer_Health = PlayerPrefs.HasKey("Player_Health");
         CheckSaveSystemFloat(IsValidPlayer_Health, 100, "Player_Health");
+
+        IsValidPlayer_Flow = PlayerPrefs.HasKey("Player_Flow");
+        CheckSaveSystemFloat(IsValidPlayer_Flow, 0, "Player_Flow");
 
         IsValidPlayer_GermOBlasterBullet = PlayerPrefs.HasKey("GermOBlasterBullet");
         CheckSaveSystemFloat(IsValidPlayer_GermOBlasterBullet, 100, "GermOBlasterBullet");
@@ -140,8 +160,20 @@ public class SaveManager : MonoBehaviour
         IsValidPlayer_PillCount = PlayerPrefs.HasKey("PillCount");
         CheckSaveSystemFloat(IsValidPlayer_PillCount, 100, "PillCount");
 
+        IsValidPlayer_CharLevel = PlayerPrefs.HasKey("CharLevel");
+        CheckSaveSystemFloat(IsValidPlayer_CharLevel, 1, "CharLevel");
     }
 
+    void SaveOtherParams()
+    {
+        bool IsValidDifficultyLevelParam;
+        bool IsValidLevelParam;
 
+        IsValidDifficultyLevelParam = PlayerPrefs.HasKey("DifficultyLevel");
+        CheckSaveSystemFloat(IsValidDifficultyLevelParam,1, "DifficultyLevel");
 
+        IsValidLevelParam = PlayerPrefs.HasKey("CurrentLevel");
+        CheckSaveSystemFloat(IsValidLevelParam, 1, "CurrentLevel");
+
+    }
 }

@@ -10,7 +10,7 @@ namespace Assets.Creator_Kit___FPS.Scenes.BurakÇalışma.GameDifficulty.Paramat
     {
 
         float CalculateEnemysIncreaseAmount(float DifficultyOneCount, float DifficultyTenCount);
-        int CalculateEnemyCount(int CurrentLevel, float IncreaseAmount, int DifficultyOneParameter);
+        int CalculateEnemyCount(float DifficultyLevel, float IncreaseAmount, int DifficultyOneParameter);
     }
 
 
