@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField]
+  
     float health;
     float mashroomAttack = 1;
     float bacteriumAttack = 1;
@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<Controller>();
-        health = PlayerPrefs.GetFloat("Player_Health")*10;
+        health = PlayerPrefs.GetFloat("Player_Health");
 
     }
 
@@ -43,6 +43,11 @@ public class Character : MonoBehaviour
         else if (other.gameObject.tag == "Mushy" && health > mashroomAttack)
         {
             health -= mashroomAttack;
+            Debug.Log(health);
+        }
+        else if (other.gameObject.tag == "bacterium" && health > bacteriumAttack)
+        {
+            health -= bacteriumAttack;
             Debug.Log(health);
         }
         else

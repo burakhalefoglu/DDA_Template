@@ -6,7 +6,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Target : MonoBehaviour
 {
-    public float health = 5.0f;
+    float health = 1f;
     public int pointValue;
 
     public ParticleSystem DestroyedEffect;
