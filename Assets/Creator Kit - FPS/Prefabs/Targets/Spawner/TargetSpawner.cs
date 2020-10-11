@@ -10,7 +10,6 @@ public class TargetSpawner : MonoBehaviour
     public void BuildObject()
     {
         GameObject obj= Instantiate(SpawnObject, new Vector3(0, 0, 0), Quaternion.identity);
-        gameObject.name = "Enemy";
         obj.transform.SetParent(this.gameObject.transform, false);
 
 

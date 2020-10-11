@@ -11,7 +11,7 @@ public class GettingDifficultySettings : MonoBehaviour
         int currentlevel;
         currentlevel = SceneManager.GetActiveScene().buildIndex;
         setVisibility(currentlevel);
-
+        CalculateDesisity(currentlevel);
         
 
     }
@@ -36,4 +36,133 @@ public class GettingDifficultySettings : MonoBehaviour
         }
     }
 
+
+
+    void CalculateDesisity(int currentlevel)
+    {
+        if (currentlevel > 0 && currentlevel < 5)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                float childcount=this.gameObject.transform.GetChild(i).childCount;
+                switch (i)
+                {
+                    case 0:
+                        childcount= childcount - PlayerPrefs.GetFloat("CuteMushy_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                            break;
+                    case 1:
+                        childcount = childcount - PlayerPrefs.GetFloat("CuteBacterium_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                        break;
+                    case 2:
+                        childcount = childcount - PlayerPrefs.GetFloat("GermSpike_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                        break;
+                }
+            }
+                
+        }
+        else if (currentlevel > 4 && currentlevel < 9)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                    float childcount = this.gameObject.transform.GetChild(i).childCount;
+                    switch (i)
+                    {
+                        case 0:
+                            childcount = childcount - PlayerPrefs.GetFloat("CuteMushy_Density");
+                            for (int j = 0; j < childcount; j++)
+                            {
+                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            }
+                            break;
+                        case 1:
+                            childcount = childcount - PlayerPrefs.GetFloat("CuteBacterium_Density");
+                            for (int j = 0; j < childcount; j++)
+                            {
+                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            }
+                            break;
+                        case 2:
+                            childcount = childcount - PlayerPrefs.GetFloat("GermSpike_Density");
+                            for (int j = 0; j < childcount; j++)
+                            {
+                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            }
+                            break;
+
+                       case 3:
+                                childcount = childcount - PlayerPrefs.GetFloat("GermSlime_Density");
+                                for (int j = 0; j < childcount; j++)
+                                {
+                                    this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                                }
+                                break;
+                    }
+                
+            }
+                
+        }
+
+        else
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                float childcount = this.gameObject.transform.GetChild(i).childCount;
+                switch (i)
+                {
+                    case 0:
+                        childcount = childcount - PlayerPrefs.GetFloat("CuteMushy_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                        break;
+                    case 1:
+                        childcount = childcount - PlayerPrefs.GetFloat("CuteBacterium_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                        break;
+                    case 2:
+                        childcount = childcount - PlayerPrefs.GetFloat("GermSpike_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                        break;
+
+                    case 3:
+                        childcount = childcount - PlayerPrefs.GetFloat("GermSlime_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                        break;
+                    case 4:
+                        childcount = childcount - PlayerPrefs.GetFloat("Vırus_Density");
+                        for (int j = 0; j < childcount; j++)
+                        {
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                        }
+                        break;
+                }
+
+
+            }
+        }
+
+
+    }
 }
