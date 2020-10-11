@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1782824341860796120}
   m_Layer: 10
   m_Name: CharacterRoot
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,8 +275,8 @@ GameObject:
   - component: {fileID: 1782824343737523953}
   - component: {fileID: 1782824343737523952}
   - component: {fileID: 1782824343737523964}
-  - component: {fileID: 2076006592}
   - component: {fileID: 5191335408213895292}
+  - component: {fileID: 8962991925944967712}
   m_Layer: 10
   m_Name: Character
   m_TagString: Player
@@ -322,9 +322,11 @@ MonoBehaviour:
   - {fileID: 6274258826675327207, guid: 4f2e46d4d4842c849a745f6e82991e57, type: 3}
   startingAmmo:
   - ammoType: 0
-    amount: 60
+    amount: 10000000
   - ammoType: 2
-    amount: 2
+    amount: 10000000
+  - ammoType: 0
+    amount: 10000000
   MouseSensitivity: 2.4
   PlayerSpeed: 5
   RunningSpeed: 10
@@ -350,18 +352,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2076006592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782824343737523965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e775d48fda8c87946865215f18419636, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5191335408213895292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,9 +364,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3990bd8e4a56da41a76d294498fd56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  pausePanel: {fileID: 3514285871138933657, guid: be1653002b380cf41b40f59e52a330df,
-    type: 3}
+  controller: {fileID: 0}
+--- !u!54 &8962991925944967712
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782824343737523965}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &9066338771475785965
 GameObject:
   m_ObjectHideFlags: 0

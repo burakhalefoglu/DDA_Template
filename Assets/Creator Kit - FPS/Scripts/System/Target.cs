@@ -6,7 +6,6 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Target : MonoBehaviour
 {
-    float health = 1f;
     public int pointValue;
 
     public ParticleSystem DestroyedEffect;
@@ -19,6 +18,7 @@ public class Target : MonoBehaviour
 
     bool m_Destroyed = false;
     float m_CurrentHealth;
+    public GameObject Key;
 
     void Awake()
     {
@@ -45,6 +45,7 @@ public class Target : MonoBehaviour
             return;
 
         Vector3 position = transform.position;
+        Instantiate(Key, transform.position, transform.rotation);
 
         if (DestroyedEffect != null)
         {
@@ -77,8 +78,8 @@ public class Target : MonoBehaviour
 
     private float SelectHealth(string tag)
     {
-        
-        
+
+
         if (tag == "Virus")
         {
             return PlayerPrefs.GetFloat("Virus_Health");
@@ -91,6 +92,11 @@ public class Target : MonoBehaviour
         else if (tag == "GermSpike")
         {
             return PlayerPrefs.GetFloat("GermSpike_Health");
+
+        }
+        else if (tag == "BloodGuard")
+        {
+            return PlayerPrefs.GetFloat("DifficultyLevel")*1.5f;
 
         }
         else

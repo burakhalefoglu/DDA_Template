@@ -10,6 +10,8 @@ using UnityEditor;
 
 public class Weapon : MonoBehaviour
 {
+
+    float hitcount = 0;
     static RaycastHit[] s_HitInfoBuffer = new RaycastHit[8];
     
     public enum TriggerType
@@ -173,12 +175,12 @@ public class Weapon : MonoBehaviour
 
         triggerDown = false;
         m_ShotDone = false;
-        
-        WeaponInfoUI.Instance.UpdateWeaponName(this);
-        WeaponInfoUI.Instance.UpdateClipInfo(this);
-        WeaponInfoUI.Instance.UpdateAmmoAmount(m_Owner.GetAmmo(ammoType));
-        
-        if(AmmoDisplay)
+
+        //WeaponInfoUI.Instance.UpdateWeaponName(this);
+        //WeaponInfoUI.Instance.UpdateClipInfo(this);
+        //WeaponInfoUI.Instance.UpdateAmmoAmount(m_Owner.GetAmmo(ammoType));
+
+        if (AmmoDisplay)
             AmmoDisplay.UpdateAmount(m_ClipContent, clipSize);
 
         if (m_ClipContent == 0 && ammoRemaining != 0)
@@ -208,7 +210,7 @@ public class Weapon : MonoBehaviour
         if(AmmoDisplay)
             AmmoDisplay.UpdateAmount(m_ClipContent, clipSize);
         
-        WeaponInfoUI.Instance.UpdateClipInfo(this);
+        //WeaponInfoUI.Instance.UpdateClipInfo(this);
 
         //the state will only change next frame, so we set it right now.
         m_CurrentState = WeaponState.Firing;
@@ -258,6 +260,7 @@ public class Weapon : MonoBehaviour
             //this is a target
             if (hit.collider.gameObject.layer == 10)
             {
+                hitcount++;
                 Target target = hit.collider.gameObject.GetComponent<Target>();
                 target.Got(damage);
             }
@@ -278,7 +281,10 @@ public class Weapon : MonoBehaviour
             });
         }
     }
-
+    public float GetTotalHit()
+    {
+        return hitcount;
+    }
     void ProjectileShot()
     {
         for (int i = 0; i < advancedSettings.projectilePerShot; ++i)
