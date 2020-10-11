@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GettingDatabaseParameters : MonoBehaviour
 {
-
+    ListeninCharBehavior listeninCharBehavior;
+    float time;
     void Start()
     {
       //Devide id save work........
-        devideid = 0;
+        int devideid = 0;
 
         bool IsValidDevideId = PlayerPrefs.HasKey("DevideId");
         CheckSaveSystemInt(IsValidDevideId, devideid, "DevideId");
-
+        listeninCharBehavior = GetComponent<ListeninCharBehavior>();
+    }
+    private void Update()
+    {
+        time += Time.deltaTime;
     }
 
     void CheckSaveSystemInt(bool checkPrefs, int playerPrefKey, string playerPrefName)
@@ -27,6 +32,30 @@ public class GettingDatabaseParameters : MonoBehaviour
 
     public int RemainingHealth()
     {
+        return (int)(listeninCharBehavior.GetPlayerFinishHealth() / listeninCharBehavior.GetPlayerStartHealth());
+    }
+
+    public int AttackSpeed()
+    {
+        return (int)(listeninCharBehavior.GetPlayerTotalAttackCount()/time);
+    }
+
+    public int HitRate()
+    {
         return 0;
     }
+
+    public int APM()
+    {
+        return 0;
+    }
+    public int IsDead()
+    {
+        return 0;
+    }
+    public int FinishingTime()
+    {
+        return 0;
+    }
+
 }

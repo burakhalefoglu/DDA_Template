@@ -22,8 +22,6 @@ public class Character : MonoBehaviour
 
     }
 
-
-
     private void OnTriggerEnter(Collider other)
     {
 
@@ -53,7 +51,7 @@ public class Character : MonoBehaviour
         else
         {
             Debug.Log(health);
-            PauseGame();
+          //  PauseGame();
         }
 
     }
@@ -75,16 +73,19 @@ public class Character : MonoBehaviour
         else
         {
             Debug.Log(health);
-            PauseGame();
+           // PauseGame();
         }
     }
 
     private void PauseGame()
     {
-        controller.DisplayCursor(true);
         Time.timeScale = 0;
         pausePanel.SetActive(true);
     }
 
+    public float GetPlayerHealth()
+    {
+        return health;
+    }
   
 }

@@ -24,21 +24,45 @@
               <e p="StandardFleischDisolve.shader" t="Include" />
             </e>
           </e>
+          <e p="Prefabs" t="Include">
+            <e p="Targets" t="Include">
+              <e p="Spawner" t="Include">
+                <e p="GettingDifficultySettings.cs" t="Include" />
+                <e p="SpawnButton.cs" t="Include" />
+                <e p="TargetSpawner.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Scenes" t="Include">
             <e p="BurakÇalışma" t="Include">
               <e p="bullet.cs" t="Include" />
               <e p="BulletVirus.cs" t="Include" />
               <e p="Character.cs" t="Include" />
+              <e p="ConnectingServer" t="Include">
+                <e p="AskingServerDifficultyLevel.cs" t="Include" />
+                <e p="Server.cs" t="Include" />
+              </e>
+              <e p="Deneme.cs" t="Include" />
               <e p="Destroy.cs" t="Include" />
               <e p="Following.cs" t="Include" />
               <e p="GameDifficulty" t="Include">
+                <e p="CalculatingDifficulty.cs" t="Include" />
                 <e p="DifficultyManager.cs" t="Include" />
-                <e p="DifficultyParameter.cs" t="Include" />
-                <e p="IDiffultyParameter.cs" t="Include" />
+                <e p="DifficultyParameters.cs" t="Include" />
+                <e p="ParamatersAbstrack" t="Include">
+                  <e p="CuteBacterium.cs" t="Include" />
+                  <e p="CuteMushy.cs" t="Include" />
+                  <e p="CuteVirus.cs" t="Include" />
+                  <e p="GermSlime.cs" t="Include" />
+                  <e p="GermSpike.cs" t="Include" />
+                  <e p="ITarget.cs" t="Include" />
+                </e>
+              </e>
+              <e p="MainMenu" t="Include">
+                <e p="SaveManager.cs" t="Include" />
               </e>
               <e p="ObjectPooling.cs" t="Include" />
               <e p="PingPong.cs" t="Include" />
-              <e p="SaveManager.cs" t="Include" />
               <e p="ShootToPlayer_GermSlim.cs" t="Include" />
               <e p="ShootToPlayer_Virus.cs" t="Include" />
               <e p="TurnPlayer.cs" t="Include" />
@@ -89,7 +113,6 @@
               <e p="Projectile.cs" t="Include" />
               <e p="StartCheckpoint.cs" t="Include" />
               <e p="Target.cs" t="Include" />
-              <e p="TargetSpawner.cs" t="Include" />
               <e p="Weapon.cs" t="Include" />
               <e p="WeaponAnimationEventHandler.cs" t="Include" />
             </e>

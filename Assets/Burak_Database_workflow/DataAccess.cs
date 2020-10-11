@@ -7,10 +7,11 @@ using System.Data;
 public class DataAccess : MonoBehaviour
 {
     GettingDatabaseParameters gettingDatabaseParameters;
+    SqlConnection baglan;
     void Awake()
     {
-        gettingDatabaseParameters = GetComponenet<GettingDatabaseParameters>();
-        SqlConnection baglan = new SqlConnection("Data Source=192.168.1.7; Initial Catalog=Kutuphane; User Id=Emre; password=123456;");
+        gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
+        baglan = new SqlConnection("Data Source=192.168.1.7; Initial Catalog=Kutuphane; User Id=Emre; password=123456;");
        
     }
    
@@ -24,13 +25,13 @@ public class DataAccess : MonoBehaviour
                 SqlCommand komut = new SqlCommand(kayit, baglan);
                 komut.Parameters.AddWithValue("@devideid", PlayerPrefs.GetInt("DevideId"));
                 komut.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
-                komut.Parameters.AddWithValue("@attackspeed",0 );
-                komut.Parameters.AddWithValue("@hitrate", 0);
-                komut.Parameters.AddWithValue("@apm", 0);
-                komut.Parameters.AddWithValue("@isdead", 0);
-                komut.Parameters.AddWithValue("@finishingtime", 0);
-                komut.Parameters.AddWithValue("@currentdifficulty", 0);
-                komut.Parameters.AddWithValue("@currentlevel", 0);
+                komut.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
+                komut.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
+                komut.Parameters.AddWithValue("@apm", gettingDatabaseParameters.APM());
+                komut.Parameters.AddWithValue("@isdead", gettingDatabaseParameters.IsDead());
+                komut.Parameters.AddWithValue("@finishingtime", gettingDatabaseParameters.FinishingTime());
+                komut.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetFloat("DifficultyLevel"));
+                komut.Parameters.AddWithValue("@currentlevel", PlayerPrefs.GetFloat("CurrentLevel"));
                 komut.ExecuteNonQuery();
                 baglan.Close();
                 
