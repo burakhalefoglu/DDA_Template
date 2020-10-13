@@ -28,4 +28,9 @@ public class Shoot : MonoBehaviour
         controller.changeWeaponLeft();
     }
 
+    public void Jump()
+    {
+        controller.Jump();
+    }
+
 }

@@ -7,9 +7,7 @@ using Vector3 = UnityEngine.Vector3;
 public class Target : MonoBehaviour
 {
     public int pointValue;
-
     public ParticleSystem DestroyedEffect;
-
     [Header("Audio")]
     public RandomPlayer HitPlayer;
     public AudioSource IdleSource;
@@ -18,7 +16,9 @@ public class Target : MonoBehaviour
 
     bool m_Destroyed = false;
     float m_CurrentHealth;
-    public GameObject Key;
+
+    GameObject Player;
+    Character character;
 
     void Awake()
     {
@@ -30,22 +30,50 @@ public class Target : MonoBehaviour
         if(DestroyedEffect)
             PoolSystem.Instance.InitPool(DestroyedEffect, 16);
         
-        m_CurrentHealth = SelectHealth(this.gameObject.tag);
         if(IdleSource != null)
             IdleSource.time = Random.Range(0.0f, IdleSource.clip.length);
+
+        Player = GameObject.FindGameObjectWithTag("Player");
+        character = Player.GetComponent<Character>();
+
+        if (this.gameObject.tag == "BossVirus")
+        {
+            m_CurrentHealth = 30;
+        }
+        else if (this.gameObject.tag == "BossGermSpike")
+        {
+            m_CurrentHealth = 50;
+        }
+        else
+        {
+            m_CurrentHealth = SelectHealth(this.gameObject.tag);
+
+        }
+
+
     }
 
     public void Got(float damage)
     {
         Debug.Log("Canım yandı");
         m_CurrentHealth -= damage;
-        Debug.Log(m_CurrentHealth);
-        
-        if(m_CurrentHealth > 0)
+        if (this.gameObject.tag == "BloodGuard")
+        {
+            damage *= 3;
+            character.SetPoint(damage);
+        }
+        else
+        {
+            character.SetPoint(damage);
+        }
+
+
+
+
+        if (m_CurrentHealth > 0)
             return;
 
         Vector3 position = transform.position;
-        Instantiate(Key, transform.position, transform.rotation);
 
         if (DestroyedEffect != null)
         {

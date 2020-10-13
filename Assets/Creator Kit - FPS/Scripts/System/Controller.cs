@@ -41,14 +41,12 @@ public class Controller : MonoBehaviour
     public AudioClip LandingAudioClip;
     
     float m_VerticalSpeed = 0.0f;
-    bool m_IsPaused = false;
     int m_CurrentWeapon;
     
     float m_VerticalAngle, m_HorizontalAngle;
     public float Speed { get; private set; } = 0.0f;
 
     public bool LockControl { get; set; }
-    public bool CanPause { get; set; } = true;
 
     public bool Grounded => m_Grounded;
 
@@ -72,7 +70,6 @@ public class Controller : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        m_IsPaused = false;
         m_Grounded = true;
         
         MainCamera.transform.SetParent(CameraPosition, false);
@@ -103,19 +100,14 @@ public class Controller : MonoBehaviour
     }
 
     bool IsShoot;
+    bool Isjump=false;
     void Update()
     {
-        Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
-        m_Weapons[m_CurrentWeapon].triggerDown = IsShoot;
-        IsShoot = false;//SimpleInput.GetMouseButton(0);
-
-
-        if (CanPause && Input.GetButtonDown("Menu"))
-        {
-            PauseMenu.Instance.Display();
-        }
         
-        FullscreenMap.Instance.gameObject.SetActive(Input.GetButton("Map"));
+           m_Weapons[m_CurrentWeapon].triggerDown = IsShoot;
+           IsShoot = false;
+        
+       
 
         bool wasGrounded = m_Grounded;
         bool loosedGrounding = false;
@@ -143,11 +135,12 @@ public class Controller : MonoBehaviour
 
         Speed = 0;
         Vector3 move = Vector3.zero;
-        if (!m_IsPaused && !LockControl)
+        if (!LockControl)
         {
             // Jump (we do it first as 
-            if (m_Grounded && Input.GetButtonDown("Jump"))
+            if (m_Grounded && Isjump)
             {
+                Isjump = false;
                 m_VerticalSpeed = JumpSpeed;
                 m_Grounded = false;
                 loosedGrounding = true;
@@ -174,24 +167,24 @@ public class Controller : MonoBehaviour
             move = transform.TransformDirection(move);
             m_CharacterController.Move(move);
 
-            // Turn player
-            float turnPlayer = SimpleInput.GetAxis("MouseX") /** MouseSensitivity*/;
-            m_HorizontalAngle = m_HorizontalAngle + turnPlayer;
+            //// Turn player
+            //float turnPlayer = SimpleInput.GetAxis("MouseX") /** MouseSensitivity*/;
+            //m_HorizontalAngle = m_HorizontalAngle + turnPlayer;
 
-            if (m_HorizontalAngle > 360) m_HorizontalAngle -= 360.0f;
-            if (m_HorizontalAngle < 0) m_HorizontalAngle += 360.0f;
+            //if (m_HorizontalAngle > 360) m_HorizontalAngle -= 360.0f;
+            //if (m_HorizontalAngle < 0) m_HorizontalAngle += 360.0f;
 
-            Vector3 currentAngles = transform.localEulerAngles;
-            currentAngles.y = m_HorizontalAngle;
-            transform.localEulerAngles = currentAngles;
+            //Vector3 currentAngles = transform.localEulerAngles;
+            //currentAngles.y = m_HorizontalAngle;
+            //transform.localEulerAngles = currentAngles;
 
-            // Camera look up/down
-            var turnCam = -SimpleInput.GetAxis("MouseY")/2;
-            //turnCam = turnCam * MouseSensitivity;
-            m_VerticalAngle = Mathf.Clamp(turnCam + m_VerticalAngle, -89.0f, 89.0f);
-            currentAngles = CameraPosition.transform.localEulerAngles;
-            currentAngles.x = m_VerticalAngle;
-            CameraPosition.transform.localEulerAngles = currentAngles;
+            //// Camera look up/down
+            //var turnCam = -SimpleInput.GetAxis("MouseY")/2;
+            ////turnCam = turnCam * MouseSensitivity;
+            //m_VerticalAngle = Mathf.Clamp(turnCam + m_VerticalAngle, -89.0f, 89.0f);
+            //currentAngles = CameraPosition.transform.localEulerAngles;
+            //currentAngles.x = m_VerticalAngle;
+            //CameraPosition.transform.localEulerAngles = currentAngles;
 
             
 
@@ -244,12 +237,6 @@ public class Controller : MonoBehaviour
         }
     }
 
-    public void DisplayCursor(bool display)
-    {
-        m_IsPaused = display;
-        Cursor.lockState = display ? CursorLockMode.None : CursorLockMode.Locked;
-        Cursor.visible = display;
-    }
 
     void PickupWeapon(Weapon prefab)
     {
@@ -346,5 +333,9 @@ public class Controller : MonoBehaviour
     {
         Weapon weapon =m_Weapons[m_CurrentWeapon].GetComponent<Weapon>();
         return weapon.GetTotalHit();
+    }
+    public void Jump()
+    {
+        Isjump = true;
     }
 }

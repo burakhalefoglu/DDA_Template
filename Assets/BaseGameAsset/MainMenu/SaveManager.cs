@@ -60,7 +60,6 @@ public class SaveManager : MonoBehaviour
         bool IsValidVırus_Density;
         bool IsValidVırus_Level;
 
-
         IsValidVirus_Health = PlayerPrefs.HasKey("Virus_Health");
         CheckSaveSystemFloat(IsValidVirus_Health, 10, "Virus_Health");
 
@@ -93,6 +92,8 @@ public class SaveManager : MonoBehaviour
 
         IsValidGermSlime_Level = PlayerPrefs.HasKey("GermSlime_Level");
         CheckSaveSystemFloat(IsValidGermSlime_Level, 1, "GermSlime_Level");
+
+
 
     }
     void SaveGermSpikeParams()
@@ -167,12 +168,16 @@ public class SaveManager : MonoBehaviour
     {
         bool IsValidDifficultyLevelParam;
         bool IsValidLevelParam;
+        bool IsValidPoint;
 
         IsValidDifficultyLevelParam = PlayerPrefs.HasKey("DifficultyLevel");
         CheckSaveSystemFloat(IsValidDifficultyLevelParam,1, "DifficultyLevel");
 
         IsValidLevelParam = PlayerPrefs.HasKey("CurrentLevel");
         CheckSaveSystemFloat(IsValidLevelParam, 1, "CurrentLevel");
+
+        IsValidPoint = PlayerPrefs.HasKey("Point");
+        CheckSaveSystemFloat(IsValidPoint, 0, "Point");
 
     }
 }

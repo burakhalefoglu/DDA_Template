@@ -15,6 +15,8 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
     {
        
         Target = GameObject.FindGameObjectWithTag("Player");
+        shootFrequencyTime = 5 - (5 * PlayerPrefs.GetFloat("DifficultyLevel") / 10);
+
     }
 
 

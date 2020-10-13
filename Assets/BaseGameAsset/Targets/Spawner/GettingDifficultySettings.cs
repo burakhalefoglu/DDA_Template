@@ -5,15 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GettingDifficultySettings : MonoBehaviour
 {
+    int currentlevel;
     // Start is called before the first frame update
     void Start()
     {
-        int currentlevel;
+      
         currentlevel = SceneManager.GetActiveScene().buildIndex;
-        setVisibility(currentlevel);
-        CalculateDesisity(currentlevel);
         
-
     }
 
     
@@ -164,5 +162,14 @@ public class GettingDifficultySettings : MonoBehaviour
         }
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            setVisibility(currentlevel);
+            CalculateDesisity(currentlevel);
+        }
     }
 }

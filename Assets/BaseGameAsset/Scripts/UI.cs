@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
-  
+
+
+
     public void RestartLevel()
     {
         Time.timeScale = 1;
@@ -26,4 +28,11 @@ public class UI : MonoBehaviour
 
     }
 
+
+    public void StartLevel()
+    {
+        SceneManager.LoadScene((int)PlayerPrefs.GetFloat("CurrentLevel"));
+
+
+    }
 }

@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 4721971787300690077}
   - component: {fileID: 1493503577001327650}
   - component: {fileID: 4678812056902347137}
+  - component: {fileID: 6163081752695236895}
   m_Layer: 10
   m_Name: BloodCellGuard
   m_TagString: BloodGuard
@@ -197,7 +198,6 @@ MonoBehaviour:
     type: 3}
   HitPlayer: {fileID: 6619562243973543880}
   IdleSource: {fileID: 350652712947764252}
-  Key: {fileID: 486199577062060824, guid: d3d153a926e7b974781c26b005ba3201, type: 3}
 --- !u!136 &4678812056902347137
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -212,6 +212,19 @@ CapsuleCollider:
   m_Height: 1.7
   m_Direction: 0
   m_Center: {x: -0.008023421, y: 0.7293066, z: 0}
+--- !u!114 &6163081752695236895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194149699345020935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4027ac2164c944481c52d56cb0beae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: {fileID: 486199577062060824, guid: d3d153a926e7b974781c26b005ba3201, type: 3}
 --- !u!1 &4648600681211777893
 GameObject:
   m_ObjectHideFlags: 0

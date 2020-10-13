@@ -225,7 +225,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &1839256883
 CapsuleCollider:
@@ -253,7 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21572170bf3eef94dba3f7ca0f06525a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
   pointValue: 2
   DestroyedEffect: {fileID: 198321120434662062, guid: 5656e7ea1f1a75d4c895547ec2b824b3,
     type: 3}
@@ -261,6 +260,7 @@ MonoBehaviour:
     type: 3}
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
+  Key: {fileID: 0}
 --- !u!114 &-7170223332218218847
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -344,7 +344,7 @@ public class Weapon : MonoBehaviour
         
         m_Owner.ChangeAmmo(ammoType, -chargeInClip);
         
-        WeaponInfoUI.Instance.UpdateClipInfo(this);
+        //WeaponInfoUI.Instance.UpdateClipInfo(this);
     }
 
     void Update()

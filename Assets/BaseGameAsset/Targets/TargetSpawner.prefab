@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2204775727403316141}
   - component: {fileID: 7274829881494021015}
+  - component: {fileID: 3998878839889528489}
   m_Layer: 0
   m_Name: TargetSpawner
   m_TagString: Untagged
@@ -48,6 +49,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e7b6a5b0dbf5643b9db123e06c1e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3998878839889528489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204775727403316140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.362755, y: 3.6118279, z: 7.0375347}
+  m_Center: {x: 0.24779892, y: 1.3059139, z: 0.17360783}
 --- !u!1 &2204775727454860269
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2204775727454860178
 Transform:
   m_ObjectHideFlags: 0
@@ -109,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1542472717115667581
 Transform:
   m_ObjectHideFlags: 0
@@ -154,7 +168,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2797743803126942513
 Transform:
   m_ObjectHideFlags: 0

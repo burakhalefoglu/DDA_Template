@@ -129,7 +129,8 @@ public class DifficultyManager : MonoBehaviour
             CuteVirusDifficultyOne = 1,
             CuteVirusDifficultyTen = 14,
 
-            GermSlimeLevel = 1
+            GermSlimeLevel = 1,
+            GermSlimeAttackFrequency = 5
         };
 
 
@@ -193,7 +194,11 @@ public class DifficultyManager : MonoBehaviour
             CuteVirusDifficultyTen = 15,
 
             GermSlimeLevel = 2,
-            CuteVirusLevel = 1
+            CuteVirusLevel = 1,
+           
+            GermSlimeAttackFrequency = 5,
+            CuteVirusAttackFrequency =5
+
 
         };
 
@@ -257,7 +262,10 @@ public class DifficultyManager : MonoBehaviour
             CuteVirusDifficultyTen = 144,
 
             GermSlimeLevel = 2,
-            CuteVirusLevel = 2
+            CuteVirusLevel = 2,
+
+            GermSlimeAttackFrequency = 5,
+            CuteVirusAttackFrequency = 5
 
         };
 
