@@ -37,8 +37,8 @@ public class Character : MonoBehaviour
         healthBarHandler = HealthBar.GetComponent<HealthBarHandler>();
 
         controller = GetComponent<Controller>();
-        firstHealth = PlayerPrefs.GetFloat("Player_Health");
-        health = PlayerPrefs.GetFloat("Player_Health");
+        firstHealth = 10000; PlayerPrefs.GetFloat("Player_Health");
+        health = 10000;/* PlayerPrefs.GetFloat("Player_Health");*/
 
 
 
@@ -54,7 +54,7 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("GermSlime_Attack");
             CalculateHealthBar(PlayerPrefs.GetFloat("GermSlime_Attack"));
             Debug.Log(health);
-            IsKilled();
+            //IsKilled();
 
         }
         else if (other.gameObject.tag == "CuteVirusBullet" && health > 0)
@@ -62,26 +62,57 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack");
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack"));
             Debug.Log(health);
-            IsKilled();
+            //IsKilled();
 
         }
+        else if (other.gameObject.tag == "BossVirusBullet" && health > 0)
+        {
+            health -= PlayerPrefs.GetFloat("Virus_Attack")*2;
+            CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 2);
+            Debug.Log(health);
+            //IsKilled();
+
+        }
+        else if (other.gameObject.tag == "DomestosBullet" && health > 0)
+        {
+            health -= PlayerPrefs.GetFloat("Virus_Attack") * 3;
+            CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 3);
+            Debug.Log(health);
+            //IsKilled();
+
+        }
+        else if (other.gameObject.tag == "BossFlyBullet" && health > 0)
+        {
+            health -= PlayerPrefs.GetFloat("Virus_Attack") *4;
+            CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 4);
+            Debug.Log(health);
+            //IsKilled();
+
+        }
+
         else if (other.gameObject.tag == "Mushy" && health > 0)
         {
             health -= mashroomAttack;
             CalculateHealthBar(mashroomAttack);
             Debug.Log(health);
-            IsKilled();
+            //IsKilled();
         }
         else if (other.gameObject.tag == "bacterium" && health > 0)
         {
             health -= bacteriumAttack;
             CalculateHealthBar(bacteriumAttack);
             Debug.Log(health);
-            IsKilled();
+            //IsKilled();
         }
-        IsKilled();
+        //IsKilled();
 
-
+        if (health <= 0)
+        {
+            IsDead = 0;
+            Debug.Log(health);
+            PauseGame();
+        }
+       
 
     }
 
@@ -94,18 +125,26 @@ public class Character : MonoBehaviour
             health -= bacteriumAttack;
             CalculateHealthBar(bacteriumAttack);
             Debug.Log(health);
-            IsKilled();
+            //IsKilled();
         }
         else if (collision.gameObject.tag == "GermSpike" && health > 0)
         {
             health -= GermSpike;
             CalculateHealthBar(GermSpike);
             Debug.Log(health);
-            IsKilled();
+            //IsKilled();
         }
 
 
-        IsKilled();
+        //IsKilled();
+
+        //if (health <= 0)
+        //{
+        //    IsDead = 0;
+        //    Debug.Log(health);
+        //    PauseGame();
+        //}
+
 
     }
 
@@ -170,5 +209,5 @@ public class Character : MonoBehaviour
         return this.Point;
     }
 
-
+   
 }

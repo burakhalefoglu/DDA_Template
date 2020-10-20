@@ -33,9 +33,9 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
         if (time > shootFrequencyTime)
         {
             time = 0;
-            bullet.transform.position = this.gameObject.transform.position;
-            bullet.transform.rotation = this.gameObject.transform.rotation;
             bullet.SetActive(true);
+            bullet.transform.position = this.gameObject.transform.position;
+            bullet.tag = "GermSlimeBullet";
         }
     }
 }

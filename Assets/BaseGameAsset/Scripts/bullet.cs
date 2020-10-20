@@ -10,24 +10,28 @@ public class bullet : MonoBehaviour
     float time = 0;
     Vector3 shoot;
     GameObject target;
+    Material m_Material;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody>();
+        m_Material = GetComponent<Renderer>().material;
+        ChangeMaterialColor();
+
     }
 
 
-  
+
     void FixedUpdate()
     {
         shoot = (target.transform.position - transform.position).normalized;
-        rigidbody.AddForce( shoot * thrust);
+        rigidbody.AddForce(shoot * thrust);
     }
 
     private void Update()
     {
-
+        
         time += Time.deltaTime;
         if (time > 2f)
         {
@@ -50,4 +54,25 @@ public class bullet : MonoBehaviour
             Particle.SetActive(true);
         }
     }
+
+
+
+    void ChangeMaterialColor()
+    {
+       
+        if (this.gameObject.tag == "BossFlyBullet")
+        {
+
+            m_Material.SetColor("_Color1", new Color(220, 220,0));
+            m_Material.SetColor("_Color2", new Color(200, 200,0));
+
+        }
+        else
+        {
+            m_Material.SetColor("_Color1", new Color(0, 220, 0));
+            m_Material.SetColor("_Color2", new Color(0, 200, 0));
+        }
+    }
+
+
 }

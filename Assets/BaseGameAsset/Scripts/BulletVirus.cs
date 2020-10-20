@@ -10,12 +10,15 @@ public class BulletVirus : MonoBehaviour
     float time = 0;
     Vector3 shoot;
     GameObject target;
+    Material m_Material;
+
 
     void Start()
     {
         Debug.Log("Doğdum");
         target = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody>();
+
     }
 
 
@@ -47,4 +50,6 @@ public class BulletVirus : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+
 }

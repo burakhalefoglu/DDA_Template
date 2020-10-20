@@ -30,11 +30,7 @@ public class Following : MonoBehaviour
     }
     void Update()
     {
-
-        if (this.gameObject.tag != "BossGermSpike")
-        {
             follow();
-        }
 
 
     }

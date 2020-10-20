@@ -7,9 +7,7 @@ TagManager:
   - Enemy
   - Mushy
   - bacterium
-  - CuteVirusBullet
   - bullet
-  - GermSlimeBullet
   - GermSpike
   - Blood
   - Virus
@@ -24,6 +22,14 @@ TagManager:
   - PointValue
   - BossVirus
   - BossGermSpike
+  - BossDomestos
+  - BossEnemyFly
+  - BossGermSlime
+  - DomestosBullet
+  - GermSlimeBullet
+  - CuteVirusBullet
+  - BossVirusBullet
+  - BossFlyBullet
   layers:
   - Default
   - TransparentFX

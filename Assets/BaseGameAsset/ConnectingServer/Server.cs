@@ -11,18 +11,19 @@ public class Server : MonoBehaviour
 {
     AskingServerDifficultyLevel askingServerDifficultyLevel;
 
-    public String Host = "localhost";
-    public Int32 Port = 8888;
+    String Host = "localhost";
+    Int32 Port = 6060;
 
-    TcpClient mySocket = null;
-    NetworkStream theStream = null;
-    StreamWriter theWriter = null;
+    TcpClient mySocket;
+    NetworkStream theStream;
+    StreamWriter theWriter;
+    float time;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        askingServerDifficultyLevel = GetComponent<AskingServerDifficultyLevel>();
         mySocket = new TcpClient();
+        askingServerDifficultyLevel = GetComponent<AskingServerDifficultyLevel>();
 
         if (SetupSocket())
         {
@@ -30,9 +31,11 @@ public class Server : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        time += Time.deltaTime;
+
         if (!mySocket.Connected)
         {
             SetupSocket();

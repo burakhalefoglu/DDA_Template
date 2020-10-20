@@ -10,7 +10,7 @@ public class TurnPlayer : MonoBehaviour
     float maxdistance=20;
     [SerializeField]
     float rotationSpeed =10;
-
+    Quaternion rotation;
 
     void Awake()
     {
@@ -35,9 +35,10 @@ public class TurnPlayer : MonoBehaviour
         if (Vector3.Distance(target.position, myTransform.position) < maxdistance)
         {
 
-            myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
+            transform.rotation = Quaternion.Slerp(myTransform.rotation,
                                                Quaternion.LookRotation(target.position - myTransform.position),
                                                rotationSpeed * Time.deltaTime);
+           
 
         }
     }

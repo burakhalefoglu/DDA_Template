@@ -19,10 +19,17 @@ public class Target : MonoBehaviour
 
     GameObject Player;
     Character character;
+    float HealthBarPoint;
+    float FirstHealh;
+
+    EnemyHealthBar enemyHealthBar;
+
+   public GameObject UI;
 
     void Awake()
     {
         Helpers.RecursiveLayerChange(transform, LayerMask.NameToLayer("Target"));
+
     }
 
     void Start()
@@ -36,20 +43,12 @@ public class Target : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         character = Player.GetComponent<Character>();
 
-        if (this.gameObject.tag == "BossVirus")
-        {
-            m_CurrentHealth = 30;
-        }
-        else if (this.gameObject.tag == "BossGermSpike")
-        {
-            m_CurrentHealth = 50;
-        }
-        else
-        {
+      
             m_CurrentHealth = SelectHealth(this.gameObject.tag);
+            FirstHealh = m_CurrentHealth;
 
-        }
 
+        enemyHealthBar = UI.GetComponent<EnemyHealthBar>();
 
     }
 
@@ -64,6 +63,7 @@ public class Target : MonoBehaviour
         }
         else
         {
+
             character.SetPoint(damage);
         }
 
@@ -71,7 +71,12 @@ public class Target : MonoBehaviour
 
 
         if (m_CurrentHealth > 0)
+        {
+            HealthBarPoint = 1 - (damage / FirstHealh);
+            enemyHealthBar.SetHealthBarValue(HealthBarPoint);
             return;
+
+        }
 
         Vector3 position = transform.position;
 
@@ -124,9 +129,26 @@ public class Target : MonoBehaviour
         }
         else if (tag == "BloodGuard")
         {
-            return PlayerPrefs.GetFloat("DifficultyLevel")*1.5f;
+            return PlayerPrefs.GetFloat("DifficultyLevel")*3f;
 
         }
+        else if (tag == "BossGermSpike")
+        {
+            return 50;
+
+        }
+        else if (tag == "BossVirus")
+        {
+            return 30;
+
+        }
+        else if (tag == "BossDomestos")
+        {
+            return 70;
+
+        }
+
+
         else
         {
             return 1.0f;
