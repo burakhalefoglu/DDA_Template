@@ -20,7 +20,7 @@ public class LevelFinisher : MonoBehaviour
         character = player.GetComponent<Character>();
         FinishUI = GameObject.FindGameObjectWithTag("SucceesLevel");
         boxCollider = this.gameObject.GetComponent<BoxCollider>();
-        boxCollider.isTrigger = false;
+        boxCollider.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)

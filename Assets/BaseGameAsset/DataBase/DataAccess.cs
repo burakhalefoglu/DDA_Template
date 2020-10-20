@@ -23,7 +23,7 @@ public class DataAccess : MonoBehaviour
                     baglan.Open();
                 string kayit = "insert into kitaplar(devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel) values (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
                 SqlCommand komut = new SqlCommand(kayit, baglan);
-                komut.Parameters.AddWithValue("@devideid", PlayerPrefs.GetInt("DevideId"));
+                komut.Parameters.AddWithValue("@devideid", 123456789/*PlayerPrefs.GetInt("DevideId")*/);
                 komut.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
                 komut.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
                 komut.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
