@@ -48,7 +48,7 @@ public class LevelFinisher : MonoBehaviour
             PlayerPrefs.SetFloat("Point", point);
 
 
-            FinishUI.SetActive(true);
+            FinishUI.transform.GetChild(0).gameObject.SetActive(true);
             PlayerPrefs.SetFloat("CurrentLevel", SceneManager.GetActiveScene().buildIndex + 1);
 
         }
