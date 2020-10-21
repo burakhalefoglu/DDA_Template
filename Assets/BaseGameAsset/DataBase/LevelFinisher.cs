@@ -18,7 +18,6 @@ public class LevelFinisher : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         character = player.GetComponent<Character>();
-        FinishUI = GameObject.FindGameObjectWithTag("SucceesLevel");
         boxCollider = this.gameObject.GetComponent<BoxCollider>();
         boxCollider.enabled = false;
     }
@@ -47,7 +46,7 @@ public class LevelFinisher : MonoBehaviour
             point += character.Getpoint();
             PlayerPrefs.SetFloat("Point", point);
 
-
+            FinishUI = GameObject.FindGameObjectWithTag("SucceesLevel");
             FinishUI.transform.GetChild(0).gameObject.SetActive(true);
             PlayerPrefs.SetFloat("CurrentLevel", SceneManager.GetActiveScene().buildIndex + 1);
 
