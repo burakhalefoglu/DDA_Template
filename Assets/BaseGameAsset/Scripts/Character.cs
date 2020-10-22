@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     float GermSpike = 5;
     float NewHealthRate = 1;
     float Point;
-    float IsDead=1;
+    float IsDead=0;
 
     GameObject PointValueObject;
     GameObject PauseMenu;
@@ -108,7 +108,7 @@ public class Character : MonoBehaviour
 
         if (health <= 0)
         {
-            IsDead = 0;
+            IsDead = 1;
             Debug.Log(health);
             PauseGame();
         }

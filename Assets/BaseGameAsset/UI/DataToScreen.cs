@@ -9,31 +9,58 @@ public class DataToScreen : MonoBehaviour
     [SerializeField]
     Text DifficultyLevel;
     [SerializeField]
+    Text RemainingHealth;
+    [SerializeField]
     Text CharLevel;
     [SerializeField]
-    Text Player_Flow;
+    Text AttackSpeed;
     [SerializeField]
-    Text Player_Health;
+    Text HitRate;
     [SerializeField]
-    Text CuteBacterium_Density;
-    [SerializeField]
-    Text CuteMushy_Density;
-    [SerializeField]
-    Text BloodCell_Density;
+    Text FinishingTime;
 
+    float time;
+
+    LevelFinisher levelFinisher;
+    GettingDatabaseParameters gettingDatabaseParameters;
     private void Start()
     {
-        DifficultyLevel.text = "DifficultyLevel:  " + 1;/* PlayerPrefs.GetFloat("DifficultyLevel").ToString();
-*/        CharLevel.text = "CharLevel:  " + PlayerPrefs.GetFloat("CharLevel").ToString();
-        Player_Flow.text = "Player_Flow:  " + PlayerPrefs.GetFloat("Player_Flow").ToString();
-        Player_Health.text = "Player_Health:  " + PlayerPrefs.GetFloat("Player_Health").ToString();
-        CuteBacterium_Density.text = "CuteBacterium_Density:  " + PlayerPrefs.GetFloat("CuteBacterium_Density").ToString();
-        CuteMushy_Density.text = "CuteMushy_Density:  " + PlayerPrefs.GetFloat("CuteMushy_Density").ToString();
-        BloodCell_Density.text = "BloodCell_Density:  " + PlayerPrefs.GetFloat("BloodCell_Density").ToString();
+        levelFinisher = this.gameObject.GetComponent<LevelFinisher>();
+        gettingDatabaseParameters = this.gameObject.transform.GetChild(0).gameObject.GetComponent<GettingDatabaseParameters>();
     }
 
 
 
+    private void Update()
+    {
+        time += Time.deltaTime;
 
+        if (time > 0.5f)
+        {
+            time = 0;
+            CalculateAllData();
+            ScreenToData();
+        }
+       
+    }
+
+
+    void CalculateAllData()
+    {
+        levelFinisher.CalculatePlayerFlow();
+        levelFinisher.SetUserDatas();
+
+
+    }
+
+    void ScreenToData()
+    {
+        DifficultyLevel.text =PlayerPrefs.GetFloat("DifficultyLevel").ToString();
+        CharLevel.text = PlayerPrefs.GetFloat("CharLevel").ToString();
+        RemainingHealth.text = gettingDatabaseParameters.RemainingHealth().ToString();
+        AttackSpeed.text = gettingDatabaseParameters.AttackSpeed().ToString();
+        HitRate.text = gettingDatabaseParameters.HitRate().ToString();
+        FinishingTime.text = gettingDatabaseParameters.FinishingTime().ToString();
+    }
 
 }

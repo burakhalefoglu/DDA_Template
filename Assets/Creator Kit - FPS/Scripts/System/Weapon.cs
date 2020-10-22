@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour
     public float fireRate = 0.5f;
     public float reloadTime = 2.0f;
     public int clipSize = 4;
-    public float damage = 1.0f;
+    float damage;
 
     [AmmoType]
     public int ammoType = -1;
@@ -138,6 +138,11 @@ public class Weapon : MonoBehaviour
                 m_ProjectilePool.Enqueue(p);
             }
         }
+    }
+
+    private void Start()
+    {
+        damage = PlayerPrefs.GetFloat("CharAttackDamage");
     }
 
     public void PickedUp(Controller c)
