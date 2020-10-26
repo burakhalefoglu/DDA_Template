@@ -120,21 +120,21 @@ public class GettingDifficultySettings : MonoBehaviour
                 switch (i)
                 {
                     case 0:
-                        childcount = childcount - PlayerPrefs.GetFloat("CuteMushy_Density");
+                        childcount = childcount - PlayerPrefs.GetFloat("EnemyTop_Density");
                         for (int j = 0; j < childcount; j++)
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
                         }
                         break;
                     case 1:
-                        childcount = childcount - PlayerPrefs.GetFloat("CuteBacterium_Density");
+                        childcount = childcount - PlayerPrefs.GetFloat("HelloKitty_Density");
                         for (int j = 0; j < childcount; j++)
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
                         }
                         break;
                     case 2:
-                        childcount = childcount - PlayerPrefs.GetFloat("GermSpike_Density");
+                        childcount = childcount - PlayerPrefs.GetFloat("CuteBaby_Density");
                         for (int j = 0; j < childcount; j++)
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);

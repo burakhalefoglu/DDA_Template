@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.65
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.24509466, g: 0.23578873, b: 0.25092632, a: 0.65}
+  m_IndirectSpecularColor: {r: 0.24508929, g: 0.2357866, b: 0.25095105, a: 0.65}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -121884,6 +121884,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1274794264672281466, guid: 649fb92054216dd419354ca08838b574,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemytop
+      objectReference: {fileID: 0}
     - target: {fileID: 1274794264720679738, guid: 649fb92054216dd419354ca08838b574,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -121944,21 +121949,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: TargetSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4840920803495917798, guid: 649fb92054216dd419354ca08838b574,
+        type: 3}
+      propertyPath: SpawnObject
+      value: 
+      objectReference: {fileID: 3498884444026731467, guid: d5e3cd36286085c4ab5adbcaaa7f8a81,
+        type: 3}
     - target: {fileID: 5406558782637201274, guid: 649fb92054216dd419354ca08838b574,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406558782637201274, guid: 649fb92054216dd419354ca08838b574,
+        type: 3}
+      propertyPath: m_Name
+      value: Hellokity
       objectReference: {fileID: 0}
     - target: {fileID: 5888190067878650427, guid: 649fb92054216dd419354ca08838b574,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5888190067878650427, guid: 649fb92054216dd419354ca08838b574,
+        type: 3}
+      propertyPath: m_Name
+      value: CuteBaby
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438410098439191361, guid: 649fb92054216dd419354ca08838b574,
+        type: 3}
+      propertyPath: SpawnObject
+      value: 
+      objectReference: {fileID: 359539341402343656, guid: 4c1d5e7dce8723a4d9aa062a0951e706,
+        type: 3}
     - target: {fileID: 7123040280585840237, guid: 649fb92054216dd419354ca08838b574,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8411503939136719488, guid: 649fb92054216dd419354ca08838b574,
+        type: 3}
+      propertyPath: SpawnObject
+      value: 
+      objectReference: {fileID: 5292314309871156594, guid: a16aa1ae8eeace749865bda99fba91ba,
+        type: 3}
     - target: {fileID: 8803920945190504226, guid: 649fb92054216dd419354ca08838b574,
         type: 3}
       propertyPath: m_IsActive
