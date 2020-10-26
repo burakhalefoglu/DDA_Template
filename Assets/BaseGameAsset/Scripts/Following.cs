@@ -9,8 +9,8 @@ public class Following : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    float maxdistance = 5;
-    float FollowingStepCount = 0.1f;
+    float maxdistance = 10;
+    float FollowingStepCount = 0.01f;
 
     void Awake()
     {
@@ -24,7 +24,6 @@ public class Following : MonoBehaviour
 
         target = go.transform;
 
-        maxdistance = 200;
 
 
     }
@@ -37,6 +36,7 @@ public class Following : MonoBehaviour
 
     void follow()
     {
+
         Debug.DrawLine(target.position, myTransform.position, Color.red);
         if (Vector3.Distance(target.position, myTransform.position) < maxdistance)
         {

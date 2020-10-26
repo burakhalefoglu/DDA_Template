@@ -197,7 +197,7 @@ MonoBehaviour:
   DestroyedEffect: {fileID: 0}
   HitPlayer: {fileID: 5180989449417381527}
   IdleSource: {fileID: 1794190175530118467}
-  UI: {fileID: 0}
+  UI: {fileID: 8998016032058872614}
 --- !u!136 &6689394087353256158
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -509,6 +509,12 @@ PrefabInstance:
 --- !u!224 &8998016031754024760 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8998016031759470905, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+    type: 3}
+  m_PrefabInstance: {fileID: 264037889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8998016032058872614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8998016031983105319, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
     type: 3}
   m_PrefabInstance: {fileID: 264037889}
   m_PrefabAsset: {fileID: 0}

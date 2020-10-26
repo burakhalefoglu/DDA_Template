@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 229699999225323858}
   - component: {fileID: 8051019731238238469}
   - component: {fileID: 5528016342082872066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Domestos
   m_TagString: BossDomestos
   m_Icon: {fileID: 0}
@@ -451,6 +451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 8998016031759470904, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8998016031759470905, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -570,6 +575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998016031983105319, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f22bc6db9a0a54f933a44b7cf0d939, type: 3}

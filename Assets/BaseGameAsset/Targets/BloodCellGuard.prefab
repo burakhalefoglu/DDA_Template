@@ -199,7 +199,7 @@ MonoBehaviour:
     type: 3}
   HitPlayer: {fileID: 6619562243973543880}
   IdleSource: {fileID: 350652712947764252}
-  UI: {fileID: 0}
+  UI: {fileID: 8998016032567063363}
 --- !u!136 &4678812056902347137
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -529,6 +529,12 @@ PrefabInstance:
 --- !u!224 &8998016032253253469 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8998016031759470905, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+    type: 3}
+  m_PrefabInstance: {fileID: 770868836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8998016032567063363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8998016031983105319, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
     type: 3}
   m_PrefabInstance: {fileID: 770868836}
   m_PrefabAsset: {fileID: 0}

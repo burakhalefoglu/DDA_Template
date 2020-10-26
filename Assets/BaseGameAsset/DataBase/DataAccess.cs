@@ -11,7 +11,7 @@ public class DataAccess : MonoBehaviour
     void Awake()
     {
         gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
-        baglan = new SqlConnection("Data Source=192.168.1.7; Initial Catalog=Kutuphane; User Id=Emre; password=123456;");
+        baglan = new SqlConnection("Data Source=192.168.1.7; Initial Catalog=appneuron; User Id=Emre; password=123456;");
        
     }
    
@@ -21,7 +21,7 @@ public class DataAccess : MonoBehaviour
            // {
                 if (baglan.State == ConnectionState.Closed)
                     baglan.Open();
-                string kayit = "insert into kitaplar(devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel) values (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
+                string kayit = "insert into users(devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel) values (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
                 SqlCommand komut = new SqlCommand(kayit, baglan);
                 komut.Parameters.AddWithValue("@devideid", 123456789/*PlayerPrefs.GetInt("DevideId")*/);
                 komut.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());

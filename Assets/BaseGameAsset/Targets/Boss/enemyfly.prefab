@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6470736272110148470}
   - component: {fileID: 4682042497884456332}
   - component: {fileID: 4448221582193487809}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemyfly
   m_TagString: BossEnemyFly
   m_Icon: {fileID: 0}
@@ -431,6 +431,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 8998016031759470904, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8998016031759470905, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -550,6 +555,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998016031983105319, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f22bc6db9a0a54f933a44b7cf0d939, type: 3}

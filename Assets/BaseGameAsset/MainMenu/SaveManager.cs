@@ -6,7 +6,7 @@ public class SaveManager : MonoBehaviour
 {
 
 
-    void Awake()
+    void Start()
     {  
 
         SaveVirusParams();
@@ -16,6 +16,7 @@ public class SaveManager : MonoBehaviour
         SaveCuteMushyParams();
         SaveCuteBacteriumParams();
         SaveBloodCellParams();
+        SaveHelloKittyParams();
 
         SavePlayerParams();
 
@@ -74,6 +75,7 @@ public class SaveManager : MonoBehaviour
 
 
     }
+
     void SaveGermSlimParams()
     {
         bool IsValidGermSlime_Health;
@@ -96,6 +98,7 @@ public class SaveManager : MonoBehaviour
 
 
     }
+
     void SaveGermSpikeParams()
     {
         bool IsValidGermSpike_Health;
@@ -117,6 +120,7 @@ public class SaveManager : MonoBehaviour
         IsValidCuteMushy_Density = PlayerPrefs.HasKey("CuteMushy_Density");
         CheckSaveSystemFloat(IsValidCuteMushy_Density, 10, "CuteMushy_Density");
     }
+
     void SaveCuteBacteriumParams()
     {
         bool IsValidCuteBacterium_Density;
@@ -124,6 +128,39 @@ public class SaveManager : MonoBehaviour
         IsValidCuteBacterium_Density = PlayerPrefs.HasKey("CuteBacterium_Density");
         CheckSaveSystemFloat(IsValidCuteBacterium_Density, 10, "CuteBacterium_Density");
     }
+
+
+    void SaveHelloKittyParams()
+    {
+        bool IsValidHelloKitty_Density;
+
+        IsValidHelloKitty_Density = PlayerPrefs.HasKey("HelloKitty_Density");
+        CheckSaveSystemFloat(IsValidHelloKitty_Density, 10, "HelloKitty_Density");
+    }
+    
+    void SaveEnemyTopParams()
+    {
+        bool IsValidEnemyTop_Density;
+
+        IsValidEnemyTop_Density = PlayerPrefs.HasKey("EnemyTop_Density");
+        CheckSaveSystemFloat(IsValidEnemyTop_Density, 10, "EnemyTop_Density");
+    }
+
+    void SaveCuteBabyParams()
+    {
+        bool IsValidCuteBaby_Density;
+        bool IsValidCuteBaby_Attack;
+
+        IsValidCuteBaby_Density = PlayerPrefs.HasKey("CuteBaby_Density");
+        CheckSaveSystemFloat(IsValidCuteBaby_Density, 10, "CuteBaby_Density");
+
+
+
+        IsValidCuteBaby_Attack = PlayerPrefs.HasKey("CuteBaby_Attack");
+        CheckSaveSystemFloat(IsValidCuteBaby_Attack, 5, "CuteBaby_Attack");
+    }
+
+
     void SaveBloodCellParams()
     {
         bool IsValidBloodCell_Density;

@@ -364,7 +364,7 @@ MonoBehaviour:
     type: 3}
   HitPlayer: {fileID: 8212324151211496083}
   IdleSource: {fileID: 2512953057398773005}
-  UI: {fileID: 0}
+  UI: {fileID: 8998016031905730048}
 --- !u!114 &1083131948219192915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,6 +539,12 @@ PrefabInstance:
 --- !u!224 &8998016031835728414 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8998016031759470905, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+    type: 3}
+  m_PrefabInstance: {fileID: 77445927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8998016031905730048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8998016031983105319, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
     type: 3}
   m_PrefabInstance: {fileID: 77445927}
   m_PrefabAsset: {fileID: 0}

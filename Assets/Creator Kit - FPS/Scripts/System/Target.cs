@@ -34,8 +34,8 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        if(DestroyedEffect)
-            PoolSystem.Instance.InitPool(DestroyedEffect, 16);
+        //if(DestroyedEffect)
+        //    PoolSystem.Instance.InitPool(DestroyedEffect, 16);
         
         if(IdleSource != null)
             IdleSource.time = Random.Range(0.0f, IdleSource.clip.length);
@@ -63,7 +63,6 @@ public class Target : MonoBehaviour
         }
         else
         {
-
             character.SetPoint(damage);
         }
 
@@ -147,7 +146,11 @@ public class Target : MonoBehaviour
             return 70;
 
         }
+        else if (tag == "CuteBaby")
+        {
+            return 2;
 
+        }
 
         else
         {

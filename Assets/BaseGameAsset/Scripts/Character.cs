@@ -11,10 +11,12 @@ public class Character : MonoBehaviour
     float health;
     float mashroomAttack = 1;
     float bacteriumAttack = 1;
+    float HelloKittyAttack = 1;
     float GermSpike = 5;
     float NewHealthRate = 1;
     float Point;
     float IsDead=0;
+    float EnemyTopAttackCount = 1;
 
     GameObject PointValueObject;
     GameObject PauseMenu;
@@ -24,6 +26,7 @@ public class Character : MonoBehaviour
     HealthBarHandler healthBarHandler;
     Controller controller;
     Text PointValue;
+    LevelFinisher levelFinisher;
 
 
     private void Start()
@@ -37,11 +40,11 @@ public class Character : MonoBehaviour
         healthBarHandler = HealthBar.GetComponent<HealthBarHandler>();
 
         controller = GetComponent<Controller>();
-        firstHealth = 10000; PlayerPrefs.GetFloat("Player_Health");
-        health = 10000;/* PlayerPrefs.GetFloat("Player_Health");*/
+        firstHealth = PlayerPrefs.GetFloat("Player_Health");
+        health = PlayerPrefs.GetFloat("Player_Health");
 
 
-
+        levelFinisher = GameObject.FindGameObjectWithTag("LevelFinisher").GetComponent<LevelFinisher>();
         PointValue.text = Point.ToString();
     }
 
@@ -54,7 +57,6 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("GermSlime_Attack");
             CalculateHealthBar(PlayerPrefs.GetFloat("GermSlime_Attack"));
             Debug.Log(health);
-            //IsKilled();
 
         }
         else if (other.gameObject.tag == "CuteVirusBullet" && health > 0)
@@ -62,7 +64,6 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack");
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack"));
             Debug.Log(health);
-            //IsKilled();
 
         }
         else if (other.gameObject.tag == "BossVirusBullet" && health > 0)
@@ -70,7 +71,6 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack")*2;
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 2);
             Debug.Log(health);
-            //IsKilled();
 
         }
         else if (other.gameObject.tag == "DomestosBullet" && health > 0)
@@ -78,7 +78,6 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack") * 3;
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 3);
             Debug.Log(health);
-            //IsKilled();
 
         }
         else if (other.gameObject.tag == "BossFlyBullet" && health > 0)
@@ -86,7 +85,13 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack") *4;
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 4);
             Debug.Log(health);
-            //IsKilled();
+
+        }
+        else if (other.gameObject.tag == "CuteBabyBullet" && health > 0)
+        {
+            health -= PlayerPrefs.GetFloat("CuteBaby_Attack");
+            CalculateHealthBar(PlayerPrefs.GetFloat("CuteBaby_Attack"));
+            Debug.Log(health);
 
         }
 
@@ -95,16 +100,7 @@ public class Character : MonoBehaviour
             health -= mashroomAttack;
             CalculateHealthBar(mashroomAttack);
             Debug.Log(health);
-            //IsKilled();
         }
-        else if (other.gameObject.tag == "bacterium" && health > 0)
-        {
-            health -= bacteriumAttack;
-            CalculateHealthBar(bacteriumAttack);
-            Debug.Log(health);
-            //IsKilled();
-        }
-        //IsKilled();
 
         if (health <= 0)
         {
@@ -125,25 +121,28 @@ public class Character : MonoBehaviour
             health -= bacteriumAttack;
             CalculateHealthBar(bacteriumAttack);
             Debug.Log(health);
-            //IsKilled();
+        }
+        else if (collision.gameObject.tag == "HelloKitty" && health > 0)
+        {
+            health -= HelloKittyAttack;
+            CalculateHealthBar(HelloKittyAttack);
+            Debug.Log(health);
         }
         else if (collision.gameObject.tag == "GermSpike" && health > 0)
         {
             health -= GermSpike;
             CalculateHealthBar(GermSpike);
             Debug.Log(health);
-            //IsKilled();
+        }
+        else if (collision.gameObject.tag == "EnemyTop" && health > 0)
+        {
+            health -= EnemyTopAttackCount;
+            CalculateHealthBar(EnemyTopAttackCount);
+            Debug.Log(health);
         }
 
 
-        //IsKilled();
 
-        //if (health <= 0)
-        //{
-        //    IsDead = 0;
-        //    Debug.Log(health);
-        //    PauseGame();
-        //}
 
 
     }
@@ -156,9 +155,11 @@ public class Character : MonoBehaviour
         PauseMenu.transform.GetChild(0).gameObject.SetActive(true);
         PauseMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
 
+
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
         Time.timeScale = 0;
+
     }
     public float GetPlayerHealth()
     {
@@ -186,6 +187,7 @@ public class Character : MonoBehaviour
             return;
         }
         IsDead = 0;
+        levelFinisher.SaveUserDataForLevelfinish(this.gameObject);
         Debug.Log(health);
         PauseGame();
     }

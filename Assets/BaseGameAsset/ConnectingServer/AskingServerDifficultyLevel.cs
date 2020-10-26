@@ -30,7 +30,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
     private void Awake()
     {
         CheckInternetConnection();
-        
+        Debug.Log("Çalıştııııı....");
     }
 
     void CheckInternetConnection()

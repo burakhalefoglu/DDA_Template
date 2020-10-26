@@ -8,23 +8,11 @@ public class UI : MonoBehaviour
 
 
 
-    public void RestartLevel()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-
-    }
+   
 
     public void ReturnMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-
-    }
-
-    public void NextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
 
     }
 
@@ -33,6 +21,25 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene((int)PlayerPrefs.GetFloat("CurrentLevel"));
 
+    }
+
+
+
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("LoadingSceene");
+
+
 
     }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("LoadingSceene");
+
+    }
+
+
 }

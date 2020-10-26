@@ -32,35 +32,43 @@ public class LevelFinisher : MonoBehaviour
     private void Start()
     {
         charLevelRaising = GetComponent<CharLevelRaising>();
+        listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
+        character = player.GetComponent<Character>();
+        dataAccess = this.gameObject.transform.GetChild(0).gameObject.GetComponent<DataAccess>();
+
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-
-            AddUserData(other.gameObject);
-
-            CalculatePlayerFlow();
-
-            CalculatePoint();
-
-            ShowFinishUi();
-
-            charLevelRaising.UpdateCharLevel();
-
-            CalculateFinisUiValue();
-
+            SaveUserDataForLevelfinish(other.gameObject);
             PlayerPrefs.SetFloat("CurrentLevel", SceneManager.GetActiveScene().buildIndex + 1);
-
         }
     }
 
+
+    public void SaveUserDataForLevelfinish(GameObject player)
+    {
+
+        CalculatePlayerFlow();
+
+        CalculatePoint();
+
+        ShowFinishUi();
+
+        charLevelRaising.UpdateCharLevel();
+
+        CalculateFinisUiValue();
+
+        AddUserData(player);
+
+    }
+
+
+
     void AddUserData(GameObject other)
     {
-        GameObject player = other.gameObject;
-        Character character = player.GetComponent<Character>();
-        listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
-        dataAccess = this.gameObject.transform.GetChild(0).gameObject.GetComponent<DataAccess>();
+        player = other.gameObject;
 
         SetUserDatas();
         dataAccess.verileriekle();
