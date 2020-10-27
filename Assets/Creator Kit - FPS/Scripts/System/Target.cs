@@ -34,8 +34,6 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        //if(DestroyedEffect)
-        //    PoolSystem.Instance.InitPool(DestroyedEffect, 16);
         
         if(IdleSource != null)
             IdleSource.time = Random.Range(0.0f, IdleSource.clip.length);
@@ -136,6 +134,11 @@ public class Target : MonoBehaviour
             return 50;
 
         }
+        else if (tag == "BossEnemyFly")
+        {
+            return 50;
+
+        }
         else if (tag == "BossVirus")
         {
             return 30;
@@ -146,6 +149,11 @@ public class Target : MonoBehaviour
             return 70;
 
         }
+         else if (tag == "BossFootMicrobe")
+         {
+            return 100;
+
+         }
         else if (tag == "CuteBaby")
         {
             return 2;

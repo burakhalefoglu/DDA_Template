@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6470736272110148470}
   - component: {fileID: 4682042497884456332}
   - component: {fileID: 4448221582193487809}
+  - component: {fileID: 2996583935118539428}
   m_Layer: 10
   m_Name: enemyfly
   m_TagString: BossEnemyFly
@@ -100,7 +101,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!136 &6470736272110148470
 CapsuleCollider:
@@ -141,6 +142,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49f3d40900ad234592d642b295750fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2996583935118539428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496765819598467352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21572170bf3eef94dba3f7ca0f06525a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointValue: 0
+  DestroyedEffect: {fileID: 198321120434662062, guid: 5656e7ea1f1a75d4c895547ec2b824b3,
+    type: 3}
+  HitPlayer: {fileID: 836343478636876465}
+  IdleSource: {fileID: 7922725255996567893}
+  UI: {fileID: 8998016031713715757}
 --- !u!1 &3347373183607702985
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +585,12 @@ PrefabInstance:
 --- !u!224 &8998016032027476531 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8998016031759470905, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
+    type: 3}
+  m_PrefabInstance: {fileID: 269456138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8998016031713715757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8998016031983105319, guid: f2f22bc6db9a0a54f933a44b7cf0d939,
     type: 3}
   m_PrefabInstance: {fileID: 269456138}
   m_PrefabAsset: {fileID: 0}

@@ -95,6 +95,14 @@ public class Character : MonoBehaviour
 
         }
 
+        else if (other.gameObject.tag == "FootMicrobeBullet" && health > 0)
+        {
+            health -= 20;
+            CalculateHealthBar(20);
+            Debug.Log(health);
+
+        }
+
         else if (other.gameObject.tag == "Mushy" && health > 0)
         {
             health -= mashroomAttack;
