@@ -11,6 +11,8 @@ public class AttackFootMicrobe : MonoBehaviour
     CapsuleCollider capsuleCollider;
     GameObject MobileInput;
     bool AttackControl=true;
+    Vector3 LastPose;
+
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class AttackFootMicrobe : MonoBehaviour
         animator = GetComponent<Animator>();
         followingFootMicrobe = GetComponent<FollowingFootMicrobe>();
         capsuleCollider = this.gameObject.transform.GetChild(0).GetComponent<CapsuleCollider>();
-
+        LastPose = new Vector3();
     }
 
 
@@ -26,7 +28,6 @@ public class AttackFootMicrobe : MonoBehaviour
     {
         time += Time.deltaTime;
         float dis = Vector3.Distance(TransformPlayer.position, transform.position);
-        //Debug.Log(dis);
 
         if (dis <= 5 && time>5f)
         {
@@ -39,7 +40,9 @@ public class AttackFootMicrobe : MonoBehaviour
         {
             float speed = 10 - dis;
             speed = speed * Time.deltaTime * .5f;
-            TransformPlayer.position = Vector3.MoveTowards(TransformPlayer.position, transform.position, speed);
+
+            LastPose = Vector3.MoveTowards(TransformPlayer.position, transform.position, speed);
+            TransformPlayer.position = new Vector3(LastPose.x, TransformPlayer.position.y, LastPose.z);
         }
         
         if (followingFootMicrobe.GetIsAttack() && AttackControl)
@@ -48,7 +51,7 @@ public class AttackFootMicrobe : MonoBehaviour
             capsuleCollider.enabled = true;
             RaycastHit hit;
             Vector3 fwd = this.gameObject.transform.GetChild(1).transform.TransformDirection(Vector3.forward);
-            Physics.Raycast(this.gameObject.transform.GetChild(1).transform.position,fwd, out hit, 5f);
+            Physics.Raycast(this.gameObject.transform.GetChild(1).transform.position,fwd, out hit, 10f);
 
             if (hit.collider.gameObject.tag == "Player")
             {

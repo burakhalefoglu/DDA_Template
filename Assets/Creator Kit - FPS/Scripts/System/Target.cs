@@ -29,7 +29,7 @@ public class Target : MonoBehaviour
     void Awake()
     {
         Helpers.RecursiveLayerChange(transform, LayerMask.NameToLayer("Target"));
-
+        HealthBarPoint = 1;
     }
 
     void Start()
@@ -69,7 +69,8 @@ public class Target : MonoBehaviour
 
         if (m_CurrentHealth > 0)
         {
-            HealthBarPoint = 1 - (damage / FirstHealh);
+            HealthBarPoint -= (damage / FirstHealh);
+            Debug.Log(HealthBarPoint);
             enemyHealthBar.SetHealthBarValue(HealthBarPoint);
             return;
 
@@ -89,20 +90,20 @@ public class Target : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        GameSystem.Instance.TargetDestroyed(pointValue);
+        //GameSystem.Instance.TargetDestroyed(pointValue);
     }
     
     public void killyourself()
     {
         Debug.Log("kİLL mEE");
-        Vector3 position = transform.position;
-        var effect = PoolSystem.Instance.GetInstance<ParticleSystem>(DestroyedEffect);
-        effect.time = 0.0f;
-        effect.Play();
-        effect.transform.position = position;
+        //Vector3 position = transform.position;
+        //var effect = PoolSystem.Instance.GetInstance<ParticleSystem>(DestroyedEffect);
+        //effect.time = 0.0f;
+        //effect.Play();
+        //effect.transform.position = position;
         m_Destroyed = true;
         gameObject.SetActive(false);
-        GameSystem.Instance.TargetDestroyed(pointValue);
+        //GameSystem.Instance.TargetDestroyed(pointValue);
 
     }
 
@@ -129,40 +130,51 @@ public class Target : MonoBehaviour
             return PlayerPrefs.GetFloat("DifficultyLevel")*3f;
 
         }
+
+        else if (tag == "BossEnemyFly")
+        {
+            return 20;
+
+        }
+
+        else if (tag == "BossVirus")
+        {
+            return 35;
+
+        }
+
         else if (tag == "BossGermSpike")
         {
             return 50;
 
         }
-        else if (tag == "BossEnemyFly")
-        {
-            return 50;
-
-        }
-        else if (tag == "BossVirus")
-        {
-            return 30;
-
-        }
+        
+       
         else if (tag == "BossDomestos")
         {
-            return 70;
+            return 65;
 
         }
+
          else if (tag == "BossFootMicrobe")
          {
-            return 100;
+            return 10;
 
          }
+
         else if (tag == "CuteBaby")
         {
             return 2;
 
         }
-
         else
         {
             return 1.0f;
         }
+    }
+
+    public float GetCurrentHealth()
+    {
+        return m_CurrentHealth;
     }
 }

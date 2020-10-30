@@ -503,8 +503,9 @@ GameObject:
   - component: {fileID: 3220681691710087676}
   - component: {fileID: 6022254977503922403}
   - component: {fileID: 1990164969}
+  - component: {fileID: 8132164498121493229}
   m_Layer: 10
-  m_Name: Boss_2_GermSpike
+  m_Name: 3_BossGermSpike
   m_TagString: BossGermSpike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,7 +520,7 @@ Transform:
   m_GameObject: {fileID: 3220681691287459574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.17, y: 3.15, z: 36.37}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children:
   - {fileID: 3220681691287554756}
   - {fileID: 3220681691287554812}
@@ -610,8 +611,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541831aec42c94e41803d53d20a32e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GermSpike: {fileID: 3220681691287459574, guid: 6ee6b27c80756274cbb8f80dbc82527b,
+  GermSpike: {fileID: 3220681691287459574, guid: 79c632d0ccada9448932a87d86029719,
     type: 3}
+--- !u!114 &8132164498121493229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220681691287459574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4027ac2164c944481c52d56cb0beae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: {fileID: 486199577062060824, guid: d3d153a926e7b974781c26b005ba3201, type: 3}
 --- !u!1 &3220681691287459576
 GameObject:
   m_ObjectHideFlags: 0

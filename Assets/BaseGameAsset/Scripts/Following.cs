@@ -9,8 +9,11 @@ public class Following : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    float maxdistance = 10;
-    float FollowingStepCount = 0.01f;
+    [SerializeField]
+    float maxdistance;
+
+    [SerializeField]
+    float FollowingStepCount;
 
     void Awake()
     {
