@@ -11,7 +11,7 @@ public class Server : MonoBehaviour
 {
     AskingServerDifficultyLevel askingServerDifficultyLevel;
 
-    String Host = "localhost";
+    String Host = "168.63.24.185";
     Int32 Port = 6060;
 
     TcpClient mySocket;

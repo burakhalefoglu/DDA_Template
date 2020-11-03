@@ -13,7 +13,7 @@ public class DomestosAttack : MonoBehaviour
 
         bullet.SetActive(true);
         bullet.transform.position = this.gameObject.transform.position;
-        bullet.transform.localScale = new Vector3(1f,1f,1f);
+        bullet.transform.localScale = new Vector3(3f,3f,3f);
         bullet.tag = "DomestosBullet";
 
     }

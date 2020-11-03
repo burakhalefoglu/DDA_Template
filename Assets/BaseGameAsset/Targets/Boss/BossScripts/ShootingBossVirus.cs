@@ -24,11 +24,13 @@ public class ShootingBossVirus : MonoBehaviour
         if (timeBoss > Yieldtime)
         {
             timeBoss = 0;
-            if (sayac < 5)
+            if (sayac < 10)
             {
                 sayac += 1;
-                Yieldtime = 1;
+                Yieldtime = 0.5f;
                 Virusbullet.SetActive(true);
+                Virusbullet.transform.localScale = new Vector3(1, 1, 1);
+                Virusbullet.transform.GetChild(0).localScale = new Vector3(1, 1, 1);
                 Virusbullet.transform.position = this.gameObject.transform.position;
                 Virusbullet.tag = "BossVirusBullet";
             }

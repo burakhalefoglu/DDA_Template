@@ -11,7 +11,7 @@
         [NoScaleOffset] _DisplacementNoise ("Displacement Noise", 3D) = "" {}
         [NoScaleOffset] _DisplacementRamp ("Displacement Ramp", 2D) = "white" {}
         _EdgeLength ("Edge length", Range(2,50)) = 15
-        _Displacement ("Displacement", Range(0, 1.0)) = 0.3
+        _Displacement ("Displacement", Range(0, 1.0)) = 0.1
         _DisplacementIndex ("Displacement Index", int) = 0        
         _DisplacementScale ("Displacement Scale", Float) = 2
         _DisplacementSpeed ("Displacement Speed", Float) = 0.1

@@ -18,28 +18,35 @@ public class BossGermSpike_Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.gameObject.tag =="BossGermSpike")
-        {
-            SpawnGermSpike();
-        }
+       
+           SpawnGermSpike();
     }
 
     void SpawnGermSpike()
     {
         timer += Time.deltaTime;
-        if (timer > 5)
+        if (timer > 1 && GermSpikeCount<10)
         {
+            GermSpikeCount++;
             timer = 0;
-            GermSpikeCount = Random.Range(4, 8);
-            
-            for (int i = 0; i < GermSpikeCount; i++)
-            {
+
                 GermSpikeTransformX = Random.Range(this.transform.position.x - 10, this.transform.position.x + 10);
                 GermSpikeTransformY = Random.Range(this.transform.position.y - 10, this.transform.position.y + 10);
                 GermSpikeTransformZ = Random.Range(this.transform.position.z - 10, this.transform.position.z + 10);
-                Vector3 position = new Vector3(GermSpikeTransformX, GermSpikeTransformY, GermSpikeTransformZ);
+               Vector3 position = new Vector3(GermSpikeTransformX, GermSpikeTransformY, GermSpikeTransformZ);
                 Instantiate(GermSpike, position, this.transform.rotation);
-            }
+            
         }
+        if (GermSpikeCount == 10)
+        {
+            GermSpikeCount = 0;
+            timer = -4;
+
+        }
+
     }
+
+
+
+
 }

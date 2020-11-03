@@ -148,8 +148,19 @@ public class Character : MonoBehaviour
             CalculateHealthBar(EnemyTopAttackCount);
             Debug.Log(health);
         }
+        else if (collision.gameObject.tag == "ChildSpike" && health > 0)
+        {
+            health -= 1;
+            CalculateHealthBar(1);
+            Debug.Log(health);
+        }
 
-
+        if (health <= 0)
+        {
+            IsDead = 1;
+            Debug.Log(health);
+            PauseGame();
+        }
 
 
 

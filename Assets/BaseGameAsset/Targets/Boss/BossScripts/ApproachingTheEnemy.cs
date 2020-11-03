@@ -9,12 +9,19 @@ public class ApproachingTheEnemy : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    float maxdistance = 5;
-    float FollowingStepCount = 0.1f;
+    [SerializeField]
+    float maxdistance;
+
+    [SerializeField]
+    float FollowingStepCount;
+
+    [SerializeField]
+    float MaxApproachDistance;
+
     float dist;
     float timeFollow;
     float timeAttack;
-
+    Vector3 LastPose;
 
     ShootingBossFly shootingBossFly;
 
@@ -28,12 +35,8 @@ public class ApproachingTheEnemy : MonoBehaviour
     {
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         shootingBossFly=GetComponent<ShootingBossFly>();
-
+        LastPose = new Vector3();
         target = go.transform;
-
-        maxdistance = 200;
-
-
     }
 
     void Update()
@@ -43,7 +46,7 @@ public class ApproachingTheEnemy : MonoBehaviour
 
         TurnToPlayer();
 
-        if (CalculateDistiance() < 12 && timeAttack>3)
+        if (CalculateDistiance() < MaxApproachDistance && timeAttack>3)
         {
             timeAttack = 0;
             shootingBossFly.ShootPlayer();
@@ -54,7 +57,7 @@ public class ApproachingTheEnemy : MonoBehaviour
         if (timeFollow > 0.05f)
         {
             timeFollow = 0;
-            if (CalculateDistiance() > 8)
+            if (CalculateDistiance() > MaxApproachDistance)
             {
 
                 follow();
@@ -78,11 +81,11 @@ public class ApproachingTheEnemy : MonoBehaviour
     }
     void follow()
     {
-        Debug.DrawLine(target.position, myTransform.position, Color.red);
+        //Debug.DrawLine(target.position, myTransform.position, Color.red);
         if (Vector3.Distance(target.position, myTransform.position) < maxdistance)
         {
-
-            myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
+            LastPose= Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
+            myTransform.position = new Vector3(LastPose.x, transform.position.y, LastPose.z);
 
         }
 
@@ -91,7 +94,7 @@ public class ApproachingTheEnemy : MonoBehaviour
    float CalculateDistiance()
     {
         dist = Vector3.Distance(target.position, transform.position);
-
+        //Debug.Log(dist);
         return dist;
     }
 
