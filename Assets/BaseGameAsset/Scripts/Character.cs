@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     float Point;
     float IsDead=0;
     float EnemyTopAttackCount = 1;
+    float time;
 
     GameObject PointValueObject;
     GameObject PauseMenu;
@@ -31,6 +32,8 @@ public class Character : MonoBehaviour
     AudioSource [] audioData;
     GameObject DamageUi;
     Animator animatorController;
+    bool heartAttackStart=false;
+
     private void Start()
     {
         PointValueObject = GameObject.FindGameObjectWithTag("PointValue");
@@ -63,14 +66,14 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("GermSlime_Attack");
             CalculateHealthBar(PlayerPrefs.GetFloat("GermSlime_Attack"));
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
         }
         else if (other.gameObject.tag == "CuteVirusBullet" && health > 0)
         {
             health -= PlayerPrefs.GetFloat("Virus_Attack");
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack"));
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
         else if (other.gameObject.tag == "BossVirusBullet" && health > 0)
@@ -78,7 +81,7 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack")*2;
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 2);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
         else if (other.gameObject.tag == "DomestosBullet" && health > 0)
@@ -86,7 +89,7 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack") * 3;
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 3);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
         else if (other.gameObject.tag == "BossFlyBullet" && health > 0)
@@ -94,7 +97,7 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("Virus_Attack") *4;
             CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 4);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit",true);
 
         }
         else if (other.gameObject.tag == "CuteBabyBullet" && health > 0)
@@ -102,7 +105,7 @@ public class Character : MonoBehaviour
             health -= PlayerPrefs.GetFloat("CuteBaby_Attack");
             CalculateHealthBar(PlayerPrefs.GetFloat("CuteBaby_Attack"));
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
 
@@ -111,7 +114,7 @@ public class Character : MonoBehaviour
             health -= 20;
             CalculateHealthBar(20);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
 
@@ -120,7 +123,7 @@ public class Character : MonoBehaviour
             health -= mashroomAttack;
             CalculateHealthBar(mashroomAttack);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
 
@@ -144,7 +147,7 @@ public class Character : MonoBehaviour
             health -= bacteriumAttack;
             CalculateHealthBar(bacteriumAttack);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
         else if (collision.gameObject.tag == "HelloKitty" && health > 0)
@@ -152,7 +155,7 @@ public class Character : MonoBehaviour
             health -= HelloKittyAttack;
             CalculateHealthBar(HelloKittyAttack);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
         else if (collision.gameObject.tag == "GermSpike" && health > 0)
@@ -160,7 +163,7 @@ public class Character : MonoBehaviour
             health -= GermSpike;
             CalculateHealthBar(GermSpike);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
         else if (collision.gameObject.tag == "EnemyTop" && health > 0)
@@ -168,7 +171,7 @@ public class Character : MonoBehaviour
             health -= EnemyTopAttackCount;
             CalculateHealthBar(EnemyTopAttackCount);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit",true);
 
         }
         else if (collision.gameObject.tag == "ChildSpike" && health > 0)
@@ -176,7 +179,7 @@ public class Character : MonoBehaviour
             health -= 1;
             CalculateHealthBar(1);
             audioData[0].Play();
-            animatorController.SetTrigger("GetHit");
+            animatorController.SetBool("GetHit", true);
 
         }
 
@@ -256,5 +259,26 @@ public class Character : MonoBehaviour
         return this.Point;
     }
 
-   
+
+    private void Update()
+    {
+        if (animatorController.GetBool("GetHit"))
+        {
+            time += Time.deltaTime;
+            if (time > .5f)
+            {
+                time = 0;
+                animatorController.SetBool("GetHit", false);
+            }
+        }
+
+        if (health < 20 && !heartAttackStart)
+        {
+            heartAttackStart = true;
+            audioData[2].Play();
+        }
+    }
+
+
+
 }

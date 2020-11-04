@@ -26,7 +26,7 @@ public class Target : MonoBehaviour
 
    public GameObject UI;
 
-    AudioSource randomSound;
+    AudioSource[] randomSound;
     public AudioClip[] audioSources;
 
     void Awake()
@@ -51,12 +51,13 @@ public class Target : MonoBehaviour
 
 
         enemyHealthBar = UI.GetComponent<EnemyHealthBar>();
-        randomSound = GetComponent<AudioSource>();
+        randomSound = GetComponents<AudioSource>();
     }
 
     public void Got(float damage)
     {
         Debug.Log("Canım yandı");
+        randomSound[1].Play();
         m_CurrentHealth -= damage;
         if (this.gameObject.tag == "BloodGuard")
         {
@@ -81,8 +82,8 @@ public class Target : MonoBehaviour
         }
 
         Vector3 position = transform.position;
-        randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
-        randomSound.Play();
+        randomSound[0].clip = audioSources[Random.Range(0, audioSources.Length)];
+        randomSound[0].Play();
 
         if (DestroyedEffect != null)
         {
