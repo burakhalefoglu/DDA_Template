@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.65
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.24509466, g: 0.23578873, b: 0.25092632, a: 0.65}
+  m_IndirectSpecularColor: {r: 0.24509606, g: 0.23579045, b: 0.25092846, a: 0.65}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -411,6 +411,75 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &8814467
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3456312889659277406, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1579
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719509713852201699, guid: f97a83c14aca92849ab436dd087da477,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f97a83c14aca92849ab436dd087da477, type: 3}
 --- !u!1 &12922976
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2288,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1773958170}
+  audioSources: []
 --- !u!136 &54147020
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2661,6 +2731,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 2040085136}
+  audioSources: []
 --- !u!136 &62440258
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2844,6 +2915,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1314828883}
+  audioSources: []
 --- !u!136 &63747609
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3312,6 +3384,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1072193499}
+  audioSources: []
 --- !u!136 &68379771
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4660,6 +4733,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 1286671133}
+  audioSources: []
 --- !u!114 &98102108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4685,6 +4759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &98102110
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5106,6 +5182,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 877630479}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &107315434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107315435}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107315435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107315434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 5, z: -77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2016441293}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &107911476
 GameObject:
@@ -6177,6 +6283,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 593823556}
+  audioSources: []
 --- !u!114 &125335039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6746,6 +6853,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1804887316}
+  audioSources: []
 --- !u!136 &134014283
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7142,6 +7250,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 186626463}
+  audioSources: []
 --- !u!114 &136291407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7510,6 +7619,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 387222736}
+  audioSources: []
 --- !u!114 &142426967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7535,6 +7645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &142426969
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8189,6 +8301,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1920524919}
+  audioSources: []
 --- !u!136 &150880564
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9258,6 +9371,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1726183822}
+  audioSources: []
 --- !u!114 &171035527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10608,6 +10722,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 255396866}
+  audioSources: []
 --- !u!136 &207712093
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10728,6 +10843,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1828797239}
+  audioSources: []
 --- !u!136 &208410535
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11066,6 +11182,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 1063376519}
+  audioSources: []
 --- !u!114 &218446547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11091,6 +11208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &218446549
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11725,6 +11844,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 2012425162}
+  audioSources: []
 --- !u!114 &229176074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11840,6 +11960,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1678983169}
+  audioSources: []
 --- !u!136 &231290465
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12138,6 +12259,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1754510752}
+  audioSources: []
 --- !u!136 &233773572
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12553,6 +12675,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1884196534}
+  audioSources: []
 --- !u!136 &236966224
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12870,7 +12993,7 @@ PrefabInstance:
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -13312,6 +13435,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 238063315}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &238063319 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
+    type: 3}
+  m_PrefabInstance: {fileID: 238063315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &238191288
 GameObject:
   m_ObjectHideFlags: 0
@@ -13587,6 +13716,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 298565360}
+  audioSources: []
 --- !u!136 &243055317
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14124,6 +14254,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 942948784}
+  audioSources: []
 --- !u!136 &256323667
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14928,6 +15059,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 544210649}
+  audioSources: []
 --- !u!136 &274120078
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15110,6 +15242,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 588512785}
+  audioSources: []
 --- !u!136 &274963523
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15435,6 +15568,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 765415417}
+  audioSources: []
 --- !u!114 &286882689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15460,6 +15594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &286882691
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16096,6 +16232,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 2109786846}
+  audioSources: []
 --- !u!136 &300796991
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16367,6 +16504,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 232500222}
+  audioSources: []
 --- !u!136 &305627703
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16805,6 +16943,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1397132865}
+  audioSources: []
 --- !u!136 &314179195
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17444,6 +17583,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1140563880}
+  audioSources: []
 --- !u!136 &332810907
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18445,6 +18585,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1875842076}
+  audioSources: []
 --- !u!136 &352893061
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18799,6 +18940,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1068916718}
+  audioSources: []
 --- !u!136 &358260296
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20379,6 +20521,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1130487979}
+  audioSources: []
 --- !u!136 &398300270
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21396,6 +21539,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 828413599}
+  audioSources: []
 --- !u!136 &417316539
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21590,6 +21734,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1886029338}
+  audioSources: []
 --- !u!136 &418412027
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23436,6 +23581,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1659849621}
+  audioSources: []
 --- !u!136 &469829713
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23586,6 +23732,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 163381849}
+  audioSources: []
 --- !u!136 &470739005
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24006,6 +24153,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1548049971}
+  audioSources: []
 --- !u!136 &479039302
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24577,6 +24725,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 330027932}
+  audioSources: []
 --- !u!136 &500924610
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25816,6 +25965,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 951873519}
+  audioSources: []
 --- !u!136 &530649368
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26513,6 +26663,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 834186756}
+  audioSources: []
 --- !u!136 &545687292
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27383,6 +27534,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 44463130}
+  audioSources: []
 --- !u!114 &568721290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27408,6 +27560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &568721292
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27620,6 +27774,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 139147376}
+  audioSources: []
 --- !u!136 &576332316
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28064,6 +28219,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1629740548}
+  audioSources: []
 --- !u!136 &589721918
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29537,6 +29693,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1097698773}
+  audioSources: []
 --- !u!136 &611549072
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31675,6 +31832,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 1553596671}
+  audioSources: []
 --- !u!114 &661858415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31700,6 +31858,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &661858417
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32744,6 +32904,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 989665678}
+  audioSources: []
 --- !u!136 &688978240
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33310,7 +33471,12 @@ PrefabInstance:
     - target: {fileID: 5327845804700730380, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_Size.z
-      value: 20
+      value: 26.75364
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327845804700730380, guid: cab079d4fa3544b4f99dc94c4ac64189,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 3.5504265
       objectReference: {fileID: 0}
     - target: {fileID: 6367251717307861396, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -33360,7 +33526,7 @@ PrefabInstance:
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -33817,6 +33983,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 701481023}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &701481027 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
+    type: 3}
+  m_PrefabInstance: {fileID: 701481023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &703411357
 GameObject:
   m_ObjectHideFlags: 0
@@ -33952,6 +34124,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 63812423}
+  audioSources: []
 --- !u!136 &708760649
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34361,6 +34534,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 674695256}
+  audioSources: []
 --- !u!136 &721111520
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35320,6 +35494,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 139701075}
+  audioSources: []
 --- !u!136 &732641644
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35969,75 +36144,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0049837353, y: 0.0056952746, z: 0.0025243806}
   m_Center: {x: 0.000041019855, y: -0.0021523633, z: -0.00015898662}
---- !u!1001 &757582095
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1529
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523953, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782824343737523965, guid: 6ca000ead671ebe449deb210e0a19be8,
-        type: 3}
-      propertyPath: m_Name
-      value: Character
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6ca000ead671ebe449deb210e0a19be8, type: 3}
 --- !u!1 &758245629
 GameObject:
   m_ObjectHideFlags: 0
@@ -36426,6 +36532,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1284257237}
+  audioSources: []
 --- !u!136 &765394069
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37800,6 +37907,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1712250070}
+  audioSources: []
 --- !u!136 &792507942
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38258,6 +38366,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 700849099}
+  audioSources: []
 --- !u!136 &806560239
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38742,6 +38851,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1204174707}
+  audioSources: []
 --- !u!136 &821448232
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -39395,6 +39505,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 113488636}
+  audioSources: []
 --- !u!136 &847441893
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41403,6 +41514,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 653692899}
+  audioSources: []
 --- !u!136 &884159608
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42430,6 +42542,36 @@ Transform:
   m_Father: {fileID: 703411358}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &911236585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911236586}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &911236586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911236585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: -117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 238063319}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &911758546
 GameObject:
   m_ObjectHideFlags: 0
@@ -42917,6 +43059,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1766593992}
+  audioSources: []
 --- !u!136 &922042938
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42966,6 +43109,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &922529436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922529437}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &922529437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922529436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -102.1, y: 5, z: -25.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 701481027}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923718665
 GameObject:
   m_ObjectHideFlags: 0
@@ -43683,6 +43856,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1917449898}
+  audioSources: []
 --- !u!114 &942461253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44685,6 +44859,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1233177347}
+  audioSources: []
 --- !u!136 &966705358
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -44880,6 +45055,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 151184920}
+  audioSources: []
 --- !u!136 &968407157
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -45298,6 +45474,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 589362230}
+  audioSources: []
 --- !u!136 &978649493
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46054,6 +46231,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 339166200}
+  audioSources: []
 --- !u!136 &988319614
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46261,6 +46439,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1931308321}
+  audioSources: []
 --- !u!136 &992426207
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46399,6 +46578,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 771928076}
+  audioSources: []
 --- !u!114 &993487755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46424,6 +46604,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &993487757
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47348,6 +47530,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 522295264}
+  audioSources: []
 --- !u!114 &1013526364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47373,6 +47556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1013526366
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47890,6 +48075,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 261631346}
+  audioSources: []
 --- !u!136 &1023200011
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48639,6 +48825,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 854875223}
+  audioSources: []
 --- !u!136 &1041204484
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48846,6 +49033,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1049666623}
+  audioSources: []
 --- !u!136 &1044416587
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49263,6 +49451,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1754589095}
+  audioSources: []
 --- !u!136 &1053426158
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49383,6 +49572,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1150628805}
+  audioSources: []
 --- !u!136 &1057367799
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -50701,6 +50891,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 37642770}
+  audioSources: []
 --- !u!136 &1083189081
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -50916,6 +51107,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 772243601}
+  audioSources: []
 --- !u!136 &1084351287
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51752,7 +51944,7 @@ PrefabInstance:
     - target: {fileID: 5327845804700730380, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_Size.x
-      value: 60
+      value: 67.45481
       objectReference: {fileID: 0}
     - target: {fileID: 5327845804700730380, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -51763,6 +51955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327845804700730380, guid: cab079d4fa3544b4f99dc94c4ac64189,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 3.9752007
       objectReference: {fileID: 0}
     - target: {fileID: 6367251717307861396, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -51812,7 +52009,7 @@ PrefabInstance:
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -52249,6 +52446,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1100482404}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1100482408 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
+    type: 3}
+  m_PrefabInstance: {fileID: 1100482404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1100567201
 GameObject:
   m_ObjectHideFlags: 0
@@ -52351,6 +52554,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1478522748}
+  audioSources: []
 --- !u!136 &1102960223
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53164,6 +53368,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1910339052}
+  audioSources: []
 --- !u!136 &1115406384
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -54459,6 +54664,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1082273747}
+  audioSources: []
 --- !u!136 &1156426134
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -54610,6 +54816,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1305019861}
+  audioSources: []
 --- !u!136 &1163158653
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -55019,7 +55226,7 @@ PrefabInstance:
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -55048,6 +55255,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab079d4fa3544b4f99dc94c4ac64189, type: 3}
+--- !u!4 &1174431562 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
+    type: 3}
+  m_PrefabInstance: {fileID: 1174431561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1176622275
 GameObject:
   m_ObjectHideFlags: 0
@@ -55520,6 +55733,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 450754832}
+  audioSources: []
 --- !u!136 &1180728715
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -55640,6 +55854,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1779641430}
+  audioSources: []
 --- !u!136 &1182281713
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -55791,6 +56006,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1065039632}
+  audioSources: []
 --- !u!136 &1182942848
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -56406,6 +56622,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1558458395}
+  audioSources: []
 --- !u!136 &1196178826
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -56835,6 +57052,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 722384396}
+  audioSources: []
 --- !u!136 &1206906349
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -57004,6 +57222,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1403890219}
+  audioSources: []
 --- !u!114 &1208737584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57779,6 +57998,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 556185239}
+  audioSources: []
 --- !u!136 &1224231861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -58400,7 +58620,7 @@ PrefabInstance:
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -58842,6 +59062,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1234124240}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1234124244 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
+    type: 3}
+  m_PrefabInstance: {fileID: 1234124240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1234451357
 GameObject:
   m_ObjectHideFlags: 0
@@ -59036,6 +59262,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 374163547}
+  audioSources: []
 --- !u!136 &1238177505
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59758,6 +59985,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1239526366}
+  audioSources: []
 --- !u!136 &1259692449
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -60024,6 +60252,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 264904021}
+  audioSources: []
 --- !u!136 &1266343092
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -60498,6 +60727,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1033310419}
+  audioSources: []
 --- !u!136 &1281791180
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -61369,6 +61599,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1046752941}
+  audioSources: []
 --- !u!136 &1298223685
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -61605,6 +61836,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1557985286}
+  audioSources: []
 --- !u!136 &1301761193
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62188,6 +62420,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 2073608436}
+  audioSources: []
 --- !u!136 &1306925137
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62370,6 +62603,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1394482542}
+  audioSources: []
 --- !u!114 &1308494611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62695,6 +62929,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 69721362}
+  audioSources: []
 --- !u!136 &1316043631
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -63180,6 +63415,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1337675568}
+  audioSources: []
 --- !u!136 &1324468588
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -63469,6 +63705,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 652434208}
+  audioSources: []
 --- !u!136 &1334047530
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -64504,6 +64741,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 40751011}
+  audioSources: []
 --- !u!136 &1357914411
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65178,6 +65416,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1361359001}
+  audioSources: []
 --- !u!114 &1382160749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66461,6 +66700,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 329333001}
+  audioSources: []
 --- !u!114 &1418759333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66486,6 +66726,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1418759335
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -66999,6 +67241,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 916529044}
+  audioSources: []
 --- !u!136 &1426105577
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -68041,6 +68284,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1012249808}
+  audioSources: []
 --- !u!136 &1443877969
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -69332,6 +69576,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1364465729}
+  audioSources: []
 --- !u!136 &1467226730
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -69483,6 +69728,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1042709019}
+  audioSources: []
 --- !u!136 &1467899886
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70124,6 +70370,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 355019585}
+  audioSources: []
 --- !u!136 &1479226865
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70480,6 +70727,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 752924398}
+  audioSources: []
 --- !u!114 &1483720938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70505,6 +70753,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1483720940
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70744,6 +70994,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 474192502}
+  audioSources: []
 --- !u!136 &1495440112
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70822,6 +71073,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 19481267}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1497309423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497309424}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1497309424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497309423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: -94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1174431562}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497854546
 GameObject:
@@ -71333,6 +71614,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 60798354}
+  audioSources: []
 --- !u!136 &1512939040
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -71565,6 +71847,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 476685531}
+  audioSources: []
 --- !u!136 &1514071954
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -71776,6 +72059,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1238186830}
+  audioSources: []
 --- !u!136 &1517917647
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -73102,6 +73386,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 830493404}
+  audioSources: []
 --- !u!136 &1553222060
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -73676,6 +73961,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 14053609}
+  audioSources: []
 --- !u!114 &1557659093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74934,6 +75220,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 1126161571}
+  audioSources: []
 --- !u!114 &1580699700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74959,6 +75246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1580699702
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -75233,6 +75522,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1903721756}
+  audioSources: []
 --- !u!114 &1586439093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75457,6 +75747,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1794732141}
+  audioSources: []
 --- !u!114 &1587035066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75664,6 +75955,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1658301915}
+  audioSources: []
 --- !u!136 &1592978170
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -75784,6 +76076,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 942815753}
+  audioSources: []
 --- !u!136 &1593633050
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -75863,6 +76156,36 @@ Transform:
   - {fileID: 1847977114}
   m_Father: {fileID: 30392430}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1593890608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593890609}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1593890609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593890608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.1, y: 5, z: -47.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1100482408}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594204652
 GameObject:
@@ -75984,6 +76307,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 2048487089}
+  audioSources: []
 --- !u!114 &1595851866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76191,6 +76515,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1430217756}
+  audioSources: []
 --- !u!136 &1603062893
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -76311,6 +76636,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1447668050}
+  audioSources: []
 --- !u!136 &1604427399
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -77765,6 +78091,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 988076605}
+  audioSources: []
 --- !u!136 &1633686575
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -78357,6 +78684,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 288324558}
+  audioSources: []
 --- !u!136 &1647241152
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -79051,6 +79379,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 492432463}
+  audioSources: []
 --- !u!114 &1655489138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79076,6 +79405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1655489140
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -79503,6 +79834,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 105115315}
+  audioSources: []
 --- !u!114 &1660430804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79648,6 +79980,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1841068499}
+  audioSources: []
 --- !u!136 &1664226704
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -79768,6 +80101,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1653208686}
+  audioSources: []
 --- !u!136 &1668137616
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -79919,6 +80253,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 610893827}
+  audioSources: []
 --- !u!136 &1671777228
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -80604,6 +80939,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1324433332}
+  audioSources: []
 --- !u!136 &1693747112
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -80836,6 +81172,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 781084534}
+  audioSources: []
 --- !u!136 &1694720537
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -81908,6 +82245,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 125788046}
+  audioSources: []
 --- !u!114 &1731301283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82902,6 +83240,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 1073858909}
+  audioSources: []
 --- !u!114 &1755594566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82927,6 +83266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1755594568
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -84038,6 +84379,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 2102928897}
+  audioSources: []
 --- !u!136 &1780794368
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -84270,6 +84612,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1543874659}
+  audioSources: []
 --- !u!136 &1781494668
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -84685,6 +85028,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 791615958}
+  audioSources: []
 --- !u!136 &1785739920
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -85078,6 +85422,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1012775452}
+  audioSources: []
 --- !u!136 &1790921869
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -85354,6 +85699,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1756140608}
+  audioSources: []
 --- !u!136 &1793749229
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -86492,6 +86838,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1813184975}
+  audioSources: []
 --- !u!114 &1818613720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86786,6 +87133,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 760991708}
+  audioSources: []
 --- !u!114 &1825414464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86811,6 +87159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1825414466
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -87906,6 +88256,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 2112992616}
+  audioSources: []
 --- !u!136 &1853810328
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -88057,6 +88408,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1061658394}
+  audioSources: []
 --- !u!136 &1862159319
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -88664,6 +89016,36 @@ Transform:
   m_Father: {fileID: 1653980788}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1878433899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1878433900}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1878433900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878433899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: -166}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1234124244}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878468893
 GameObject:
   m_ObjectHideFlags: 0
@@ -88885,6 +89267,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1982684588}
+  audioSources: []
 --- !u!136 &1879387420
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -89132,6 +89515,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1511632097}
+  audioSources: []
 --- !u!136 &1883568526
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -89456,6 +89840,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1964950617}
+  audioSources: []
 --- !u!136 &1886790485
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -89576,6 +89961,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1819092482}
+  audioSources: []
 --- !u!136 &1888647985
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -89696,6 +90082,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1872389897}
+  audioSources: []
 --- !u!136 &1888733987
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -90149,6 +90536,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 159137334}
+  audioSources: []
 --- !u!136 &1902348754
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -90546,6 +90934,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 92036005}
+  audioSources: []
 --- !u!114 &1909776706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90571,6 +90960,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1909776708
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -91277,6 +91668,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 942609329}
+  audioSources: []
 --- !u!114 &1926173404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91302,6 +91694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1926173406
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -92207,6 +92601,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1656222138}
+  audioSources: []
 --- !u!136 &1949670455
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -92407,6 +92802,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 661204290}
+  audioSources: []
 --- !u!114 &1963162029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92432,6 +92828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &1963162031
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -92780,6 +93178,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 870775581}
+  audioSources: []
 --- !u!114 &1970654771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93427,6 +93826,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1274131240}
+  audioSources: []
 --- !u!114 &1983611543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93573,6 +93973,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 633451606}
+  audioSources: []
 --- !u!136 &1985762829
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93672,7 +94073,7 @@ PrefabInstance:
     - target: {fileID: 2152182226565996444, guid: f7a29801ef1207442893876b7560238a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2152182226565996444, guid: f7a29801ef1207442893876b7560238a,
         type: 3}
@@ -93811,6 +94212,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 831013669}
+  audioSources: []
 --- !u!114 &1992765848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94297,6 +94699,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1253530173}
+  audioSources: []
 --- !u!136 &2010543586
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -94876,7 +95279,7 @@ PrefabInstance:
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -95318,6 +95721,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2016441289}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2016441293 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
+    type: 3}
+  m_PrefabInstance: {fileID: 2016441289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2017822672
 GameObject:
   m_ObjectHideFlags: 0
@@ -95420,6 +95829,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1222230050}
+  audioSources: []
 --- !u!136 &2019353713
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -96104,6 +96514,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1030582982}
+  audioSources: []
 --- !u!136 &2034130508
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -96814,6 +97225,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 678651105}
+  audioSources: []
 --- !u!136 &2045704437
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -97272,6 +97684,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 265523716}
+  audioSources: []
 --- !u!136 &2053994966
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -98613,6 +99026,36 @@ Transform:
   m_Father: {fileID: 777976570}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2101190626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101190627}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2101190627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101190626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 48, y: 5, z: -40.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2145134846}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102928897
 GameObject:
   m_ObjectHideFlags: 0
@@ -98913,6 +99356,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1614803740}
+  audioSources: []
 --- !u!136 &2106884078
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -99020,6 +99464,7 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 448256299}
+  audioSources: []
 --- !u!114 &2107421969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99045,6 +99490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  maxdistance: 0
+  FollowingStepCount: 0
 --- !u!136 &2107421971
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -100383,6 +100830,7 @@ MonoBehaviour:
   IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1432872451}
+  audioSources: []
 --- !u!136 &2142659335
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -100769,7 +101217,7 @@ PrefabInstance:
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
         type: 3}
@@ -101211,6 +101659,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2145134842}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2145134846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923861451875037448, guid: cab079d4fa3544b4f99dc94c4ac64189,
+    type: 3}
+  m_PrefabInstance: {fileID: 2145134842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4870067930794184152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101341,7 +101795,7 @@ PrefabInstance:
     - target: {fileID: 4870067928815971754, guid: 5737275daa0ecbf4aaf911b10cd126ac,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4870067928815971754, guid: 5737275daa0ecbf4aaf911b10cd126ac,
         type: 3}
