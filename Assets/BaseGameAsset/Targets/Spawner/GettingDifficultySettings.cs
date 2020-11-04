@@ -170,6 +170,13 @@ public class GettingDifficultySettings : MonoBehaviour
         {
             setVisibility(currentlevel);
             CalculateDesisity(currentlevel);
+            PlayerPrefs.SetFloat("IsLocStart", 0);
+            Vector3 location = new Vector3();
+            location = this.gameObject.transform.GetChild(5).transform.position;
+            PlayerPrefs.SetFloat("LocX", location.x);
+            PlayerPrefs.SetFloat("LocY", location.y);
+            PlayerPrefs.SetFloat("LocZ", location.z);
+
         }
     }
 }

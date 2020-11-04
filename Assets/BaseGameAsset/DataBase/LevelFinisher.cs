@@ -43,6 +43,7 @@ public class LevelFinisher : MonoBehaviour
         {
             SaveUserDataForLevelfinish(other.gameObject);
             PlayerPrefs.SetFloat("CurrentLevel", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetFloat("IsLocStart", 1);
         }
     }
 

@@ -26,10 +26,14 @@ public class Target : MonoBehaviour
 
    public GameObject UI;
 
+    AudioSource randomSound;
+    public AudioClip[] audioSources;
+
     void Awake()
     {
         Helpers.RecursiveLayerChange(transform, LayerMask.NameToLayer("Target"));
         HealthBarPoint = 1;
+
     }
 
     void Start()
@@ -47,7 +51,7 @@ public class Target : MonoBehaviour
 
 
         enemyHealthBar = UI.GetComponent<EnemyHealthBar>();
-
+        randomSound = GetComponent<AudioSource>();
     }
 
     public void Got(float damage)
@@ -64,7 +68,7 @@ public class Target : MonoBehaviour
             character.SetPoint(damage);
         }
 
-
+       
 
 
         if (m_CurrentHealth > 0)
@@ -77,6 +81,8 @@ public class Target : MonoBehaviour
         }
 
         Vector3 position = transform.position;
+        randomSound.clip = audioSources[Random.Range(0, audioSources.Length)];
+        randomSound.Play();
 
         if (DestroyedEffect != null)
         {

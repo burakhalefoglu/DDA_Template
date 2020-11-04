@@ -21,7 +21,7 @@ public class SaveManager : MonoBehaviour
         SavePlayerParams();
 
         SaveOtherParams();
-
+        SaveLocationparams();
         PlayerPrefs.Save();
        
 
@@ -220,6 +220,27 @@ public class SaveManager : MonoBehaviour
 
         IsValidPoint = PlayerPrefs.HasKey("Point");
         CheckSaveSystemFloat(IsValidPoint, 0, "Point");
+
+    }
+
+    void SaveLocationparams()
+    {
+        bool IsValidIsLocStart;
+        bool IsValidLocX;
+        bool IsValidLocY;
+        bool IsValidLocZ;
+
+        IsValidIsLocStart = PlayerPrefs.HasKey("IsLocStart");
+        CheckSaveSystemFloat(IsValidIsLocStart, 1, "IsLocStart");
+
+        IsValidLocX = PlayerPrefs.HasKey("LocX");
+        CheckSaveSystemFloat(IsValidLocX, 0, "LocX");
+
+        IsValidLocY = PlayerPrefs.HasKey("LocY");
+        CheckSaveSystemFloat(IsValidLocY, 0, "LocY");
+
+        IsValidLocZ = PlayerPrefs.HasKey("LocZ");
+        CheckSaveSystemFloat(IsValidLocZ, 0, "LocZ");
 
     }
 }
