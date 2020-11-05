@@ -13,12 +13,13 @@ public class LoadingScreenManager : MonoBehaviour
     {
         loadingScreen = GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreen>();
         loadingScreen.ShowLoadingScreen();
-
+        System.GC.Collect();
     }
 
   
     void Update()
     {
+
         if (loadingScreen.GetFilledCount() > 0.99f)
         {
             loadingScreen.MakeZero();

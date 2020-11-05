@@ -22,8 +22,8 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
 
     void Update()
     {
-
-        ShootPlayer();
+        if (Time.frameCount % 3 == 0)
+            ShootPlayer();
 
     }
   void ShootPlayer()
@@ -34,7 +34,7 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
         {
             time = 0;
             bullet.SetActive(true);
-            bullet.transform.position = this.gameObject.transform.position;
+            bullet.transform.localPosition = this.gameObject.transform.localPosition;
             bullet.tag = "GermSlimeBullet";
         }
     }

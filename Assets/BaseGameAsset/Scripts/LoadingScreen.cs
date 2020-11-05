@@ -31,13 +31,16 @@ public class LoadingScreen : MonoBehaviour
 
     private void Update()
     {
-        loadProgress = loadingOperation.progress;
-        Debug.Log(loadProgress);
+        if (Time.frameCount % 3 == 0)
+        {
 
-        FilledImage.fillAmount = loadProgress;
-        percentLoaded.text = Mathf.Round(loadProgress * 100) + "%";
+            loadProgress = loadingOperation.progress;
+
+            FilledImage.fillAmount = loadProgress;
+            percentLoaded.text = Mathf.Round(loadProgress * 100) + "%";
+        }
+
     }
-
     public float GetFilledCount()
     {
         return FilledImage.fillAmount;

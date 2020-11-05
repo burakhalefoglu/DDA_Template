@@ -22,15 +22,14 @@ public class LevelFinisher : MonoBehaviour
     Text CharLevel;
 
 
-    private void Awake()
+   
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         character = player.GetComponent<Character>();
         boxCollider = this.gameObject.GetComponent<BoxCollider>();
         boxCollider.enabled = false;
-    }
-    private void Start()
-    {
+
         charLevelRaising = GetComponent<CharLevelRaising>();
         listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
         character = player.GetComponent<Character>();

@@ -6,7 +6,7 @@ public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField]
     GameObject Player;
-    void Start()
+    void Awake()
     {
         if (PlayerPrefs.GetFloat("IsLocStart") != 0)
         {

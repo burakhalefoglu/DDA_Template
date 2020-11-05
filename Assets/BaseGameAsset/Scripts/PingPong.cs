@@ -6,7 +6,7 @@ public class PingPong : MonoBehaviour
 {
     void Update()
     {
-        // Set the x position to loop between 0 and 3
+        if (Time.frameCount % 3 == 0)
         transform.position = new Vector3(Mathf.PingPong(Time.time,.1f), transform.position.y, transform.position.z);
     }
 }

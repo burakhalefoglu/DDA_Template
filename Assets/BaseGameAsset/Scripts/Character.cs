@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -131,7 +130,6 @@ public class Character : MonoBehaviour
         {
             audioData[1].Play();
             IsDead = 1;
-            Debug.Log(health);
             PauseGame();
         }
        
@@ -187,7 +185,6 @@ public class Character : MonoBehaviour
         {
             audioData[1].Play();
             IsDead = 1;
-            Debug.Log(health);
             PauseGame();
         }
 
@@ -236,7 +233,6 @@ public class Character : MonoBehaviour
         }
         IsDead = 0;
         levelFinisher.SaveUserDataForLevelfinish(this.gameObject);
-        Debug.Log(health);
         PauseGame();
     }
 

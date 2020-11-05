@@ -30,17 +30,20 @@ public class TurnPlayer : MonoBehaviour
 
     void Update()
     {
-
-        Debug.DrawLine(target.position, myTransform.position, Color.red);
-        distince = Vector3.Distance(target.position, myTransform.position);
-        if (distince < maxdistance)
+        if (Time.frameCount % 3 == 0)
         {
+            distince = Vector3.Distance(target.localPosition, myTransform.localPosition);
+            if (distince < maxdistance)
+            {
 
-            transform.rotation = Quaternion.Slerp(myTransform.rotation,
-                                               Quaternion.LookRotation(target.position - myTransform.position),
-                                               rotationSpeed * Time.deltaTime);
-           
+                transform.rotation = Quaternion.Slerp(myTransform.rotation,
+                                                   Quaternion.LookRotation(target.localPosition - myTransform.localPosition),
+                                                   rotationSpeed * Time.deltaTime);
 
+            }
         }
+
+       
+        
     }
 }

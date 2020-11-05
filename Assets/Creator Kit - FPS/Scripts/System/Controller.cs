@@ -30,7 +30,7 @@ public class Controller : MonoBehaviour
     public AmmoInventoryEntry[] startingAmmo;
 
     [Header("Control Settings")]
-    public float MouseSensitivity = 0.00000000001f;
+    //public float MouseSensitivity = 0.00000000001f;
     public float PlayerSpeed = 5.0f;
     public float RunningSpeed = 7.0f;
     public float JumpSpeed = 5.0f;

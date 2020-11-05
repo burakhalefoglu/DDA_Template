@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class FollowingEnemyTop : MonoBehaviour
@@ -42,16 +41,15 @@ public class FollowingEnemyTop : MonoBehaviour
     void follow()
     {
 
-        Debug.DrawLine(target.position, myTransform.position, Color.red);
-        float distance = Vector3.Distance(target.position, myTransform.position);
+        float distance = Vector3.Distance(target.localPosition, myTransform.localPosition);
         if (distance < maxdistance)
         {
             animator.SetBool("IsJump", true);
             myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-                                               Quaternion.LookRotation(target.position - myTransform.position),
+                                               Quaternion.LookRotation(target.localPosition - myTransform.localPosition),
                                                rotationSpeed * Time.deltaTime);
 
-            myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
+            myTransform.localPosition = Vector3.MoveTowards(transform.localPosition, target.transform.localPosition, FollowingStepCount);
 
         }
         else

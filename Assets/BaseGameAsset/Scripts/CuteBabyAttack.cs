@@ -13,6 +13,7 @@ public class CuteBabyAttack : MonoBehaviour
     float FollowingStepCount = 0.01f;
     float time = 3;
     float timeToCollision = 0;
+    float distance;
     BoxCollider boxCollider;
     Animator animator;
 
@@ -29,18 +30,17 @@ public class CuteBabyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.DrawLine(target.position, myTransform.position, Color.red);
-        float distance = Vector3.Distance(target.position, myTransform.position);
+        if (Time.frameCount % 3 == 0)
+            distance = Vector3.Distance(target.localPosition, myTransform.localPosition);
 
 
         if (distance < maxdistance && distance > 9f)
         {
             myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-                                               Quaternion.LookRotation(target.position - myTransform.position),
+                                               Quaternion.LookRotation(target.localPosition - myTransform.localPosition),
                                                rotationSpeed * Time.deltaTime);
 
-            myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
+            myTransform.localPosition = Vector3.MoveTowards(transform.localPosition, target.transform.localPosition, FollowingStepCount);
             boxCollider.enabled = false;
         }
 

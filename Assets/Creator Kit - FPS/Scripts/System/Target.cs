@@ -56,7 +56,7 @@ public class Target : MonoBehaviour
 
     public void Got(float damage)
     {
-        Debug.Log("Canım yandı");
+
         randomSound[1].Play();
         m_CurrentHealth -= damage;
         if (this.gameObject.tag == "BloodGuard")
@@ -75,7 +75,6 @@ public class Target : MonoBehaviour
         if (m_CurrentHealth > 0)
         {
             HealthBarPoint -= (damage / FirstHealh);
-            Debug.Log(HealthBarPoint);
             enemyHealthBar.SetHealthBarValue(HealthBarPoint);
             return;
 
@@ -102,7 +101,6 @@ public class Target : MonoBehaviour
     
     public void killyourself()
     {
-        Debug.Log("kİLL mEE");
         //Vector3 position = transform.position;
         //var effect = PoolSystem.Instance.GetInstance<ParticleSystem>(DestroyedEffect);
         //effect.time = 0.0f;
@@ -134,7 +132,7 @@ public class Target : MonoBehaviour
         }
         else if (tag == "BloodGuard")
         {
-            return PlayerPrefs.GetFloat("DifficultyLevel")*3f;
+            return 10;
 
         }
 

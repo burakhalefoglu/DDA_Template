@@ -25,10 +25,12 @@ public class bullet : MonoBehaviour
 
     void FixedUpdate()
     {
-        shoot = (target.transform.position - transform.position).normalized;
-        rigidbody.AddForce(shoot * thrust);
+        if (Time.frameCount % 3 == 0)
+        {
+            shoot = (target.transform.localPosition - transform.localPosition).normalized;
+            rigidbody.AddForce(shoot * thrust);
+        }
     }
-
     private void Update()
     {
         
@@ -49,7 +51,7 @@ public class bullet : MonoBehaviour
             gameObject.SetActive(false);
 
             GameObject Particle = ObjectPooling.SharedInstance.GetPooledObject();
-            Particle.transform.position = this.gameObject.transform.position;
+            Particle.transform.localPosition = this.gameObject.transform.localPosition;
             Particle.transform.rotation = this.gameObject.transform.rotation;
             Particle.SetActive(true);
         }

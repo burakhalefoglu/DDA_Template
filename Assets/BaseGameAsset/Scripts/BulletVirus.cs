@@ -15,7 +15,6 @@ public class BulletVirus : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Doğdum");
         target = GameObject.FindGameObjectWithTag("Player");
         rigidbody = GetComponent<Rigidbody>();
 
@@ -25,10 +24,14 @@ public class BulletVirus : MonoBehaviour
 
     void FixedUpdate()
     {
-       
-        shoot = (target.transform.position - transform.position).normalized;
-        rigidbody.AddForce(thrust*shoot);
-    }
+        if (Time.frameCount % 3 == 0) 
+        
+        { 
+            shoot = (target.transform.position - transform.position).normalized;
+            rigidbody.AddForce(thrust * shoot);
+
+        }
+    }   
 
     private void Update()
     {

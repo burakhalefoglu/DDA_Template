@@ -18,8 +18,8 @@ public class ShootToPlayer_Virus : MonoBehaviour
 
     void Update()
     {
-    
-        ShootPlayer();
+        if (Time.frameCount % 3 == 0)
+            ShootPlayer();
 
     }
 
@@ -35,7 +35,7 @@ public class ShootToPlayer_Virus : MonoBehaviour
             for (int i = 0; i < 10; i++ ){
 
                 Virusbullet.SetActive(true);
-                Virusbullet.transform.position = this.gameObject.transform.position;
+                Virusbullet.transform.localPosition = this.gameObject.transform.localPosition;
                 Virusbullet.tag = "CuteVirusBullet";
             }
 
