@@ -8,7 +8,7 @@ public class PlayerSpawner : MonoBehaviour
     GameObject Player;
     void Awake()
     {
-        if (PlayerPrefs.GetFloat("IsLocStart") != 0)
+        if (PlayerPrefs.GetFloat("IsLocStart") == 0)
         {
 
             Instantiate(Player, new Vector3(PlayerPrefs.GetFloat("LocX"), PlayerPrefs.GetFloat("LocY"), PlayerPrefs.GetFloat("LocZ")), transform.rotation);
