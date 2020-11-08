@@ -13,11 +13,6 @@ public class Shoot : MonoBehaviour
     }
 
 
-   public void Attack()
-    {
-        controller.shoot();
-    }
-
     public void ChangeWeaponright()
     {
         controller.changeWeaponRight();

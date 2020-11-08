@@ -55,7 +55,7 @@ public class Following : MonoBehaviour
                                                rotationSpeed * Time.deltaTime);
 
             myTransform.localPosition = Vector3.MoveTowards(transform.localPosition, target.transform.localPosition, FollowingStepCount);
-
+            Debug.Log("Çalıştı amk");
         }
 
     }

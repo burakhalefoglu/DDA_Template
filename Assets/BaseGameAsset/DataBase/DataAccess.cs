@@ -13,7 +13,7 @@ public class DataAccess : MonoBehaviour
     void Awake()
     {
         gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
-        baglan = new SqlConnection("Data Source=192.168.1.7; Initial Catalog=appneuron; User Id=Emre; password=123456;");
+        baglan = new SqlConnection("Data Source=20.71.17.141; Initial Catalog=appneuron; User Id=Emre; password=123456;");
        
     }
    

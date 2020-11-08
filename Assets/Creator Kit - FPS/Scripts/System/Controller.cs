@@ -99,13 +99,9 @@ public class Controller : MonoBehaviour
         m_HorizontalAngle = transform.localEulerAngles.y;
     }
 
-    bool IsShoot;
     bool Isjump=false;
     void Update()
     {
-        
-           m_Weapons[m_CurrentWeapon].triggerDown = IsShoot;
-           IsShoot = false;
         
        
 
@@ -167,40 +163,11 @@ public class Controller : MonoBehaviour
             move = transform.TransformDirection(move);
             m_CharacterController.Move(move);
 
-            //// Turn player
-            //float turnPlayer = SimpleInput.GetAxis("MouseX") /** MouseSensitivity*/;
-            //m_HorizontalAngle = m_HorizontalAngle + turnPlayer;
-
-            //if (m_HorizontalAngle > 360) m_HorizontalAngle -= 360.0f;
-            //if (m_HorizontalAngle < 0) m_HorizontalAngle += 360.0f;
-
-            //Vector3 currentAngles = transform.localEulerAngles;
-            //currentAngles.y = m_HorizontalAngle;
-            //transform.localEulerAngles = currentAngles;
-
-            //// Camera look up/down
-            //var turnCam = -SimpleInput.GetAxis("MouseY")/2;
-            ////turnCam = turnCam * MouseSensitivity;
-            //m_VerticalAngle = Mathf.Clamp(turnCam + m_VerticalAngle, -89.0f, 89.0f);
-            //currentAngles = CameraPosition.transform.localEulerAngles;
-            //currentAngles.x = m_VerticalAngle;
-            //CameraPosition.transform.localEulerAngles = currentAngles;
-
-            
+           
 
             Speed = move.magnitude / (PlayerSpeed * Time.deltaTime);
 
-            //if (Input.GetButton("Reload"))
-            //    m_Weapons[m_CurrentWeapon].Reload();
-
-            //if (Input.GetAxis("Mouse ScrollWheel") < 0)
-            //{
-            //    ChangeWeapon(m_CurrentWeapon - 1);
-            //}
-            //else if (Input.GetAxis("Mouse ScrollWheel") > 0)
-            //{
-            //    ChangeWeapon(m_CurrentWeapon + 1);
-            //}
+          
             
             //Key input to change weapon
 
@@ -308,11 +275,6 @@ public class Controller : MonoBehaviour
     public void PlayFootstep()
     {
         FootstepPlayer.PlayRandom();
-    }
-
-    public void shoot()
-    {
-        IsShoot = true;
     }
 
     public void changeWeaponRight()

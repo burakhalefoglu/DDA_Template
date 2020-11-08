@@ -112,7 +112,9 @@ public class Weapon : MonoBehaviour
     Queue<Projectile> m_ProjectilePool = new Queue<Projectile>();
     
     int fireNameHash = Animator.StringToHash("fire");
-    int reloadNameHash = Animator.StringToHash("reload");     
+    int reloadNameHash = Animator.StringToHash("reload");
+
+    Controller PlayerComponent;
 
     void Awake()
     {
@@ -143,6 +145,7 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         damage = PlayerPrefs.GetFloat("CharAttackDamage");
+        PlayerComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
     }
 
     public void PickedUp(Controller c)
@@ -226,18 +229,6 @@ public class Weapon : MonoBehaviour
         m_Source.PlayOneShot(FireAudioClip);
         
         CameraShaker.Instance.Shake(0.2f, 0.05f * advancedSettings.screenShakeMultiplier);
-
-        if (weaponType == WeaponType.Raycast)
-        {
-            for (int i = 0; i < advancedSettings.projectilePerShot; ++i)
-            {
-                RaycastShot();
-            }
-        }
-        else
-        {
-            ProjectileShot();
-        }
     }
 
 
@@ -265,6 +256,7 @@ public class Weapon : MonoBehaviour
             //this is a target
             if (hit.collider.gameObject.layer == 10)
             {
+                Fire();
                 hitcount++;
                 Target target = hit.collider.gameObject.GetComponent<Target>();
                 target.Got(damage);
@@ -351,11 +343,18 @@ public class Weapon : MonoBehaviour
         
         //WeaponInfoUI.Instance.UpdateClipInfo(this);
     }
-
+    float time;
     void Update()
     {
-        UpdateControllerState();        
-        
+        time += Time.deltaTime;
+        if (time > .3f)
+        {
+            ShootControl();
+            time = 0;
+        }
+
+        UpdateControllerState();
+
         if (m_ShotTimer > 0)
             m_ShotTimer -= Time.deltaTime;
 
@@ -363,21 +362,36 @@ public class Weapon : MonoBehaviour
         for (int i = 0; i < m_ActiveTrails.Count; ++i)
         {
             var activeTrail = m_ActiveTrails[i];
-            
+
             activeTrail.renderer.GetPositions(pos);
             activeTrail.remainingTime -= Time.deltaTime;
 
             pos[0] += activeTrail.direction * 50.0f * Time.deltaTime;
             pos[1] += activeTrail.direction * 50.0f * Time.deltaTime;
-            
+
             m_ActiveTrails[i].renderer.SetPositions(pos);
-            
+
             if (m_ActiveTrails[i].remainingTime <= 0.0f)
             {
                 m_ActiveTrails[i].renderer.gameObject.SetActive(false);
                 m_ActiveTrails.RemoveAt(i);
                 i--;
             }
+        }
+    }
+
+    private void ShootControl()
+    {
+        if (weaponType == WeaponType.Raycast)
+        {
+            for (int i = 0; i < advancedSettings.projectilePerShot; ++i)
+            {
+                RaycastShot();
+            }
+        }
+        else
+        {
+            ProjectileShot();
         }
     }
 
@@ -408,19 +422,7 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        if (triggerDown)
-        {
-            if (triggerType == TriggerType.Manual)
-            {
-                if (!m_ShotDone)
-                {
-                    m_ShotDone = true;
-                    Fire();
-                }
-            }
-            else
-                Fire();
-        }
+        
     }
     
     /// <summary>
