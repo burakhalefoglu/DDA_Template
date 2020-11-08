@@ -15,6 +15,8 @@ public class FollowingEnemyTop : MonoBehaviour
     Animator animator;
 
     EnemyTopAttack enemyTopAttack;
+
+    GameObject go;
     void Awake()
     {
         myTransform = transform;
@@ -24,16 +26,16 @@ public class FollowingEnemyTop : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        go  = GameObject.FindGameObjectWithTag("Player");
         enemyTopAttack = this.gameObject.GetComponent<EnemyTopAttack>();
-        target = go.transform;
 
 
 
     }
     void Update()
     {
-        if(!enemyTopAttack.GetIsChar())
+        target = go.transform;
+        if (!enemyTopAttack.GetIsChar())
         follow();
 
     }

@@ -38,6 +38,7 @@ public class PoolSystem : MonoBehaviour
     public T GetInstance<T>(Object prefab) where T:Object
     {
         Queue<Object> queue;
+        Debug.Log(m_Pools.TryGetValue(prefab, out queue));
         if (m_Pools.TryGetValue(prefab, out queue))
         {
             Object obj;

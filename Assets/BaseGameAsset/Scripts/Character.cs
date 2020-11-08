@@ -52,13 +52,15 @@ public class Character : MonoBehaviour
         PointValue.text = Point.ToString();
 
         audioData = GetComponents<AudioSource>();
+
         DamageUi = GameObject.FindGameObjectWithTag("DamageUi");
         animatorController = DamageUi.transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
+        DamageUi = GameObject.FindGameObjectWithTag("DamageUi");
+        animatorController = DamageUi.transform.GetChild(0).gameObject.GetComponent<Animator>();
 
         if (other.gameObject.tag == "GermSlimeBullet" && health > 0)
         {
@@ -139,6 +141,8 @@ public class Character : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        DamageUi = GameObject.FindGameObjectWithTag("DamageUi");
+        animatorController = DamageUi.transform.GetChild(0).gameObject.GetComponent<Animator>();
 
         if (collision.gameObject.tag == "bacterium" && health > 0)
         {
@@ -258,6 +262,9 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
+        DamageUi = GameObject.FindGameObjectWithTag("DamageUi");
+        animatorController = DamageUi.transform.GetChild(0).gameObject.GetComponent<Animator>();
+
         if (animatorController.GetBool("GetHit"))
         {
             time += Time.deltaTime;

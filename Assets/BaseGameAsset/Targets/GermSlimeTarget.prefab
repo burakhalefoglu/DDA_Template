@@ -367,10 +367,10 @@ MonoBehaviour:
   HitPlayer: {fileID: 8212324151211496083}
   IdleSource: {fileID: 2512953057398773005}
   UI: {fileID: 8998016031905730048}
-  audioSources:
-  - {fileID: 8300000, guid: 0658f8bf7eaf7d544ab89899ae0361ab, type: 3}
-  - {fileID: 8300000, guid: 608c2a305cfe8564fb03dff149415d61, type: 3}
-  - {fileID: 8300000, guid: ad956d9da7f6b664493795b4a536dabb, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: 44893a68cd8f54e47b539f656aa69a1c, type: 3}
+  - {fileID: 8300000, guid: d1cba0b0d650a254fbb2096940806370, type: 3}
+  - {fileID: 8300000, guid: c71e8a7fdb3821a40ae48dc78f8402ff, type: 3}
 --- !u!114 &1083131948219192915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1a6b9a1bf9d004ea05d42728bfce21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxdistance: 20
+  maxdistance: 100
   rotationSpeed: 10
 --- !u!114 &1156682497
 MonoBehaviour:

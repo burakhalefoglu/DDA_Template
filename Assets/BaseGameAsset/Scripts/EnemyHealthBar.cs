@@ -5,7 +5,16 @@ using UnityEngine.UI;
 
 public class EnemyHealthBar : MonoBehaviour
 {
-    private static Image HealthBarImage;
+    Image HealthBarImage;
+
+    private void Start()
+    {
+        HealthBarImage = this.gameObject.GetComponent<Image>();
+        SetHealthBarValue(1);
+
+
+    }
+
 
     /// <summary>
     /// Sets the health bar value
@@ -31,7 +40,7 @@ public class EnemyHealthBar : MonoBehaviour
 
     }
 
-    public static float GetHealthBarValue()
+    public float GetHealthBarValue()
     {
         return HealthBarImage.fillAmount;
     }
@@ -40,7 +49,7 @@ public class EnemyHealthBar : MonoBehaviour
     /// Sets the health bar color
     /// </summary>
     /// <param name="healthColor">Color </param>
-    public static void SetHealthBarColor(Color healthColor)
+    public void SetHealthBarColor(Color healthColor)
     {
         HealthBarImage.color = healthColor;
     }
@@ -48,13 +57,6 @@ public class EnemyHealthBar : MonoBehaviour
     /// <summary>
     /// Initialize the variable
     /// </summary>
-    private void Start()
-    {
-        HealthBarImage = GetComponent<Image>();
-        SetHealthBarValue(1);
-
-
-    }
-
+   
 
 }

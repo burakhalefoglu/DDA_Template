@@ -14,6 +14,7 @@ public class Following : MonoBehaviour
 
     [SerializeField]
     float FollowingStepCount;
+    GameObject go;
 
     void Awake()
     {
@@ -23,9 +24,8 @@ public class Following : MonoBehaviour
 
     void Start()
     {
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        go = GameObject.FindGameObjectWithTag("Player");
 
-        target = go.transform;
 
 
 
@@ -33,7 +33,13 @@ public class Following : MonoBehaviour
     void Update()
     {
         if (Time.frameCount % 3 == 0)
+        {
+            target = go.transform;
             follow();
+
+        }
+
+
 
 
     }

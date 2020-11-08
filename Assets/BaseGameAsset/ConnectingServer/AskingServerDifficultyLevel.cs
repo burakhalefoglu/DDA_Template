@@ -30,7 +30,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
     private void Awake()
     {
         CheckInternetConnection();
-        Debug.Log("Çalıştııııı....");
+
     }
 
     void CheckInternetConnection()
@@ -70,6 +70,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
         float DifficultyLevel;
         if (PlayerPrefs.GetFloat("CurrentLevel") == 1)
         {
+            difficultyManager = GetComponent<DifficultyManager>();
             difficultyManager.CalculateDifficultyLevel(5);
 
 

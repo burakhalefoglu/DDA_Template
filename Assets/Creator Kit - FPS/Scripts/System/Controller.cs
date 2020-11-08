@@ -190,8 +190,8 @@ public class Controller : MonoBehaviour
 
             Speed = move.magnitude / (PlayerSpeed * Time.deltaTime);
 
-            if (Input.GetButton("Reload"))
-                m_Weapons[m_CurrentWeapon].Reload();
+            //if (Input.GetButton("Reload"))
+            //    m_Weapons[m_CurrentWeapon].Reload();
 
             //if (Input.GetAxis("Mouse ScrollWheel") < 0)
             //{

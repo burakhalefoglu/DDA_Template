@@ -3,7 +3,44 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Mushy
+  - bacterium
+  - bullet
+  - GermSpike
+  - Blood
+  - Virus
+  - GermSlim
+  - LevelFinisher
+  - BloodGuard
+  - SucceesLevel
+  - PauseMenu
+  - GameUI
+  - MobileInput
+  - HealthBar
+  - PointValue
+  - BossVirus
+  - BossGermSpike
+  - BossDomestos
+  - BossEnemyFly
+  - DomestosBullet
+  - GermSlimeBullet
+  - CuteVirusBullet
+  - BossVirusBullet
+  - BossFlyBullet
+  - FinalValue
+  - GameDifficulty
+  - LoadingScreen
+  - HelloKitty
+  - EnemyTop
+  - CuteBaby
+  - CuteBabyBullet
+  - BossFootMicrobe
+  - FootMicrobeBullet
+  - ShootUi
+  - ChildSpike
+  - DamageUi
   layers:
   - Default
   - TransparentFX
@@ -13,12 +50,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - Weapon
+  - Target
+  - Projectile
+  - Player
+  - PlayerCollisionOnly
   - 
   - 
   - 

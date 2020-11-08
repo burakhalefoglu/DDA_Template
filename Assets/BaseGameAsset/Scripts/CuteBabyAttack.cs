@@ -16,14 +16,12 @@ public class CuteBabyAttack : MonoBehaviour
     float distance;
     BoxCollider boxCollider;
     Animator animator;
-
+    GameObject go;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
-        target = go.transform;
-        myTransform = transform;
+        go = GameObject.FindGameObjectWithTag("Player");
         boxCollider = GameObject.FindGameObjectWithTag("CuteBabyBullet").GetComponent<BoxCollider>();
     }
 
@@ -31,7 +29,9 @@ public class CuteBabyAttack : MonoBehaviour
     void Update()
     {
         if (Time.frameCount % 3 == 0)
-            distance = Vector3.Distance(target.localPosition, myTransform.localPosition);
+            target = go.transform;
+            myTransform = transform;
+        distance = Vector3.Distance(target.localPosition, myTransform.localPosition);
 
 
         if (distance < maxdistance && distance > 9f)

@@ -10,10 +10,7 @@ public class BossGermSpike_Shoot : MonoBehaviour
     float GermSpikeTransformX;
     float GermSpikeTransformY;
     float GermSpikeTransformZ;
-    void Start()
-    {
-        
-    }
+  
 
     // Update is called once per frame
     void Update()

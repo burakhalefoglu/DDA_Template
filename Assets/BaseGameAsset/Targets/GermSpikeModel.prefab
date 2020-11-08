@@ -562,8 +562,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
-  maxdistance: 0
-  FollowingStepCount: 0
+  maxdistance: 100
+  FollowingStepCount: 0.2
 --- !u!54 &3220681691710087679
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -626,10 +626,10 @@ MonoBehaviour:
   IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
     type: 3}
   UI: {fileID: 8998016030572773983}
-  audioSources:
+  audioClips:
+  - {fileID: 8300000, guid: 1edbb2ea23b078e45a206335e68407f0, type: 3}
   - {fileID: 8300000, guid: d42c4b5b9474de94c9104695770c1d97, type: 3}
   - {fileID: 8300000, guid: 849ab1b6ae344ca4a8059d8d5d9bfe7e, type: 3}
-  - {fileID: 8300000, guid: 1edbb2ea23b078e45a206335e68407f0, type: 3}
 --- !u!82 &-8054449477913640698
 AudioSource:
   m_ObjectHideFlags: 0

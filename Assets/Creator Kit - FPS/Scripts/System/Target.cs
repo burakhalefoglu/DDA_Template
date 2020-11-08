@@ -27,7 +27,7 @@ public class Target : MonoBehaviour
    public GameObject UI;
 
     AudioSource[] randomSound;
-    public AudioClip[] audioSources;
+    public AudioClip[] audioClips;
 
     void Awake()
     {
@@ -52,13 +52,22 @@ public class Target : MonoBehaviour
 
         enemyHealthBar = UI.GetComponent<EnemyHealthBar>();
         randomSound = GetComponents<AudioSource>();
+   
+  
+
+    }
+    private void Update()
+    {
+        
     }
 
     public void Got(float damage)
     {
 
         randomSound[1].Play();
+        Debug.Log(m_CurrentHealth);
         m_CurrentHealth -= damage;
+
         if (this.gameObject.tag == "BloodGuard")
         {
             damage *= 3;
@@ -81,16 +90,15 @@ public class Target : MonoBehaviour
         }
 
         Vector3 position = transform.position;
-        randomSound[0].clip = audioSources[Random.Range(0, audioSources.Length)];
-        randomSound[0].Play();
+        AudioSource.PlayClipAtPoint(audioClips[Random.Range(0,audioClips.Length-1)], Player.transform.position);
 
-        if (DestroyedEffect != null)
-        {
-            var effect = PoolSystem.Instance.GetInstance<ParticleSystem>(DestroyedEffect);
-            effect.time = 0.0f;
-            effect.Play();
-            effect.transform.position = position;
-        }
+        //if (DestroyedEffect != null)
+        //{
+        //    var effect = PoolSystem.Instance.GetInstance<ParticleSystem>(DestroyedEffect);
+        //    effect.time = 0.0f;
+        //    effect.Play();
+        //    effect.transform.position = position;
+        //}
 
         m_Destroyed = true;
 

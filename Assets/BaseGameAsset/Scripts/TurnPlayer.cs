@@ -12,6 +12,7 @@ public class TurnPlayer : MonoBehaviour
     float rotationSpeed =10;
     Quaternion rotation;
     float distince;
+    GameObject go;
     void Awake()
     {
         myTransform = transform;
@@ -20,9 +21,8 @@ public class TurnPlayer : MonoBehaviour
 
     void Start()
     {
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        go = GameObject.FindGameObjectWithTag("Player");
 
-        target = go.transform;
 
 
     }
@@ -32,6 +32,7 @@ public class TurnPlayer : MonoBehaviour
     {
         if (Time.frameCount % 3 == 0)
         {
+            target = go.transform;
             distince = Vector3.Distance(target.localPosition, myTransform.localPosition);
             if (distince < maxdistance)
             {
