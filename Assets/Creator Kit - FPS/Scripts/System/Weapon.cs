@@ -231,7 +231,6 @@ public class Weapon : MonoBehaviour
         CameraShaker.Instance.Shake(0.2f, 0.05f * advancedSettings.screenShakeMultiplier);
     }
 
-
     void RaycastShot()
     {
 
@@ -243,11 +242,13 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         Ray r = Controller.Instance.MainCamera.ViewportPointToRay(Vector3.one * 0.5f + (Vector3)spread);
         Vector3 hitPosition = r.origin + r.direction * 200.0f;
-        
-        if (Physics.Raycast(r, out hit, 1000.0f, ~(1 << 9), QueryTriggerInteraction.Ignore))
+
+        if (Physics.Raycast(r, out hit, 300.0f, ~(1 << 9), QueryTriggerInteraction.Ignore))
         {
-            Renderer renderer = hit.collider.GetComponentInChildren<Renderer>();
-            ImpactManager.Instance.PlayImpact(hit.point, hit.normal, renderer == null ? null : renderer.sharedMaterial);
+
+            //Renderer renderer = hit.collider.GetComponentInChildren<Renderer>();
+            //ImpactManager.Instance.PlayImpact(hit.point, hit.normal, renderer == null ? null : renderer.sharedMaterial);
+
 
             //if too close, the trail effect would look weird if it arced to hit the wall, so only correct it if far
             if (hit.distance > 5.0f)
@@ -256,27 +257,31 @@ public class Weapon : MonoBehaviour
             //this is a target
             if (hit.collider.gameObject.layer == 10)
             {
+               
+
                 Fire();
                 hitcount++;
                 Target target = hit.collider.gameObject.GetComponent<Target>();
                 target.Got(damage);
+
+                if (PrefabRayTrail != null)
+                {
+                    var pos = new Vector3[] { GetCorrectedMuzzlePlace(), hitPosition };
+                    var trail = PoolSystem.Instance.GetInstance<LineRenderer>(PrefabRayTrail);
+                    trail.gameObject.SetActive(true);
+                    trail.SetPositions(pos);
+                    m_ActiveTrails.Add(new ActiveTrail()
+                    {
+                        remainingTime = 0.3f,
+                        direction = (pos[1] - pos[0]).normalized,
+                        renderer = trail
+                    });
+                }
             }
         }
 
 
-        if (PrefabRayTrail != null)
-        {
-            var pos = new Vector3[] { GetCorrectedMuzzlePlace(), hitPosition };
-            var trail = PoolSystem.Instance.GetInstance<LineRenderer>(PrefabRayTrail);
-            trail.gameObject.SetActive(true);
-            trail.SetPositions(pos);
-            m_ActiveTrails.Add(new ActiveTrail()
-            {
-                remainingTime = 0.3f,
-                direction = (pos[1] - pos[0]).normalized,
-                renderer = trail
-            });
-        }
+
     }
     public float GetTotalHit()
     {
@@ -389,10 +394,12 @@ public class Weapon : MonoBehaviour
                 RaycastShot();
             }
         }
-        else
-        {
-            ProjectileShot();
-        }
+       
+        
+        //else
+        //{
+        //    ProjectileShot();
+        //}
     }
 
     void UpdateControllerState()
@@ -544,7 +551,7 @@ public class WeaponEditor : Editor
         EditorGUILayout.PropertyField(m_FireRateProp);
         EditorGUILayout.PropertyField(m_ReloadTimeProp);
         EditorGUILayout.PropertyField(m_ClipSizeProp);
-        EditorGUILayout.PropertyField(m_DamageProp);
+        //EditorGUILayout.PropertyField(m_DamageProp);
         EditorGUILayout.PropertyField(m_AmmoTypeProp);
 
         if (m_WeaponTypeProp.intValue == (int)Weapon.WeaponType.Projectile)

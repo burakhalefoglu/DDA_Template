@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
     GameObject Player;
     Controller controller;
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");

@@ -17,12 +17,10 @@ public class AskingServerDifficultyLevel: MonoBehaviour
         yield return request.SendWebRequest();
         if (request.error != null)
         {
-            Debug.Log("Error");
             action(false);
         }
         else
         {
-            Debug.Log("Success");
             action(true);
         }
     }
@@ -53,10 +51,10 @@ public class AskingServerDifficultyLevel: MonoBehaviour
 
     public void ConnectServer(int difficulty)
     {
-        Debug.Log(difficulty);
         if (difficulty == 0)
         {
             SetManualDDA();
+
         }
         else
         {
@@ -67,11 +65,12 @@ public class AskingServerDifficultyLevel: MonoBehaviour
 
     void SetManualDDA()
     {
+
         float DifficultyLevel;
         if (PlayerPrefs.GetFloat("CurrentLevel") == 1)
         {
             difficultyManager = GetComponent<DifficultyManager>();
-            difficultyManager.CalculateDifficultyLevel(5);
+            difficultyManager.CalculateDifficultyLevel(1);
 
 
         }

@@ -6,18 +6,18 @@ using UnityEngine;
 public class DifficultyParameters : ICuteBacterium, ICuteMushy, ICuteVirus, IGermSlime, IGermSpike
 {
     
-    public int CuteBacteriumDifficultyOne { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int CuteBacteriumDifficultyTen { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int CuteMushyDifficultyOne { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int CuteMushyDifficultyTen { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int CuteVirusDifficultyOne { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int CuteVirusDifficultyTen { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int CuteVirusLevel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int CuteVirusAttackFrequency { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int GermSlimeDifficultyOne { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int GermSlimeDifficultyTen { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int GermSlimeLevel { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int GermSlimeAttackFrequency { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int GermSpikeDifficultyOne { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public int GermSpikeDifficultyTen { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public int CuteBacteriumDifficultyOne { get; set; }
+    public int CuteBacteriumDifficultyTen { get; set; }
+    public int CuteMushyDifficultyOne { get; set; }
+    public int CuteMushyDifficultyTen { get; set; }
+    public int CuteVirusDifficultyOne { get; set; }
+    public int CuteVirusDifficultyTen { get; set; }
+    public int CuteVirusLevel { get; set; }
+    public int CuteVirusAttackFrequency { get; set; }
+    public int GermSlimeDifficultyOne { get; set; }
+    public int GermSlimeDifficultyTen { get; set; }
+    public int GermSlimeLevel { get; set; }
+    public int GermSlimeAttackFrequency { get; set; }
+    public int GermSpikeDifficultyOne { get; set; }
+    public int GermSpikeDifficultyTen { get; set; }
 }

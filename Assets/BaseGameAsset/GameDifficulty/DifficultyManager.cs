@@ -314,9 +314,11 @@ public class DifficultyManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("DifficultyLevel", DifficultyLevel);
 
+        Debug.Log("CalculateDifficultyLevel: Çalıştı...: " + PlayerPrefs.GetFloat("CharLevel"));
 
-        switch (PlayerPrefs.GetInt("CharLevel"))
+        switch (PlayerPrefs.GetFloat("CharLevel"))
         {
+
             case 1:
                 CharLevelOne();
                 break;
