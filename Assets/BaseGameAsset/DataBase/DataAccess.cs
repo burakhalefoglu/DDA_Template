@@ -9,34 +9,45 @@ using UnityEngine;
 public class DataAccess : MonoBehaviour
 {
     GettingDatabaseParameters gettingDatabaseParameters;
-    SqlConnection baglan;
+    SqlConnection conn;
     void Awake()
     {
         gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
-        baglan = new SqlConnection("Data Source=20.71.17.141; Initial Catalog=appneuron; User Id=Emre; password=123456;");
-       
+        conn = new SqlConnection("Server=tcp:appneurondb.database.windows.net,1433;Initial Catalog=appneuron;Persist Security Info=False;User ID=burak;Password=Developer123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
+            /* ("Data Source=20.73.17.141; Initial Catalog=appneuron; User Id=Emre; password=123456;");*/
+
     }
-   
-      public void verileriekle()
+
+    public void verileriekle()
+    {
+
+
+
+        using (var cmd = conn.CreateCommand())
         {
-           // try
-           // {
-                if (baglan.State == ConnectionState.Closed)
-                    baglan.Open();
-                string kayit = "insert into users(devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel) values (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
-                SqlCommand komut = new SqlCommand(kayit, baglan);
-                komut.Parameters.AddWithValue("@devideid", 123456789/*PlayerPrefs.GetInt("DevideId")*/);
-                komut.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
-                komut.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
-                komut.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
-                komut.Parameters.AddWithValue("@isdead", gettingDatabaseParameters.IsDead());
-                komut.Parameters.AddWithValue("@finishingtime", gettingDatabaseParameters.FinishingTime());
-                komut.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetFloat("DifficultyLevel"));
-                komut.Parameters.AddWithValue("@currentlevel", PlayerPrefs.GetFloat("CurrentLevel"));
-                komut.ExecuteNonQuery();
-                baglan.Close();
-                
-           // }
-      }
+            cmd.CommandText = @"INSERT INTO users (devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel)
+                                VALUES (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
+
+            cmd.Parameters.AddWithValue("@devideid", 123456789/*PlayerPrefs.GetInt("DevideId")*/);
+            cmd.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
+            cmd.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
+            cmd.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
+            cmd.Parameters.AddWithValue("@isdead", gettingDatabaseParameters.IsDead());
+            cmd.Parameters.AddWithValue("@finishingtime", gettingDatabaseParameters.FinishingTime());
+            cmd.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetFloat("DifficultyLevel"));
+            cmd.Parameters.AddWithValue("@currentlevel", PlayerPrefs.GetFloat("CurrentLevel"));
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+
+        }
+
+
+    }
+
+
 
 }
+
+
