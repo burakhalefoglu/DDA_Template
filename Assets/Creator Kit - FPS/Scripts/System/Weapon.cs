@@ -116,6 +116,7 @@ public class Weapon : MonoBehaviour
 
     Controller PlayerComponent;
 
+
     void Awake()
     {
         m_Animator = GetComponentInChildren<Animator>();
@@ -352,7 +353,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > .3f)
+        if (time > .1f)
         {
             ShootControl();
             time = 0;

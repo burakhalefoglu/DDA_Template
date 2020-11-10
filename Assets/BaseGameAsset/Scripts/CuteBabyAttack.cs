@@ -28,7 +28,7 @@ public class CuteBabyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.frameCount % 3 == 0)
+       
             target = go.transform;
             myTransform = transform;
         distance = Vector3.Distance(target.localPosition, myTransform.localPosition);

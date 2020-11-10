@@ -30,8 +30,7 @@ public class TurnPlayer : MonoBehaviour
 
     void Update()
     {
-        if (Time.frameCount % 3 == 0)
-        {
+       
             target = go.transform;
             distince = Vector3.Distance(target.localPosition, myTransform.localPosition);
             if (distince < maxdistance)
@@ -42,7 +41,7 @@ public class TurnPlayer : MonoBehaviour
                                                    rotationSpeed * Time.deltaTime);
 
             }
-        }
+        
 
        
         

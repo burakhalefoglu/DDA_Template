@@ -18,7 +18,7 @@ public class ShootToPlayer_Virus : MonoBehaviour
 
     void Update()
     {
-        if (Time.frameCount % 3 == 0)
+      
             ShootPlayer();
 
     }

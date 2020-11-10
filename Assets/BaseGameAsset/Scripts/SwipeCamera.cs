@@ -56,7 +56,7 @@ public class SwipeCamera : MonoBehaviour
             yAngle = yAngleTemp + (SecondPoint.y - FirstPoint.y) * 90 / Screen.height;
             ClampAngel = -yAngle;
             ClampAngel = Mathf.Clamp(ClampAngel, -60, 60);
-            rotationClamp = Quaternion.Euler(ClampAngel, xAngle, 0.1f);
+            rotationClamp = Quaternion.Euler(ClampAngel, xAngle, 1f);
             this.transform.rotation = Quaternion.Euler(rotationClamp.eulerAngles);
 
         }
@@ -70,7 +70,7 @@ public class SwipeCamera : MonoBehaviour
         CheckingPoint = Input.GetTouch(finger).position;
         float PointRate;
         PointRate = CheckingPoint.x / Screen.width;
-        if (PointRate > 0.3f && PointRate < 0.75f)
+        if (PointRate > 0.3f/* && PointRate < 0.75f*/)
         {
             RotateCamera(finger);
 

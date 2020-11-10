@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 773596669398490450}
   - component: {fileID: -9109468040764928093}
   m_Layer: 10
-  m_Name: hellokitty(Clone)
+  m_Name: hellokitty
   m_TagString: HelloKitty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 10
   maxdistance: 100
-  FollowingStepCount: 0.3
+  FollowingStepCount: 0.5
 --- !u!114 &8465411065913097447
 MonoBehaviour:
   m_ObjectHideFlags: 0

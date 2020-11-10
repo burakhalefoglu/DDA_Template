@@ -152,7 +152,7 @@ public class Controller : MonoBehaviour
             }
 
             // Move around with WASD
-            move = new Vector3(SimpleInput.GetAxis("Horizontal"), 0, SimpleInput.GetAxisRaw("Vertical"));
+            move = new Vector3(-SimpleInput.GetAxis("Horizontal"), 0, -SimpleInput.GetAxisRaw("Vertical"));
             if (move.sqrMagnitude > 1.0f)
                 move.Normalize();
 

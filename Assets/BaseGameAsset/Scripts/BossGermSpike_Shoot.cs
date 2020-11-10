@@ -15,7 +15,7 @@ public class BossGermSpike_Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.frameCount % 3 == 0)
+     
             SpawnGermSpike();
     }
 

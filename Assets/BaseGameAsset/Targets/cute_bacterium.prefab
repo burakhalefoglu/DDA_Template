@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -7639060780217102457}
   - component: {fileID: -1104876440927150882}
   m_Layer: 10
-  m_Name: cute_bacterium(Clone)
+  m_Name: cute_bacterium
   m_TagString: bacterium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 10
   maxdistance: 100
-  FollowingStepCount: 0.2
+  FollowingStepCount: 0.5
 --- !u!114 &5536430946127005823
 MonoBehaviour:
   m_ObjectHideFlags: 0

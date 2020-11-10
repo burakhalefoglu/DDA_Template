@@ -32,30 +32,24 @@ public class Following : MonoBehaviour
     }
     void Update()
     {
-        if (Time.frameCount % 3 == 0)
-        {
+
             target = go.transform;
             follow();
-
-        }
-
-
-
 
     }
 
     void follow()
     {
 
-        if (Vector3.Distance(target.localPosition, myTransform.localPosition) < maxdistance)
+        if (Vector3.Distance(target.position, myTransform.position) < maxdistance)
         {
 
             myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-                                               Quaternion.LookRotation(target.localPosition - myTransform.localPosition),
+                                               Quaternion.LookRotation(target.position - myTransform.position),
                                                rotationSpeed * Time.deltaTime);
 
-            myTransform.localPosition = Vector3.MoveTowards(transform.localPosition, target.transform.localPosition, FollowingStepCount);
-            Debug.Log("Çalıştı amk");
+            myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
+
         }
 
     }

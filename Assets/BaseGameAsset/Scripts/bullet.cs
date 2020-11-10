@@ -25,11 +25,10 @@ public class bullet : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Time.frameCount % 3 == 0)
-        {
+       
             shoot = (target.transform.localPosition - transform.localPosition).normalized;
             rigidbody.AddForce(shoot * thrust);
-        }
+        
     }
     private void Update()
     {

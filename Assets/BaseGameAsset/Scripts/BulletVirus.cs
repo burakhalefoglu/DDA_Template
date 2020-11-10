@@ -24,13 +24,10 @@ public class BulletVirus : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Time.frameCount % 3 == 0) 
-        
-        { 
+       
             shoot = (target.transform.position - transform.position).normalized;
             rigidbody.AddForce(thrust * shoot);
 
-        }
     }   
 
     private void Update()

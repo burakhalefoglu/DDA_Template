@@ -37,7 +37,7 @@ public class RotateChar : MonoBehaviour
                 xAngle =(float) (xAngTemp + (secondpoint.x - firstpoint.x) * 180.0 / Screen.width);
                 yAngle = (float)(yAngTemp - (secondpoint.y - firstpoint.y) * 90.0 / Screen.height);
                 //Rotate camera
-                this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+                this.transform.rotation = Quaternion.Euler(yAngle, xAngle,1f);
             }
         }
     }

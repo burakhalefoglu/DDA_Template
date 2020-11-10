@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: -8054449477913640698}
   - component: {fileID: 9159335579811552177}
   m_Layer: 10
-  m_Name: GermSpikeModel(Clone)
+  m_Name: GermSpikeModel
   m_TagString: GermSpike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 10
   maxdistance: 100
-  FollowingStepCount: 0.2
+  FollowingStepCount: 0.5
 --- !u!54 &9163487360391065675
 Rigidbody:
   m_ObjectHideFlags: 0

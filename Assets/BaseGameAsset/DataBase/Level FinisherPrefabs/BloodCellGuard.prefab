@@ -222,6 +222,7 @@ MonoBehaviour:
   HitPlayer: {fileID: 3880955892963457238}
   IdleSource: {fileID: 7699819265845461762}
   UI: {fileID: 4768575130855535991}
+  audioClips: []
 --- !u!136 &3380231748902217375
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -232,7 +233,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4
+  m_Radius: 1
   m_Height: 1.7
   m_Direction: 0
   m_Center: {x: -0.008023421, y: 0.7293066, z: 0}

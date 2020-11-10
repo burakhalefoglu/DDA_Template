@@ -22,7 +22,7 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
 
     void Update()
     {
-        if (Time.frameCount % 3 == 0)
+     
             ShootPlayer();
 
     }

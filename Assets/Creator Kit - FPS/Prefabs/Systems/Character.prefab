@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1782824341860796121}
   - component: {fileID: 1782824341860796120}
+  - component: {fileID: 3225987838184440628}
   m_Layer: 10
   m_Name: CharacterRoot
   m_TagString: MainCamera
@@ -74,6 +75,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19eef25df6ca73446bd43de1e4cad9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3225987838184440628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782824341860796122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4449b8aed1406c44eade40bc2072b182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1782824341984044421
@@ -277,7 +290,6 @@ GameObject:
   - component: {fileID: 1782824343737523964}
   - component: {fileID: 5191335408213895292}
   - component: {fileID: 8962991925944967712}
-  - component: {fileID: 2955470382414493183}
   - component: {fileID: 757582097}
   - component: {fileID: 525238024075121130}
   - component: {fileID: 285248407661181428}
@@ -383,18 +395,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2955470382414493183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782824343737523965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4449b8aed1406c44eade40bc2072b182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &757582097
 AudioSource:
   m_ObjectHideFlags: 0
