@@ -15,17 +15,16 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
     {
        
         Target = GameObject.FindGameObjectWithTag("Player");
-        shootFrequencyTime = 5 - (5 * PlayerPrefs.GetFloat("DifficultyLevel") / 10);
+        shootFrequencyTime = Random.Range(5, 10);
 
     }
 
 
     void Update()
     {
-     
-            ShootPlayer();
-
+        ShootPlayer();
     }
+
   void ShootPlayer()
     {
         time += Time.deltaTime;
@@ -34,7 +33,7 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
         {
             time = 0;
             bullet.SetActive(true);
-            bullet.transform.localPosition = this.gameObject.transform.localPosition;
+            bullet.transform.position = this.gameObject.transform.position;
             bullet.tag = "GermSlimeBullet";
         }
     }

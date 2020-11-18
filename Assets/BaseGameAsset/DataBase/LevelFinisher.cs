@@ -15,6 +15,10 @@ public class LevelFinisher : MonoBehaviour
     Character character;
     CharLevelRaising charLevelRaising;
     GameObject FinalValue;
+    GameObject PauseMenu;
+    GameObject GameUI;
+    GameObject MobileInput;
+
 
     Text TargetDestroyedCount;
     Text FinalTimeCount;
@@ -34,6 +38,11 @@ public class LevelFinisher : MonoBehaviour
         listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
         character = player.GetComponent<Character>();
         dataAccess = this.gameObject.transform.GetChild(0).gameObject.GetComponent<DataAccess>();
+        PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+        GameUI = GameObject.FindGameObjectWithTag("GameUI");
+        MobileInput = GameObject.FindGameObjectWithTag("MobileInput");
+
+
 
     }
     private void OnTriggerEnter(Collider other)
@@ -41,16 +50,23 @@ public class LevelFinisher : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             SaveUserDataForLevelfinish(other.gameObject);
-            PlayerPrefs.SetFloat("CurrentLevel", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetFloat("IsLocStart", 1);
+            PauseGame();
         }
+    }
+    private void PauseGame()
+    {
+        PauseMenu.transform.GetChild(0).gameObject.SetActive(true);
+        PauseMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+
+        GameUI.SetActive(false);
+        MobileInput.SetActive(false);
+        Time.timeScale = 0;
     }
 
 
     public void SaveUserDataForLevelfinish(GameObject player)
     {
 
-        CalculatePlayerFlow();
 
         CalculatePoint();
 
@@ -74,13 +90,7 @@ public class LevelFinisher : MonoBehaviour
         dataAccess.verileriekle();
     }
 
-    public void CalculatePlayerFlow()
-    {
-        float RemainHealth = character.GetPlayerHealth();
-        float PlayerHealth = PlayerPrefs.GetFloat("Player_Health");
-        float flow = 100 - ((100 * RemainHealth) / PlayerPrefs.GetFloat("Player_Health"));
-        PlayerPrefs.SetFloat("Player_Flow", flow);
-    }
+   
 
     void CalculatePoint()
     {

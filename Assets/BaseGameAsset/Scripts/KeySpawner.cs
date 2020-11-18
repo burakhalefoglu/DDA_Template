@@ -27,7 +27,7 @@ public class KeySpawner : MonoBehaviour
 
     void SpawnKey()
     {
-        Instantiate(Key, transform.localPosition, transform.rotation);
+        Instantiate(Key, transform.position, transform.rotation);
 
     }
 }

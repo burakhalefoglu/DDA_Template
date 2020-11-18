@@ -13,7 +13,7 @@ public class LoadingScreenManager : MonoBehaviour
     {
         loadingScreen = GameObject.FindGameObjectWithTag("LoadingScreen").GetComponent<LoadingScreen>();
         loadingScreen.ShowLoadingScreen();
-        System.GC.Collect();
+       // System.GC.Collect();
     }
 
   

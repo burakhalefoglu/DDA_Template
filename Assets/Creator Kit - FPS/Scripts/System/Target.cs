@@ -65,7 +65,7 @@ public class Target : MonoBehaviour
     {
 
         randomSound[1].Play();
-        Debug.Log(m_CurrentHealth);
+
         m_CurrentHealth -= damage;
 
         if (this.gameObject.tag == "BloodGuard")
@@ -146,19 +146,19 @@ public class Target : MonoBehaviour
 
         else if (tag == "BossEnemyFly")
         {
-            return 20;
+            return 30;
 
         }
 
         else if (tag == "BossVirus")
         {
-            return 35;
+            return 45;
 
         }
 
         else if (tag == "BossGermSpike")
         {
-            return 50;
+            return 55;
 
         }
         
@@ -171,7 +171,7 @@ public class Target : MonoBehaviour
 
          else if (tag == "BossFootMicrobe")
          {
-            return 10;
+            return 100;
 
          }
 

@@ -29,13 +29,13 @@ public class DataAccess : MonoBehaviour
             cmd.CommandText = @"INSERT INTO users (devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel)
                                 VALUES (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
 
-            cmd.Parameters.AddWithValue("@devideid", 123456789/*PlayerPrefs.GetInt("DevideId")*/);
+            cmd.Parameters.AddWithValue("@devideid", PlayerPrefs.GetInt("DevideId"));
             cmd.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
             cmd.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
             cmd.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
             cmd.Parameters.AddWithValue("@isdead", gettingDatabaseParameters.IsDead());
             cmd.Parameters.AddWithValue("@finishingtime", gettingDatabaseParameters.FinishingTime());
-            cmd.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetFloat("DifficultyLevel"));
+            cmd.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetInt("DifficultyLevel"));
             cmd.Parameters.AddWithValue("@currentlevel", PlayerPrefs.GetFloat("CurrentLevel"));
 
             conn.Open();

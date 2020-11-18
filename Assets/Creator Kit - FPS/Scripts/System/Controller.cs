@@ -31,8 +31,8 @@ public class Controller : MonoBehaviour
 
     [Header("Control Settings")]
     //public float MouseSensitivity = 0.00000000001f;
-    public float PlayerSpeed = 5.0f;
-    public float RunningSpeed = 7.0f;
+    public float PlayerSpeed = 4.0f;
+    public float RunningSpeed = 5.0f;
     public float JumpSpeed = 5.0f;
 
     [Header("Audio")]
@@ -152,13 +152,13 @@ public class Controller : MonoBehaviour
             }
 
             // Move around with WASD
-            move = new Vector3(-SimpleInput.GetAxis("Horizontal"), 0, -SimpleInput.GetAxisRaw("Vertical"));
+            move = new Vector3(SimpleInput.GetAxis("Horizontal"), 0, SimpleInput.GetAxisRaw("Vertical"));
             if (move.sqrMagnitude > 1.0f)
                 move.Normalize();
 
             float usedSpeed = m_Grounded ? actualSpeed : m_SpeedAtJump;
             
-            move = move * usedSpeed * Time.deltaTime;
+            move =move * usedSpeed * Time.deltaTime;
             
             move = transform.TransformDirection(move);
             m_CharacterController.Move(move);

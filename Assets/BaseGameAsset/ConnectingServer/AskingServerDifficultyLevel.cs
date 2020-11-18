@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class AskingServerDifficultyLevel: MonoBehaviour
 {
@@ -59,39 +60,51 @@ public class AskingServerDifficultyLevel: MonoBehaviour
         else
         {
             difficultyManager = GetComponent<DifficultyManager>();
+            PlayerPrefs.SetInt("DifficultyLevel", difficulty);
             difficultyManager.CalculateDifficultyLevel(difficulty);
         }
     }
 
     void SetManualDDA()
     {
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            return;
+        }
 
-        float DifficultyLevel;
+        int DifficultyLevel;
         if (PlayerPrefs.GetFloat("CurrentLevel") == 1)
         {
             difficultyManager = GetComponent<DifficultyManager>();
+            PlayerPrefs.SetInt("DifficultyLevel", 1);
             difficultyManager.CalculateDifficultyLevel(1);
 
 
         }
+
         else
         {
-            if (PlayerPrefs.GetFloat("Player_Flow") < 80)
+            if (PlayerPrefs.GetFloat("Player_Flow") > 90)
             {
-                DifficultyLevel = PlayerPrefs.GetFloat("CurrentLevel") + 1;
-                difficultyManager.CalculateDifficultyLevel((int)DifficultyLevel);
+                DifficultyLevel = PlayerPrefs.GetInt("DifficultyLevel") - 1;
+                difficultyManager = GetComponent<DifficultyManager>();
+                PlayerPrefs.SetInt("DifficultyLevel", DifficultyLevel);
+                difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
                 return;
             }
-            else if (PlayerPrefs.GetFloat("Player_Flow") > 95)
+            else if (PlayerPrefs.GetFloat("Player_Flow") < 65)
             {
-                DifficultyLevel = PlayerPrefs.GetFloat("CurrentLevel") - 1;
-                difficultyManager.CalculateDifficultyLevel((int)DifficultyLevel);
+                DifficultyLevel = PlayerPrefs.GetInt("DifficultyLevel") + 1;
+                difficultyManager = GetComponent<DifficultyManager>();
+                PlayerPrefs.SetInt("DifficultyLevel", DifficultyLevel);
+                difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
                 return;
             }
             
-            DifficultyLevel = PlayerPrefs.GetFloat("CurrentLevel");
+            DifficultyLevel = PlayerPrefs.GetInt("DifficultyLevel");
             DifficultyLevel= UnityEngine.Random.Range(DifficultyLevel - 1, DifficultyLevel + 1);
-            difficultyManager.CalculateDifficultyLevel((int)DifficultyLevel);
+            difficultyManager = GetComponent<DifficultyManager>();
+            difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
 
         }
     }

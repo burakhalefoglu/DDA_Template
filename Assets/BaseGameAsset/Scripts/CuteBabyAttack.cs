@@ -31,16 +31,16 @@ public class CuteBabyAttack : MonoBehaviour
        
             target = go.transform;
             myTransform = transform;
-        distance = Vector3.Distance(target.localPosition, myTransform.localPosition);
+        distance = Vector3.Distance(target.position, myTransform.position);
 
 
         if (distance < maxdistance && distance > 9f)
         {
             myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-                                               Quaternion.LookRotation(target.localPosition - myTransform.localPosition),
+                                               Quaternion.LookRotation(target.position - myTransform.position),
                                                rotationSpeed * Time.deltaTime);
 
-            myTransform.localPosition = Vector3.MoveTowards(transform.localPosition, target.transform.localPosition, FollowingStepCount);
+            myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
             boxCollider.enabled = false;
         }
 

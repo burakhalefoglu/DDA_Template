@@ -47,7 +47,6 @@ public class DataToScreen : MonoBehaviour
 
     void CalculateAllData()
     {
-        levelFinisher.CalculatePlayerFlow();
         levelFinisher.SetUserDatas();
 
 

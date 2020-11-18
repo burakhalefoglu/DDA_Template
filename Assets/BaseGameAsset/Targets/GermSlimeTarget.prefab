@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4453303853245738099}
   - component: {fileID: -4554144947687512553}
   m_Layer: 10
-  m_Name: GermSlimeTarget(Clone)
+  m_Name: GermSlimeTarget
   m_TagString: GermSlim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1a6b9a1bf9d004ea05d42728bfce21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxdistance: 100
+  maxdistance: 75
   rotationSpeed: 10
 --- !u!114 &4412177447532371625
 MonoBehaviour:

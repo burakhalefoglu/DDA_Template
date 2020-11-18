@@ -7,9 +7,6 @@ public class UI : MonoBehaviour
 {
 
 
-
-   
-
     public void ReturnMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -19,7 +16,7 @@ public class UI : MonoBehaviour
 
     public void StartLevel()
     {
-        SceneManager.LoadScene((int)PlayerPrefs.GetFloat("CurrentLevel"));
+        SceneManager.LoadScene("LoadingSceeneMM");
 
     }
 
@@ -28,16 +25,14 @@ public class UI : MonoBehaviour
 
     public void RestartLevel()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene("LoadingSceene");
-
-
-
+        PlayerPrefs.SetFloat("IsRestart", 1);
     }
 
     public void NextLevel()
     {
         SceneManager.LoadScene("LoadingSceene");
+        PlayerPrefs.SetFloat("IsRestart", 0);
 
     }
 

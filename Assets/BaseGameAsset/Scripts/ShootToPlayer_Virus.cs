@@ -11,7 +11,7 @@ public class ShootToPlayer_Virus : MonoBehaviour
     void Start()
     {
 
-        shootFrequencyTime_Virus = 5 - (5 * PlayerPrefs.GetFloat("DifficultyLevel") / 8);
+        shootFrequencyTime_Virus = Random.Range(3, 10);
        
     }
 
@@ -32,12 +32,9 @@ public class ShootToPlayer_Virus : MonoBehaviour
         {
             time = 0;
 
-            for (int i = 0; i < 10; i++ ){
-
                 Virusbullet.SetActive(true);
-                Virusbullet.transform.localPosition = this.gameObject.transform.localPosition;
+                Virusbullet.transform.position = this.gameObject.transform.position;
                 Virusbullet.tag = "CuteVirusBullet";
-            }
 
         }
 

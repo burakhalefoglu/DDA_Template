@@ -6,20 +6,20 @@ using UnityEngine;
 
 public class CalculatingDifficulty : MonoBehaviour, ICalculate
 {
-    public int CalculateEnemyCount(float DifficultyLevel, float IncreaseAmount, int DifficultyOneParameter)
+    public int CalculateEnemyCount(int DifficultyLevel, int IncreaseAmount, int DifficultyOneParameter)
     {
 
        int RanomizationCount = RandomizationCount(DifficultyLevel);
        float FloatDifficultyParamMedyan = DifficultyOneParameter + (IncreaseAmount * (DifficultyLevel - 1));
-       int DifficultyParamMedyan= (int)Math.Round(FloatDifficultyParamMedyan, MidpointRounding.AwayFromZero);
+       int DifficultyParamMedyan=(int)Math.Round(FloatDifficultyParamMedyan, MidpointRounding.AwayFromZero);
 
         return UnityEngine.Random.Range((int)(DifficultyParamMedyan - RanomizationCount), (int)(DifficultyParamMedyan + RanomizationCount));
 
     }
 
-    public float CalculateEnemysIncreaseAmount(float DifficultyOneCount, float DifficultyTenCount)
+    public int CalculateEnemysIncreaseAmount(int DifficultyOneCount, int DifficultyTenCount)
     {
-        float IncreaseAmount = (DifficultyTenCount - DifficultyOneCount) / 9;
+        int IncreaseAmount =(int)(DifficultyTenCount - DifficultyOneCount) / 9;
 
         return IncreaseAmount;
     }

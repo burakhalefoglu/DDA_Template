@@ -327,8 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
-  maxdistance: 100
-  FollowingStepCount: 0.5
+  maxdistance: 75
+  FollowingStepCount: 0.4
 --- !u!54 &9163487360391065675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -386,9 +386,9 @@ MonoBehaviour:
   pointValue: 3
   DestroyedEffect: {fileID: 198321120434662062, guid: 5656e7ea1f1a75d4c895547ec2b824b3,
     type: 3}
-  HitPlayer: {fileID: 8212324151211496083, guid: 547e1bb5b288bc14187ab3bdf87891f6,
+  HitPlayer: {fileID: 6344341013885922792, guid: 634009f96f347ed4798d7283b63506b9,
     type: 3}
-  IdleSource: {fileID: 2512953057398773005, guid: 547e1bb5b288bc14187ab3bdf87891f6,
+  IdleSource: {fileID: 7119717987110547321, guid: ef872522dd0acb646b322b64a5eac003,
     type: 3}
   UI: {fileID: 1800588774890888411}
   audioClips:

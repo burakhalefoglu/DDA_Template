@@ -31,10 +31,11 @@ public class Character : MonoBehaviour
     AudioSource [] audioData;
     GameObject DamageUi;
     Animator animatorController;
-    bool heartAttackStart=false;
+    bool heartAttackStart;
 
     private void Start()
     {
+
         PointValueObject = GameObject.FindGameObjectWithTag("PointValue");
         PointValue = PointValueObject.GetComponent<Text>();
         PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
@@ -55,6 +56,8 @@ public class Character : MonoBehaviour
 
         DamageUi = GameObject.FindGameObjectWithTag("DamageUi");
         animatorController = DamageUi.transform.GetChild(0).gameObject.GetComponent<Animator>();
+
+        heartAttackStart = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -208,8 +211,9 @@ public class Character : MonoBehaviour
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
         Time.timeScale = 0;
-
     }
+
+
     public float GetPlayerHealth()
     {
         return health;
@@ -229,16 +233,7 @@ public class Character : MonoBehaviour
 
     }
 
-    void IsKilled()
-    {
-        if (health > 0)
-        {
-            return;
-        }
-        IsDead = 0;
-        levelFinisher.SaveUserDataForLevelfinish(this.gameObject);
-        PauseGame();
-    }
+   
 
 
 
@@ -264,6 +259,7 @@ public class Character : MonoBehaviour
     {
         DamageUi = GameObject.FindGameObjectWithTag("DamageUi");
         animatorController = DamageUi.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        CalculatePlayerFlow();
 
         if (animatorController.GetBool("GetHit"))
         {
@@ -275,13 +271,18 @@ public class Character : MonoBehaviour
             }
         }
 
-        if (health < 20 && !heartAttackStart)
+        if (health < 30 && !heartAttackStart)
         {
             heartAttackStart = true;
             audioData[2].Play();
         }
     }
 
-
+    public void CalculatePlayerFlow()
+    {
+        float RemainHealth = GetPlayerHealth();
+        float flow = 100 - ((100 * RemainHealth) / firstHealth);
+        PlayerPrefs.SetFloat("Player_Flow", flow);
+    }
 
 }

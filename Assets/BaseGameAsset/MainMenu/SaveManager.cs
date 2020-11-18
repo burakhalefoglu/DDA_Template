@@ -22,12 +22,19 @@ public class SaveManager : MonoBehaviour
 
         SaveOtherParams();
         SaveLocationparams();
+        KeyGenerator();
         PlayerPrefs.Save();
        
 
     }
 
-
+    void KeyGenerator()
+    {
+        bool IsDevideId;
+        float DevideId = Random.Range(111111111, 999999999);
+        IsDevideId = PlayerPrefs.HasKey("GermSlime_Health");
+        CheckSaveSystemInt(IsDevideId, (int)DevideId, "DevideId");
+    }
 
     void CheckSaveSystemFloat(bool checkPrefs, float playerPrefKey, string playerPrefName )
     {
@@ -213,7 +220,7 @@ public class SaveManager : MonoBehaviour
         bool IsValidPoint;
 
         IsValidDifficultyLevelParam = PlayerPrefs.HasKey("DifficultyLevel");
-        CheckSaveSystemFloat(IsValidDifficultyLevelParam,1, "DifficultyLevel");
+        CheckSaveSystemInt(IsValidDifficultyLevelParam,1, "DifficultyLevel");
 
         IsValidLevelParam = PlayerPrefs.HasKey("CurrentLevel");
         CheckSaveSystemFloat(IsValidLevelParam, 1, "CurrentLevel");

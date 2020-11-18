@@ -115,7 +115,8 @@ public class Weapon : MonoBehaviour
     int reloadNameHash = Animator.StringToHash("reload");
 
     Controller PlayerComponent;
-
+    Animator CrosshairAttack;
+    WeaponState newState;
 
     void Awake()
     {
@@ -147,6 +148,7 @@ public class Weapon : MonoBehaviour
     {
         damage = PlayerPrefs.GetFloat("CharAttackDamage");
         PlayerComponent = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
+        CrosshairAttack = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<Animator>();
     }
 
     public void PickedUp(Controller c)
@@ -209,6 +211,7 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
+
         if (m_CurrentState != WeaponState.Idle || m_ShotTimer > 0 || m_ClipContent == 0)
             return;
         
@@ -232,6 +235,7 @@ public class Weapon : MonoBehaviour
         CameraShaker.Instance.Shake(0.2f, 0.05f * advancedSettings.screenShakeMultiplier);
     }
 
+    GameObject Blood;
     void RaycastShot()
     {
 
@@ -242,9 +246,9 @@ public class Weapon : MonoBehaviour
         
         RaycastHit hit;
         Ray r = Controller.Instance.MainCamera.ViewportPointToRay(Vector3.one * 0.5f + (Vector3)spread);
-        Vector3 hitPosition = r.origin + r.direction * 200.0f;
+        Vector3 hitPosition = r.origin + r.direction * 75.0f;
 
-        if (Physics.Raycast(r, out hit, 300.0f, ~(1 << 9), QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(r, out hit, 100.0f, ~(1 << 9), QueryTriggerInteraction.Ignore))
         {
 
             //Renderer renderer = hit.collider.GetComponentInChildren<Renderer>();
@@ -258,7 +262,11 @@ public class Weapon : MonoBehaviour
             //this is a target
             if (hit.collider.gameObject.layer == 10)
             {
-               
+                CrosshairAttack.SetBool("CrosshairAttack",true);
+
+                Blood = ObjectPooling.SharedInstance.GetPooledParticle();
+                Blood.SetActive(true);
+                Blood.transform.position = hit.point;
 
                 Fire();
                 hitcount++;
@@ -278,12 +286,18 @@ public class Weapon : MonoBehaviour
                         renderer = trail
                     });
                 }
+
+
             }
         }
 
-
-
     }
+
+    public void AttackFalseAnim()
+    {
+        CrosshairAttack.SetTrigger("CrosshairAttack");
+    }
+
     public float GetTotalHit()
     {
         return hitcount;
@@ -353,7 +367,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > .1f)
+        if (time > .05f && newState != WeaponState.Reloading)
         {
             ShootControl();
             time = 0;
@@ -410,7 +424,7 @@ public class Weapon : MonoBehaviour
         
         var info = m_Animator.GetCurrentAnimatorStateInfo(0);
 
-        WeaponState newState;
+       
         if (info.shortNameHash == fireNameHash)
             newState = WeaponState.Firing;
         else if (info.shortNameHash == reloadNameHash)

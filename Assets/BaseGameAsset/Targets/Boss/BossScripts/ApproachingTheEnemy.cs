@@ -24,6 +24,7 @@ public class ApproachingTheEnemy : MonoBehaviour
     Vector3 LastPose;
 
     ShootingBossFly shootingBossFly;
+    GameObject go;
 
     void Awake()
     {
@@ -33,20 +34,21 @@ public class ApproachingTheEnemy : MonoBehaviour
 
     void Start()
     {
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
+       go = GameObject.FindGameObjectWithTag("Player");
         shootingBossFly=GetComponent<ShootingBossFly>();
         LastPose = new Vector3();
-        target = go.transform;
+     
     }
 
     void Update()
     {
+        target = go.transform;
         timeFollow += Time.deltaTime;
         timeAttack += Time.deltaTime;
 
         TurnToPlayer();
 
-        if (CalculateDistiance() < MaxApproachDistance && timeAttack>3)
+        if (CalculateDistiance() < MaxApproachDistance && timeAttack>2)
         {
             timeAttack = 0;
             shootingBossFly.ShootPlayer();
@@ -81,7 +83,6 @@ public class ApproachingTheEnemy : MonoBehaviour
     }
     void follow()
     {
-        //Debug.DrawLine(target.position, myTransform.position, Color.red);
         if (Vector3.Distance(target.position, myTransform.position) < maxdistance)
         {
             LastPose= Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
@@ -94,7 +95,6 @@ public class ApproachingTheEnemy : MonoBehaviour
    float CalculateDistiance()
     {
         dist = Vector3.Distance(target.position, transform.position);
-        //Debug.Log(dist);
         return dist;
     }
 

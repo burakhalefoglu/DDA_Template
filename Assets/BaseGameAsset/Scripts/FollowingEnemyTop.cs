@@ -43,15 +43,15 @@ public class FollowingEnemyTop : MonoBehaviour
     void follow()
     {
 
-        float distance = Vector3.Distance(target.localPosition, myTransform.localPosition);
+        float distance = Vector3.Distance(target.position, myTransform.position);
         if (distance < maxdistance)
         {
             animator.SetBool("IsJump", true);
             myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-                                               Quaternion.LookRotation(target.localPosition - myTransform.localPosition),
+                                               Quaternion.LookRotation(target.position - myTransform.position),
                                                rotationSpeed * Time.deltaTime);
 
-            myTransform.localPosition = Vector3.MoveTowards(transform.localPosition, target.transform.localPosition, FollowingStepCount);
+            myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
 
         }
         else

@@ -18,7 +18,16 @@ public class LoadingScreen : MonoBehaviour
     public void ShowLoadingScreen()
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+        if (SceneManager.GetActiveScene().name == "LoadingSceene")
+        {
+            float Currentlevel = PlayerPrefs.GetFloat("CurrentLevel") + 1;
+            PlayerPrefs.SetFloat("CurrentLevel", Currentlevel);
+        }
+
+        PlayerPrefs.SetFloat("IsLocStart", 1);
         loadingOperation = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("CurrentLevel"));
+
 
 
     }
