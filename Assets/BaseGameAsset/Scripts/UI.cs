@@ -14,14 +14,6 @@ public class UI : MonoBehaviour
     }
 
 
-    public void StartLevel()
-    {
-        SceneManager.LoadScene("LoadingSceeneMM");
-
-    }
-
-
-
 
     public void RestartLevel()
     {
@@ -36,5 +28,16 @@ public class UI : MonoBehaviour
 
     }
 
+    public void StartLevel()
+    {
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().enabled = false;
+        StartCoroutine(DelaySceneLoad());
 
+    }
+
+    IEnumerator DelaySceneLoad()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("LoadingSceeneMM");
+    }
 }

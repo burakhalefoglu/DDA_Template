@@ -6,7 +6,6 @@ public class ButtonSound : MonoBehaviour
 {
 
     AudioSource audioSource;
-    public AudioClip MainMenuSound;
     GameObject Camera;
 
     void Start()
@@ -18,8 +17,6 @@ public class ButtonSound : MonoBehaviour
     public void MainMenuTabToScreen()
 
     {
-
-        audioSource.clip = MainMenuSound;
         audioSource.Play();
         Camera.GetComponent<AudioSource>().enabled = false;
     }
