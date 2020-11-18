@@ -13,12 +13,7 @@ public class TurnPlayer : MonoBehaviour
     Quaternion rotation;
     float distince;
     GameObject go;
-    void Awake()
-    {
-        myTransform = transform;
-    }
-
-
+ 
     void Start()
     {
         go = GameObject.FindGameObjectWithTag("Player");

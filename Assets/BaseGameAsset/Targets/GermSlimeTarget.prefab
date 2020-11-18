@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4412177447532371621}
   - component: {fileID: 4412177447532371622}
   - component: {fileID: 4412177447532371623}
-  - component: {fileID: 4412177447532371624}
   - component: {fileID: 4412177447532371625}
   - component: {fileID: 4453303853245738099}
   - component: {fileID: -4554144947687512553}
@@ -93,20 +92,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 44893a68cd8f54e47b539f656aa69a1c, type: 3}
   - {fileID: 8300000, guid: d1cba0b0d650a254fbb2096940806370, type: 3}
   - {fileID: 8300000, guid: c71e8a7fdb3821a40ae48dc78f8402ff, type: 3}
---- !u!114 &4412177447532371624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4412177447532371627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f1a6b9a1bf9d004ea05d42728bfce21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxdistance: 75
-  rotationSpeed: 10
 --- !u!114 &4412177447532371625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0601dd270f10ce94cba5558353b0fae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  FollowingStepCount: 0.4
   shootFrequencyTime: 1
 --- !u!82 &4453303853245738099
 AudioSource:

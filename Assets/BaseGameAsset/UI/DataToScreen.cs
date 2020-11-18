@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DataToScreen : MonoBehaviour
@@ -11,13 +12,15 @@ public class DataToScreen : MonoBehaviour
     [SerializeField]
     Text RemainingHealth;
     [SerializeField]
-    Text CharLevel;
-    [SerializeField]
     Text AttackSpeed;
     [SerializeField]
     Text HitRate;
     [SerializeField]
     Text FinishingTime;
+    [SerializeField]
+    Text Level;
+    [SerializeField]
+    Text PlayerFlow;
 
     float time;
 
@@ -54,8 +57,9 @@ public class DataToScreen : MonoBehaviour
 
     void ScreenToData()
     {
-        DifficultyLevel.text =PlayerPrefs.GetFloat("DifficultyLevel").ToString();
-        CharLevel.text = PlayerPrefs.GetFloat("CharLevel").ToString();
+        PlayerFlow.text = PlayerPrefs.GetFloat("Player_Flow").ToString();
+        Level.text = SceneManager.GetActiveScene().name;
+        DifficultyLevel.text =PlayerPrefs.GetInt("DifficultyLevel").ToString();
         RemainingHealth.text = gettingDatabaseParameters.RemainingHealth().ToString();
         AttackSpeed.text = gettingDatabaseParameters.AttackSpeed().ToString();
         HitRate.text = gettingDatabaseParameters.HitRate().ToString();

@@ -5,16 +5,24 @@ using UnityEngine;
 public class ShootToPlayer_GermSlim : MonoBehaviour
 {
 
-    GameObject Target;
+    private Transform myTransform;
+    private Transform target;
+    GameObject Player;
+
+    [SerializeField]
+    float rotationSpeed = 10;
+
+    [SerializeField]
+    float FollowingStepCount;
     [SerializeField]
     float shootFrequencyTime = 1;
     float time = 0;
-
+    float distance;
    
     void Start()
     {
-       
-        Target = GameObject.FindGameObjectWithTag("Player");
+        myTransform = this.gameObject.transform;
+        Player = GameObject.FindGameObjectWithTag("Player");
         shootFrequencyTime = Random.Range(5, 10);
 
     }
@@ -22,10 +30,38 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
 
     void Update()
     {
-        ShootPlayer();
+        target = Player.transform;
+
+        myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
+                                            Quaternion.LookRotation(target.position - myTransform.position),
+                                            rotationSpeed * Time.deltaTime);
+
+
+        distance = Vector3.Distance(target.position, myTransform.position);
+
+        if (distance > 10)
+        {
+            follow();
+        }
+
+
+        if (distance <= 10)
+        {
+            ShootPlayer();
+        }
+
+
     }
 
-  void ShootPlayer()
+    void follow()
+    {
+
+            myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
+
+    }
+    
+
+    void ShootPlayer()
     {
         time += Time.deltaTime;
         GameObject bullet = ObjectPooling.SharedInstance.GetPooledObject();

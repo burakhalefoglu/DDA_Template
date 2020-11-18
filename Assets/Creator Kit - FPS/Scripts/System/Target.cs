@@ -99,8 +99,10 @@ public class Target : MonoBehaviour
         //    effect.Play();
         //    effect.transform.position = position;
         //}
-
-        m_Destroyed = true;
+        if (this.gameObject.tag == "Blood")
+        {
+            Destroy(this.gameObject);
+        }
 
         gameObject.SetActive(false);
 

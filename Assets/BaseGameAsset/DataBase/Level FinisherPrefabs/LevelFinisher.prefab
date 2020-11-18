@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 6264694853527962362}
   - component: {fileID: 268020543144260484}
   m_Layer: 5
-  m_Name: CharLevel
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 1862014470189136285}
   - component: {fileID: 7362229123576525616}
   m_Layer: 5
-  m_Name: CharLevel
+  m_Name: CurrentLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Char Level
+  m_Text: Current Level
 --- !u!1 &2914535492246809849
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +975,7 @@ Transform:
   m_GameObject: {fileID: 5754785654214378077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 133, y: 0, z: -137}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5000006, y: 1.5, z: 1.5000006}
   m_Children:
   - {fileID: 5754785653143365038}
   - {fileID: 5754785652441486460}
@@ -1022,10 +1022,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DifficultyLevel: {fileID: 7566175408527618544}
   RemainingHealth: {fileID: 1170937145533748031}
-  CharLevel: {fileID: 268020543144260484}
   AttackSpeed: {fileID: 7447431589181453188}
   HitRate: {fileID: 2315545593106638650}
   FinishingTime: {fileID: 5677060581408721036}
+  Level: {fileID: 268020543144260484}
+  PlayerFlow: {fileID: 2100118322645138907}
 --- !u!114 &8317074403548137850
 MonoBehaviour:
   m_ObjectHideFlags: 0
