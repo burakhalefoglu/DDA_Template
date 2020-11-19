@@ -10,7 +10,7 @@ public class StreamingLevel : MonoBehaviour
     GameObject child;
     float time = 0;
 
-    float MaxDist =150;
+    float MaxDist =200;
     float childcount;
     void Start()
     {

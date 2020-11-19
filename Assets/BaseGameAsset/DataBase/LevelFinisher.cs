@@ -49,6 +49,7 @@ public class LevelFinisher : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            PlayerPrefs.SetInt("IsDead", 0);
             SaveUserDataForLevelfinish(other.gameObject);
             PauseGame();
         }

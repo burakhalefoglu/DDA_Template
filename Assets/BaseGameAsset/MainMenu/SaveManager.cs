@@ -188,7 +188,9 @@ public class SaveManager : MonoBehaviour
         bool IsValidPlayer_PillCount;
         bool IsValidPlayer_CharLevel;
         bool IsValidPlayer_Flow;
-        bool IsCharAttackDamage;
+        bool IsValidPlayer_IsCharAttackDamage;
+        bool IsValidPlayer_IsDead;
+
 
         IsValidPlayer_Health = PlayerPrefs.HasKey("Player_Health");
         CheckSaveSystemFloat(IsValidPlayer_Health, 100, "Player_Health");
@@ -208,9 +210,12 @@ public class SaveManager : MonoBehaviour
         IsValidPlayer_CharLevel = PlayerPrefs.HasKey("CharLevel");
         CheckSaveSystemFloat(IsValidPlayer_CharLevel, 1, "CharLevel");
 
-        IsCharAttackDamage = PlayerPrefs.HasKey("CharAttackDamage");
-        CheckSaveSystemFloat(IsCharAttackDamage, 1, "CharAttackDamage");
-        
+        IsValidPlayer_IsCharAttackDamage = PlayerPrefs.HasKey("CharAttackDamage");
+        CheckSaveSystemFloat(IsValidPlayer_IsCharAttackDamage, 1, "CharAttackDamage");
+
+        IsValidPlayer_IsDead = PlayerPrefs.HasKey("IsDead");
+        CheckSaveSystemInt(IsValidPlayer_IsDead, 0, "IsDead");
+
     }
 
     void SaveOtherParams()

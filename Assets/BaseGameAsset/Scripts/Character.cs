@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     float GermSpike = 5;
     float NewHealthRate = 1;
     float Point;
-    float IsDead=0;
+    int IsDead=0;
     float EnemyTopAttackCount = 1;
     float time;
 
@@ -135,6 +135,7 @@ public class Character : MonoBehaviour
         {
             audioData[1].Play();
             IsDead = 1;
+            PlayerPrefs.SetInt("IsDead", IsDead);
             PauseGame();
         }
        
@@ -192,6 +193,7 @@ public class Character : MonoBehaviour
         {
             audioData[1].Play();
             IsDead = 1;
+            PlayerPrefs.SetInt("IsDead", IsDead);
             PauseGame();
         }
 
@@ -227,7 +229,7 @@ public class Character : MonoBehaviour
         return controller.GetTotalHit();
 
     }
-    public float GetPlayerDeadInformation()
+    public int GetPlayerDeadInformation()
     {
         return IsDead;
 

@@ -16,10 +16,9 @@ public class KeySpawner : MonoBehaviour
     private void Update()
     {
 
-        if (target.GetCurrentHealth() <= 1 && !IsSpawned)
+        if (target.GetCurrentHealth() <= 5 && !IsSpawned)
         {
             SpawnKey();
-            IsSpawned = true;
         }
     }
 
@@ -27,7 +26,8 @@ public class KeySpawner : MonoBehaviour
 
     void SpawnKey()
     {
-        Instantiate(Key, transform.position, transform.rotation);
-
+        Vector3 SpawnPos = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+        Instantiate(Key, SpawnPos, transform.rotation);
+        IsSpawned = true;
     }
 }

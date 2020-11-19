@@ -48,7 +48,7 @@ public class ApproachingTheEnemy : MonoBehaviour
 
         TurnToPlayer();
 
-        if (CalculateDistiance() < MaxApproachDistance && timeAttack>2)
+        if (CalculateDistiance() < MaxApproachDistance*2 && timeAttack>2)
         {
             timeAttack = 0;
             shootingBossFly.ShootPlayer();

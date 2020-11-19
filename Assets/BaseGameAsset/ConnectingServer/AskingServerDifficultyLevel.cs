@@ -85,7 +85,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
        
         else
         {
-            if (PlayerPrefs.GetFloat("Player_Flow") > 90)
+            if (PlayerPrefs.GetFloat("Player_Flow") > 95)
             {
                 if (PlayerPrefs.GetInt("DifficultyLevel") <= 1)
                 {
@@ -99,7 +99,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
                 return;
             }
 
-            else if (PlayerPrefs.GetFloat("Player_Flow") < 75 && PlayerPrefs.GetFloat("Player_Flow") > 65)
+            else if (PlayerPrefs.GetFloat("Player_Flow") < 75 && PlayerPrefs.GetFloat("Player_Flow") > 50)
             {
                 if (PlayerPrefs.GetInt("DifficultyLevel") >=10)
                 {
@@ -112,7 +112,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
                 difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
                 return;
             }
-            else if (PlayerPrefs.GetFloat("Player_Flow") <= 65)
+            else if (PlayerPrefs.GetFloat("Player_Flow") <= 50)
             {
                 if (PlayerPrefs.GetInt("DifficultyLevel") >= 10)
                 {

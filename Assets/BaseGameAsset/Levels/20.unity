@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.5
+  m_AmbientIntensity: 0.7
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: c7446a045c26b55479b33911b32fb74d, type: 2}
@@ -2288,6 +2288,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5114749761028554077, guid: c92208caf1c9eb74fac36d64b54bc59d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114749761028554077, guid: c92208caf1c9eb74fac36d64b54bc59d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 219.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114749761028554077, guid: c92208caf1c9eb74fac36d64b54bc59d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6279085710785752403, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2323,6 +2338,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 128.7
       objectReference: {fileID: 0}
+    - target: {fileID: 6382186508760272635, guid: c92208caf1c9eb74fac36d64b54bc59d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6810588261608069867, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: Boss
@@ -2332,32 +2352,32 @@ PrefabInstance:
     - target: {fileID: 6810588261608069868, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: m_Size.x
-      value: 31.600107
+      value: 77.35853
       objectReference: {fileID: 0}
     - target: {fileID: 6810588261608069868, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: m_Size.y
-      value: 33.9395
+      value: 57.03865
       objectReference: {fileID: 0}
     - target: {fileID: 6810588261608069868, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: m_Size.z
-      value: 7.264005
+      value: 14.866588
       objectReference: {fileID: 0}
     - target: {fileID: 6810588261608069868, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: m_Center.x
-      value: -42.358
+      value: -38.851315
       objectReference: {fileID: 0}
     - target: {fileID: 6810588261608069868, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: m_Center.y
-      value: -10.34751
+      value: -11.64935
       objectReference: {fileID: 0}
     - target: {fileID: 6810588261608069868, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}
       propertyPath: m_Center.z
-      value: 130.05115
+      value: 138.93452
       objectReference: {fileID: 0}
     - target: {fileID: 6810588261608069869, guid: c92208caf1c9eb74fac36d64b54bc59d,
         type: 3}

@@ -18,7 +18,8 @@ public class KeyWork : MonoBehaviour
         if (charistrigger)
         {
             boxCollider.enabled = true;
-            Destroy(this.gameObject);
+            GetComponent<AudioSource>().Play();
+            Destroy(this.gameObject,1f);
         }
     }
 }

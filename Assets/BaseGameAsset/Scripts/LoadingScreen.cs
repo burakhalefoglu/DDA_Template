@@ -21,8 +21,12 @@ public class LoadingScreen : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "LoadingSceene")
         {
-            float Currentlevel = PlayerPrefs.GetFloat("CurrentLevel") + 1;
-            PlayerPrefs.SetFloat("CurrentLevel", Currentlevel);
+            if (PlayerPrefs.GetInt("IsDead") == 0)
+            {
+                float Currentlevel = PlayerPrefs.GetFloat("CurrentLevel") + 1;
+                PlayerPrefs.SetFloat("CurrentLevel", Currentlevel);
+            }
+            
         }
 
         PlayerPrefs.SetFloat("IsLocStart", 1);
