@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     int IsDead=0;
     float EnemyTopAttackCount = 1;
     float time;
+    int ClosestCheckPointIndex = 0;
 
     GameObject PointValueObject;
     GameObject PauseMenu;
@@ -58,6 +59,8 @@ public class Character : MonoBehaviour
         animatorController = DamageUi.transform.GetChild(0).gameObject.GetComponent<Animator>();
 
         heartAttackStart = false;
+        StartCoroutine(RotateChar());
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -130,16 +133,6 @@ public class Character : MonoBehaviour
             animatorController.SetBool("GetHit", true);
 
         }
-
-        if (health <= 0)
-        {
-            audioData[1].Play();
-            IsDead = 1;
-            PlayerPrefs.SetInt("IsDead", IsDead);
-            PauseGame();
-        }
-       
-
     }
 
 
@@ -188,16 +181,6 @@ public class Character : MonoBehaviour
             animatorController.SetBool("GetHit", true);
 
         }
-
-        if (health <= 0)
-        {
-            audioData[1].Play();
-            IsDead = 1;
-            PlayerPrefs.SetInt("IsDead", IsDead);
-            PauseGame();
-        }
-
-
 
     }
 
@@ -278,6 +261,15 @@ public class Character : MonoBehaviour
             heartAttackStart = true;
             audioData[2].Play();
         }
+
+        if (health <= 0 && IsDead==0)
+        {
+            audioData[1].Play();
+            IsDead = 1;
+            PlayerPrefs.SetInt("IsDead", IsDead);
+            PauseGame();
+        }
+
     }
 
     public void CalculatePlayerFlow()
@@ -285,6 +277,39 @@ public class Character : MonoBehaviour
         float RemainHealth = GetPlayerHealth();
         float flow = 100 - ((100 * RemainHealth) / firstHealth);
         PlayerPrefs.SetFloat("Player_Flow", flow);
+    }
+
+
+
+    IEnumerator RotateChar()
+    {
+        yield return new WaitForSeconds(.1f);
+        GameObject[] Checkpoint = GameObject.FindGameObjectsWithTag("CheckPoint");
+        float Dist = 0;
+        float temp = 0 ;
+        Quaternion LastRot;
+
+        for(int i=0; i < Checkpoint.Length; i++)
+        {
+            temp = Vector3.Distance(Checkpoint[i].transform.position, transform.position);
+
+            if (i == 0)
+            {
+                
+                Dist = temp;
+            }
+            else if (temp < Dist)
+            {
+
+                Dist = temp;
+                ClosestCheckPointIndex = i;
+
+            }
+            
+        }
+
+        LastRot = Quaternion.LookRotation(Checkpoint[ClosestCheckPointIndex].transform.position - transform.position);
+        transform.rotation = new Quaternion(transform.rotation.x, LastRot.y + 90, transform.rotation.z, 1);
     }
 
 }

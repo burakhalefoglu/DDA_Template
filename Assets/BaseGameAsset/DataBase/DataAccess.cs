@@ -4,18 +4,18 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using UnityEngine;
-
+using System.Text;
 
 public class DataAccess : MonoBehaviour
 {
     GettingDatabaseParameters gettingDatabaseParameters;
     SqlConnection conn;
+
     void Awake()
     {
+        var encoding = Encoding.GetEncoding("UTF-8");
         gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
-        conn = new SqlConnection("Server=tcp:appneurondb.database.windows.net,1433;Initial Catalog=appneuron;Persist Security Info=False;User ID=burak;Password=Developer123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-
-            /* ("Data Source=20.73.17.141; Initial Catalog=appneuron; User Id=Emre; password=123456;");*/
+        conn = new SqlConnection("Server=tcp:appneurondb.database.windows.net, 1433;Initial Catalog=appneuron;Persist Security Info=False;User ID=burak;Password=Developer123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
     }
 

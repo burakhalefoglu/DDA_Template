@@ -236,6 +236,7 @@ public class Weapon : MonoBehaviour
     }
 
     GameObject Blood;
+    Target target;
     void RaycastShot()
     {
 
@@ -248,7 +249,7 @@ public class Weapon : MonoBehaviour
         Ray r = Controller.Instance.MainCamera.ViewportPointToRay(Vector3.one * 0.5f + (Vector3)spread);
         Vector3 hitPosition = r.origin + r.direction * 75.0f;
 
-        if (Physics.Raycast(r, out hit, 100.0f, ~(1 << 9), QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(r, out hit, 100.0f))
         {
 
             //Renderer renderer = hit.collider.GetComponentInChildren<Renderer>();
@@ -261,7 +262,16 @@ public class Weapon : MonoBehaviour
             
             //this is a target
             if (hit.collider.gameObject.layer == 10)
+
             {
+
+                if (!hit.collider.gameObject.activeSelf)
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                    return;
+                }
+
+
                 CrosshairAttack.SetBool("CrosshairAttack",true);
 
                 Blood = ObjectPooling.SharedInstance.GetPooledParticle();
@@ -270,7 +280,7 @@ public class Weapon : MonoBehaviour
 
                 Fire();
                 hitcount++;
-                Target target = hit.collider.gameObject.GetComponent<Target>();
+                target = hit.collider.gameObject.GetComponent<Target>();
                 target.Got(damage);
 
                 if (PrefabRayTrail != null)
@@ -286,7 +296,6 @@ public class Weapon : MonoBehaviour
                         renderer = trail
                     });
                 }
-
 
             }
         }

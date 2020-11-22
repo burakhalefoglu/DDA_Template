@@ -168,6 +168,7 @@ public class GettingDifficultySettings : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+
             setVisibility(currentlevel);
             CalculateDesisity(currentlevel);
             PlayerPrefs.SetFloat("IsLocStart", 0);

@@ -62,7 +62,7 @@ namespace SimpleInputNamespace
 
 			if( isDynamicJoystick )
 			{
-				opacity = 0f;
+				//opacity = 0f;
 				thumb.raycastTarget = false;
 
 				OnUpdate();
@@ -181,10 +181,10 @@ namespace SimpleInputNamespace
 			if( !isDynamicJoystick )
 				return;
 
-			if( joystickHeld )
-				opacity = Mathf.Min( 1f, opacity + Time.unscaledDeltaTime * 4f );
-			else
-				opacity = Mathf.Max( 0f, opacity - Time.unscaledDeltaTime * 4f );
+			//if( joystickHeld )
+			//	opacity = Mathf.Min( 1f, opacity + Time.unscaledDeltaTime * 4f );
+			//else
+			//	opacity = Mathf.Max( 0f, opacity - Time.unscaledDeltaTime * 4f );
 
 			Color c = thumb.color;
 			c.a = opacity;

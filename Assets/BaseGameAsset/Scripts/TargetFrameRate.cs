@@ -6,7 +6,7 @@ public class TargetFrameRate : MonoBehaviour
 {
     private void Awake()
     {
-       //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         Application.targetFrameRate = 30;
     }
 

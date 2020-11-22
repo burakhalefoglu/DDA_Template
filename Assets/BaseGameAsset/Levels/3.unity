@@ -604,6 +604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leev1-4 TargetSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3152272095904482762, guid: 1f82e0094aca405409ff34c0c33676d5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3152272095904482763, guid: 1f82e0094aca405409ff34c0c33676d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,21 +859,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61dbda100fe90c640b51664d33515203, type: 3}
---- !u!1 &8282374083125580587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8282374082799064842, guid: 61dbda100fe90c640b51664d33515203,
-    type: 3}
-  m_PrefabInstance: {fileID: 8282374083125580586}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8282374083125580588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8282374083125580587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcdf8812313e9e2499c756725e8823e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
