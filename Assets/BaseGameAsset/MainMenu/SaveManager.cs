@@ -71,7 +71,7 @@ public class SaveManager : MonoBehaviour
         CheckSaveSystemFloat(IsValidVirus_Health, 10, "Virus_Health");
 
         IsValidVirus_Attack = PlayerPrefs.HasKey("Virus_Attack");
-        CheckSaveSystemFloat(IsValidVirus_Attack, 5, "Virus_Attack");
+        CheckSaveSystemFloat(IsValidVirus_Attack, 4, "Virus_Attack");
 
         IsValidVırus_Density = PlayerPrefs.HasKey("Vırus_Density");
         CheckSaveSystemInt(IsValidVırus_Density, 1, "Vırus_Density");
@@ -89,11 +89,12 @@ public class SaveManager : MonoBehaviour
         bool IsValidGermSlime_Density;
         bool IsValidGermSlime_Level;
 
+
         IsValidGermSlime_Health = PlayerPrefs.HasKey("GermSlime_Health");
         CheckSaveSystemFloat(IsValidGermSlime_Health, 10, "GermSlime_Health");
 
         IsValidGermSlime_Attack = PlayerPrefs.HasKey("GermSlime_Attack");
-        CheckSaveSystemFloat(IsValidGermSlime_Attack, 10, "GermSlime_Attack");
+        CheckSaveSystemFloat(IsValidGermSlime_Attack, 5, "GermSlime_Attack");
 
         IsValidGermSlime_Density = PlayerPrefs.HasKey("GermSlime_Density");
         CheckSaveSystemInt(IsValidGermSlime_Density, 1, "GermSlime_Density");
