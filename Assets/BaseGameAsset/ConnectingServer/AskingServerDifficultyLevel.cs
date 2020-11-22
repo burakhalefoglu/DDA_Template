@@ -61,23 +61,27 @@ public class AskingServerDifficultyLevel: MonoBehaviour
         {
             difficultyManager = GetComponent<DifficultyManager>();
             PlayerPrefs.SetInt("DifficultyLevel", difficulty);
-            difficultyManager.CalculateDifficultyLevel(difficulty);
+            difficultyManager.CalculateDifficultyLevel();
         }
     }
 
-    void SetManualDDA()
+
+
+
+    public  void SetManualDDA()
     {
-        if(SceneManager.GetActiveScene().name == "MainMenu")
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
             return;
         }
 
         int DifficultyLevel;
-        if (PlayerPrefs.GetFloat("CurrentLevel") == 1)
+        if (PlayerPrefs.GetFloat("CurrentLevel") == 1f)
         {
             difficultyManager = GetComponent<DifficultyManager>();
             PlayerPrefs.SetInt("DifficultyLevel", 1);
-            difficultyManager.CalculateDifficultyLevel(1);
+            difficultyManager.CalculateDifficultyLevel();
 
 
         }
@@ -95,7 +99,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
                 DifficultyLevel = PlayerPrefs.GetInt("DifficultyLevel") - 1;
                 difficultyManager = GetComponent<DifficultyManager>();
                 PlayerPrefs.SetInt("DifficultyLevel", DifficultyLevel);
-                difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
+                difficultyManager.CalculateDifficultyLevel();
                 return;
             }
 
@@ -103,14 +107,16 @@ public class AskingServerDifficultyLevel: MonoBehaviour
             {
                 if (PlayerPrefs.GetInt("DifficultyLevel") >=10)
                 {
+
                     return;
                 }
 
                 DifficultyLevel = PlayerPrefs.GetInt("DifficultyLevel") + 1;
                 difficultyManager = GetComponent<DifficultyManager>();
                 PlayerPrefs.SetInt("DifficultyLevel", DifficultyLevel);
-                difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
+                difficultyManager.CalculateDifficultyLevel();
                 return;
+
             }
             else if (PlayerPrefs.GetFloat("Player_Flow") <= 50)
             {
@@ -122,7 +128,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
                 DifficultyLevel = PlayerPrefs.GetInt("DifficultyLevel") + 2;
                 difficultyManager = GetComponent<DifficultyManager>();
                 PlayerPrefs.SetInt("DifficultyLevel", DifficultyLevel);
-                difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
+                difficultyManager.CalculateDifficultyLevel();
                 return;
             }
 
@@ -134,8 +140,32 @@ public class AskingServerDifficultyLevel: MonoBehaviour
             DifficultyLevel = PlayerPrefs.GetInt("DifficultyLevel");
             DifficultyLevel= UnityEngine.Random.Range(DifficultyLevel - 1, DifficultyLevel + 1);
             difficultyManager = GetComponent<DifficultyManager>();
-            difficultyManager.CalculateDifficultyLevel(DifficultyLevel);
+            difficultyManager.CalculateDifficultyLevel();
+
 
         }
+
     }
+
+
+
+   //public void tempDebugScreen()
+   // {
+   //     Debug.Log("DifficultyLevel" + ":  " + PlayerPrefs.GetInt("DifficultyLevel"));
+   //     Debug.Log("CurrentLevel" + ":  " + PlayerPrefs.GetFloat("CurrentLevel"));
+
+
+   //     Debug.Log("EnemyTop" + ":  " + PlayerPrefs.GetInt("EnemyTop_Density"));
+   //     Debug.Log("HelloKitty_Density" + ":  " + PlayerPrefs.GetInt("HelloKitty_Density"));
+   //     Debug.Log("CuteBaby_Density" + ":  " + PlayerPrefs.GetInt("CuteBaby_Density"));
+   //     Debug.Log("GermSlime_Density" + ":  " + PlayerPrefs.GetInt("GermSlime_Density"));
+   //     Debug.Log("Vırus_Density" + ":  " + PlayerPrefs.GetInt("Vırus_Density"));
+
+
+   //     Debug.Log("CuteMushy_Density" + ":  " + PlayerPrefs.GetInt("CuteMushy_Density"));
+   //     Debug.Log("CuteBacterium_Density" + ":  " + PlayerPrefs.GetInt("CuteBacterium_Density"));
+   //     Debug.Log("GermSpike_Density" + ":  " + PlayerPrefs.GetInt("GermSpike_Density"));
+
+   // }
+
 }

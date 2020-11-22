@@ -24,9 +24,10 @@ public class LevelFinisher : MonoBehaviour
     Text FinalTimeCount;
     Text FinalScoreCount;
     Text CharLevel;
+    AudioSource audioSource;
 
 
-   
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -41,7 +42,7 @@ public class LevelFinisher : MonoBehaviour
         PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         GameUI = GameObject.FindGameObjectWithTag("GameUI");
         MobileInput = GameObject.FindGameObjectWithTag("MobileInput");
-
+        audioSource = GetComponent<AudioSource>();
 
 
     }
@@ -52,6 +53,7 @@ public class LevelFinisher : MonoBehaviour
             PlayerPrefs.SetInt("IsDead", 0);
             SaveUserDataForLevelfinish(other.gameObject);
             PauseGame();
+
         }
     }
     private void PauseGame()
@@ -61,6 +63,7 @@ public class LevelFinisher : MonoBehaviour
 
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
+        audioSource.Play();
         Time.timeScale = 0;
     }
 

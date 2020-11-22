@@ -11,7 +11,7 @@ public class CuteBabyAttack : MonoBehaviour
 
     float maxdistance = 30;
     float FollowingStepCount = 0.01f;
-    float time = 3;
+    float time = 3.1f;
     float timeToCollision = 0;
     float distance;
     BoxCollider boxCollider;
@@ -31,7 +31,7 @@ public class CuteBabyAttack : MonoBehaviour
        
             target = go.transform;
             myTransform = transform;
-        distance = Vector3.Distance(target.position, myTransform.position);
+            distance = Vector3.Distance(target.position, myTransform.position);
 
 
         if (distance < maxdistance && distance > 9f)

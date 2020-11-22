@@ -37,31 +37,33 @@ public class DifficultyManager : MonoBehaviour
         };
 
 
-        int CuteBacteriumIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelOne.CuteBacteriumDifficultyOne,
+        float CuteBacteriumIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelOne.CuteBacteriumDifficultyOne,
                                                                                                 difficultyParametersCharLevelOne.CuteBacteriumDifficultyTen);
 
-        int CuteMushyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelOne.CuteMushyDifficultyOne,
+        float CuteMushyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelOne.CuteMushyDifficultyOne,
                                                                                                difficultyParametersCharLevelOne.CuteMushyDifficultyTen);
 
 
-        int GermSpikeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelOne.GermSpikeDifficultyOne,
+        float GermSpikeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelOne.GermSpikeDifficultyOne,
                                                                                                            difficultyParametersCharLevelOne.GermSpikeDifficultyTen);
 
 
 
         int CuteBacteriumCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteBacteriumIncreaseAmount, difficultyParametersCharLevelOne.CuteBacteriumDifficultyOne);
-        PlayerPrefs.SetFloat("CuteBacterium_Density", CuteBacteriumCount);
+        PlayerPrefs.SetInt("CuteBacterium_Density", CuteBacteriumCount);
 
         int CuteMushyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteMushyIncreaseAmount, difficultyParametersCharLevelOne.CuteMushyDifficultyOne);
-        PlayerPrefs.SetFloat("CuteMushy_Density", CuteMushyCount);
+        PlayerPrefs.SetInt("CuteMushy_Density", CuteMushyCount);
 
         int GermSpikeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSpikeIncreaseAmount, difficultyParametersCharLevelOne.GermSpikeDifficultyOne);
-        PlayerPrefs.SetFloat("GermSpike_Density", GermSpikeCount);
+        PlayerPrefs.SetInt("GermSpike_Density", GermSpikeCount);
+
 
     }
 
     void CharLeveTwo()
     {
+
         difficultyParametersCharLevelTwo = new DifficultyParameters()
         {
             CuteBacteriumDifficultyOne = 4,
@@ -79,31 +81,31 @@ public class DifficultyManager : MonoBehaviour
         };
 
 
-        int CuteBacteriumIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.CuteBacteriumDifficultyOne,
+        float CuteBacteriumIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.CuteBacteriumDifficultyOne,
                                                                                                 difficultyParametersCharLevelTwo.CuteBacteriumDifficultyTen);
 
-        int CuteMushyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.CuteMushyDifficultyOne,
+        float CuteMushyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.CuteMushyDifficultyOne,
                                                                                                difficultyParametersCharLevelTwo.CuteMushyDifficultyTen);
 
 
-        int GermSpikeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.GermSpikeDifficultyOne,
+        float GermSpikeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.GermSpikeDifficultyOne,
                                                                                                            difficultyParametersCharLevelTwo.GermSpikeDifficultyTen);
 
-        int GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.GermSlimeDifficultyOne,
+        float GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelTwo.GermSlimeDifficultyOne,
                                                                                                    difficultyParametersCharLevelTwo.GermSlimeDifficultyTen);
 
 
         int CuteBacteriumCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteBacteriumIncreaseAmount, difficultyParametersCharLevelTwo.CuteBacteriumDifficultyOne);
-        PlayerPrefs.SetFloat("CuteBacterium_Density", CuteBacteriumCount);
+        PlayerPrefs.SetInt("CuteBacterium_Density", CuteBacteriumCount);
 
         int CuteMushyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteMushyIncreaseAmount, difficultyParametersCharLevelTwo.CuteMushyDifficultyOne);
-        PlayerPrefs.SetFloat("CuteMushy_Density", CuteMushyCount);
+        PlayerPrefs.SetInt("CuteMushy_Density", CuteMushyCount);
 
         int GermSpikeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSpikeIncreaseAmount, difficultyParametersCharLevelTwo.GermSpikeDifficultyOne);
-        PlayerPrefs.SetFloat("GermSpike_Density", GermSpikeCount);
+        PlayerPrefs.SetInt("GermSpike_Density", GermSpikeCount);
 
         int GermSlimeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSlimeIncreaseAmount, difficultyParametersCharLevelTwo.GermSlimeDifficultyOne);
-        PlayerPrefs.SetFloat("GermSlime_Density", GermSlimeCount);
+        PlayerPrefs.SetInt("GermSlime_Density", GermSlimeCount);
 
         int GermSlimeLevel = difficultyParametersCharLevelTwo.GermSlimeLevel;
         PlayerPrefs.SetFloat("GermSlime_Level", GermSlimeLevel);
@@ -134,38 +136,38 @@ public class DifficultyManager : MonoBehaviour
         };
 
 
-        int HelloKittyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.CuteBacteriumDifficultyOne,
+        float HelloKittyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.CuteBacteriumDifficultyOne,
                                                                                                 difficultyParametersCharLevelThree.CuteBacteriumDifficultyTen);
 
-        int EnemyTop_DensityAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.CuteMushyDifficultyOne,
+        float EnemyTop_DensityAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.CuteMushyDifficultyOne,
                                                                                                difficultyParametersCharLevelThree.CuteMushyDifficultyTen);
 
 
-        int CuteBabyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.GermSpikeDifficultyOne,
+        float CuteBabyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.GermSpikeDifficultyOne,
                                                                                                            difficultyParametersCharLevelThree.GermSpikeDifficultyTen);
 
-        int GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.GermSlimeDifficultyOne,
+        float GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.GermSlimeDifficultyOne,
                                                                                                    difficultyParametersCharLevelThree.GermSlimeDifficultyTen);
 
-        int CuteVirusIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.CuteVirusDifficultyOne,
+        float CuteVirusIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelThree.CuteVirusDifficultyOne,
                                                                                                difficultyParametersCharLevelThree.CuteVirusDifficultyTen);
 
 
 
         int HelloKittyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), HelloKittyIncreaseAmount, difficultyParametersCharLevelThree.CuteBacteriumDifficultyOne);
-        PlayerPrefs.SetFloat("HelloKitty_Density", HelloKittyCount);
+        PlayerPrefs.SetInt("HelloKitty_Density", HelloKittyCount);
 
         int EnemyTop_DensityCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), EnemyTop_DensityAmount, difficultyParametersCharLevelThree.CuteMushyDifficultyOne);
-        PlayerPrefs.SetFloat("EnemyTop_Density", EnemyTop_DensityCount);
+        PlayerPrefs.SetInt("EnemyTop_Density", EnemyTop_DensityCount);
 
         int CuteBabyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteBabyIncreaseAmount, difficultyParametersCharLevelThree.GermSpikeDifficultyOne);
-        PlayerPrefs.SetFloat("CuteBaby_Density", CuteBabyCount);
+        PlayerPrefs.SetInt("CuteBaby_Density", CuteBabyCount);
 
         int GermSlimeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSlimeIncreaseAmount, difficultyParametersCharLevelThree.GermSlimeDifficultyOne);
-        PlayerPrefs.SetFloat("GermSlime_Density", GermSlimeCount);
+        PlayerPrefs.SetInt("GermSlime_Density", GermSlimeCount);
 
         int CuteVirusCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteVirusIncreaseAmount, difficultyParametersCharLevelThree.CuteVirusDifficultyOne);
-        PlayerPrefs.SetFloat("Vırus_Density", CuteVirusCount);
+        PlayerPrefs.SetInt("Vırus_Density", CuteVirusCount);
 
         int GermSlimeLevel = difficultyParametersCharLevelThree.GermSlimeLevel;
         PlayerPrefs.SetFloat("GermSlime_Level", GermSlimeLevel);
@@ -203,38 +205,38 @@ public class DifficultyManager : MonoBehaviour
         };
 
 
-        int HelloKittyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.CuteBacteriumDifficultyOne,
+        float HelloKittyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.CuteBacteriumDifficultyOne,
                                                                                                 difficultyParametersCharLevelFour.CuteBacteriumDifficultyTen);
 
-        int EnemyTop_DensityAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.CuteMushyDifficultyOne,
+        float EnemyTop_DensityAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.CuteMushyDifficultyOne,
                                                                                                       difficultyParametersCharLevelFour.CuteMushyDifficultyTen);
 
 
-        int CuteBabyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.GermSpikeDifficultyOne,
+        float CuteBabyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.GermSpikeDifficultyOne,
                                                                                                          difficultyParametersCharLevelFour.GermSpikeDifficultyTen);
 
-        int GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.GermSlimeDifficultyOne,
+        float GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.GermSlimeDifficultyOne,
                                                                                                    difficultyParametersCharLevelFour.GermSlimeDifficultyTen);
 
-        int CuteVirusIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.CuteVirusDifficultyOne,
+        float CuteVirusIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFour.CuteVirusDifficultyOne,
                                                                                                difficultyParametersCharLevelFour.CuteVirusDifficultyTen);
 
 
 
         int HelloKittyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), HelloKittyIncreaseAmount, difficultyParametersCharLevelFour.CuteBacteriumDifficultyOne);
-        PlayerPrefs.SetFloat("HelloKitty_Density", HelloKittyCount);
+        PlayerPrefs.SetInt("HelloKitty_Density", HelloKittyCount);
 
         int EnemyTop_DensityCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), EnemyTop_DensityAmount, difficultyParametersCharLevelFour.CuteMushyDifficultyOne);
-        PlayerPrefs.SetFloat("EnemyTop_Density", EnemyTop_DensityCount);
+        PlayerPrefs.SetInt("EnemyTop_Density", EnemyTop_DensityCount);
 
         int CuteBabyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteBabyIncreaseAmount, difficultyParametersCharLevelFour.GermSpikeDifficultyOne);
-        PlayerPrefs.SetFloat("CuteBaby_Density", CuteBabyCount);
+        PlayerPrefs.SetInt("CuteBaby_Density", CuteBabyCount);
 
         int GermSlimeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSlimeIncreaseAmount, difficultyParametersCharLevelFour.GermSlimeDifficultyOne);
-        PlayerPrefs.SetFloat("GermSlime_Density", GermSlimeCount);
+        PlayerPrefs.SetInt("GermSlime_Density", GermSlimeCount);
 
         int CuteVirusCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteVirusIncreaseAmount, difficultyParametersCharLevelFour.CuteVirusDifficultyOne);
-        PlayerPrefs.SetFloat("Vırus_Density", CuteVirusCount);
+        PlayerPrefs.SetInt("Vırus_Density", CuteVirusCount);
 
         int GermSlimeLevel = difficultyParametersCharLevelFour.GermSlimeLevel;
         PlayerPrefs.SetFloat("GermSlime_Level", GermSlimeLevel);
@@ -260,7 +262,7 @@ public class DifficultyManager : MonoBehaviour
             GermSlimeDifficultyTen = 17,
 
             CuteVirusDifficultyOne = 1,
-            CuteVirusDifficultyTen = 144,
+            CuteVirusDifficultyTen = 17,
 
             GermSlimeLevel = 2,
             CuteVirusLevel = 2,
@@ -271,37 +273,37 @@ public class DifficultyManager : MonoBehaviour
         };
 
 
-        int HelloKittyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.CuteBacteriumDifficultyOne,
+        float HelloKittyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.CuteBacteriumDifficultyOne,
                                                                                                difficultyParametersCharLevelFive.CuteBacteriumDifficultyTen);
 
-        int EnemyTop_DensityAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.CuteMushyDifficultyOne,
+        float EnemyTop_DensityAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.CuteMushyDifficultyOne,
                                                                                                          difficultyParametersCharLevelFive.CuteMushyDifficultyTen);
 
-        int CuteBabyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.GermSpikeDifficultyOne,
+        float CuteBabyIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.GermSpikeDifficultyOne,
                                                                                                          difficultyParametersCharLevelFive.GermSpikeDifficultyTen);
 
-        int GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.GermSlimeDifficultyOne,
+        float GermSlimeIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.GermSlimeDifficultyOne,
                                                                                                    difficultyParametersCharLevelFive.GermSlimeDifficultyTen);
 
-        int CuteVirusIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.CuteVirusDifficultyOne,
+        float CuteVirusIncreaseAmount = calculatingDifficulty.CalculateEnemysIncreaseAmount(difficultyParametersCharLevelFive.CuteVirusDifficultyOne,
                                                                                                difficultyParametersCharLevelFive.CuteVirusDifficultyTen);
 
 
 
         int HelloKittyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), HelloKittyIncreaseAmount, difficultyParametersCharLevelFive.CuteBacteriumDifficultyOne);
-        PlayerPrefs.SetFloat("HelloKitty_Density", HelloKittyCount);
+        PlayerPrefs.SetInt("HelloKitty_Density", HelloKittyCount);
 
         int EnemyTop_DensityCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), EnemyTop_DensityAmount, difficultyParametersCharLevelFive.CuteMushyDifficultyOne);
-        PlayerPrefs.SetFloat("EnemyTop_Density", EnemyTop_DensityCount);
+        PlayerPrefs.SetInt("EnemyTop_Density", EnemyTop_DensityCount);
 
         int CuteBabyCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteBabyIncreaseAmount, difficultyParametersCharLevelFive.GermSpikeDifficultyOne);
-        PlayerPrefs.SetFloat("CuteBaby_Density", CuteBabyCount);
+        PlayerPrefs.SetInt("CuteBaby_Density", CuteBabyCount);
 
         int GermSlimeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSlimeIncreaseAmount, difficultyParametersCharLevelFive.GermSlimeDifficultyOne);
-        PlayerPrefs.SetFloat("GermSlime_Density", GermSlimeCount);
+        PlayerPrefs.SetInt("GermSlime_Density", GermSlimeCount);
 
         int CuteVirusCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), CuteVirusIncreaseAmount, difficultyParametersCharLevelFive.CuteVirusDifficultyOne);
-        PlayerPrefs.SetFloat("Vırus_Density", CuteVirusCount);
+        PlayerPrefs.SetInt("Vırus_Density", CuteVirusCount);
 
         int GermSlimeLevel = difficultyParametersCharLevelFive.GermSlimeLevel;
         PlayerPrefs.SetFloat("GermSlime_Level", GermSlimeLevel);
@@ -310,9 +312,9 @@ public class DifficultyManager : MonoBehaviour
         PlayerPrefs.SetFloat("Vırus_Level", CuteVirusLevel);
     }
 
-    public void CalculateDifficultyLevel(int DifficultyLevel)
+    public void CalculateDifficultyLevel()
     {
-
+        Debug.Log("buraya girdi amk...");
         switch (PlayerPrefs.GetFloat("CharLevel"))
         {
 

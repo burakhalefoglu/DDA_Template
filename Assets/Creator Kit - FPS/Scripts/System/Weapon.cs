@@ -376,7 +376,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > .05f && newState != WeaponState.Reloading)
+        if (time > .02f && newState != WeaponState.Reloading)
         {
             ShootControl();
             time = 0;

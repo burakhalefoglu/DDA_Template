@@ -9,8 +9,8 @@ namespace Assets.Creator_Kit___FPS.Scenes.BurakÇalışma.GameDifficulty.Paramat
     interface ICalculate
     {
 
-        int CalculateEnemysIncreaseAmount(int DifficultyOneCount, int DifficultyTenCount);
-        int CalculateEnemyCount(int DifficultyLevel, int IncreaseAmount, int DifficultyOneParameter);
+        float CalculateEnemysIncreaseAmount(int DifficultyOneCount, int DifficultyTenCount);
+        int CalculateEnemyCount(int DifficultyLevel, float IncreaseAmount, int DifficultyOneParameter);
     }
 
 

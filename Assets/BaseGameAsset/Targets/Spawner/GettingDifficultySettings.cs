@@ -11,7 +11,7 @@ public class GettingDifficultySettings : MonoBehaviour
     {
       
         currentlevel = SceneManager.GetActiveScene().buildIndex;
-
+        Debug.Log("Level" + currentlevel);
     }
 
     
@@ -31,8 +31,11 @@ public class GettingDifficultySettings : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
                 this.gameObject.transform.GetChild(i).gameObject.SetActive(true);
+
         }
     }
+
+
 
 
 
@@ -46,24 +49,24 @@ public class GettingDifficultySettings : MonoBehaviour
                 switch (i)
                 {
                     case 0:
-                        childcount= childcount - PlayerPrefs.GetFloat("CuteMushy_Density");
+                        childcount= PlayerPrefs.GetInt("CuteMushy_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                             break;
                     case 1:
-                        childcount = childcount - PlayerPrefs.GetFloat("CuteBacterium_Density");
+                        childcount = PlayerPrefs.GetInt("CuteBacterium_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                         break;
                     case 2:
-                        childcount = childcount - PlayerPrefs.GetFloat("GermSpike_Density");
+                        childcount = PlayerPrefs.GetInt("GermSpike_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                         break;
                 }
@@ -78,32 +81,32 @@ public class GettingDifficultySettings : MonoBehaviour
                     switch (i)
                     {
                         case 0:
-                            childcount = childcount - PlayerPrefs.GetFloat("CuteMushy_Density");
+                            childcount = PlayerPrefs.GetInt("CuteMushy_Density");
                             for (int j = 0; j < childcount; j++)
                             {
-                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                             }
                             break;
                         case 1:
-                            childcount = childcount - PlayerPrefs.GetFloat("CuteBacterium_Density");
+                            childcount = PlayerPrefs.GetInt("CuteBacterium_Density");
                             for (int j = 0; j < childcount; j++)
                             {
-                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                             }
                             break;
                         case 2:
-                            childcount = childcount - PlayerPrefs.GetFloat("GermSpike_Density");
+                            childcount = PlayerPrefs.GetInt("GermSpike_Density");
                             for (int j = 0; j < childcount; j++)
                             {
-                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                                this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                             }
                             break;
 
                        case 3:
-                                childcount = childcount - PlayerPrefs.GetFloat("GermSlime_Density");
+                                childcount = PlayerPrefs.GetInt("GermSlime_Density");
                                 for (int j = 0; j < childcount; j++)
                                 {
-                                    this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                                    this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                                 }
                                 break;
                     }
@@ -120,39 +123,39 @@ public class GettingDifficultySettings : MonoBehaviour
                 switch (i)
                 {
                     case 0:
-                        childcount = childcount - PlayerPrefs.GetFloat("EnemyTop_Density");
+                        childcount = PlayerPrefs.GetInt("EnemyTop_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                         break;
                     case 1:
-                        childcount = childcount - PlayerPrefs.GetFloat("HelloKitty_Density");
+                        childcount = PlayerPrefs.GetInt("HelloKitty_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                         break;
                     case 2:
-                        childcount = childcount - PlayerPrefs.GetFloat("CuteBaby_Density");
+                        childcount = PlayerPrefs.GetInt("CuteBaby_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                         break;
 
                     case 3:
-                        childcount = childcount - PlayerPrefs.GetFloat("GermSlime_Density");
+                        childcount = PlayerPrefs.GetInt("GermSlime_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                         break;
                     case 4:
-                        childcount = childcount - PlayerPrefs.GetFloat("Vırus_Density");
+                        childcount = PlayerPrefs.GetInt("Vırus_Density");
                         for (int j = 0; j < childcount; j++)
                         {
-                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(false);
+                            this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                         }
                         break;
                 }

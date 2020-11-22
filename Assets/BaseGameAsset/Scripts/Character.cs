@@ -256,7 +256,7 @@ public class Character : MonoBehaviour
             }
         }
 
-        if (health < 30 && !heartAttackStart)
+        if (health < firstHealth/2 && !heartAttackStart)
         {
             heartAttackStart = true;
             audioData[2].Play();
@@ -298,6 +298,7 @@ public class Character : MonoBehaviour
                 
                 Dist = temp;
             }
+
             else if (temp < Dist)
             {
 

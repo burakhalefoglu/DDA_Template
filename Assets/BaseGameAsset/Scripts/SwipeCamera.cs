@@ -56,7 +56,7 @@ public class SwipeCamera : MonoBehaviour
             yAngle = yAngleTemp + (SecondPoint.y - FirstPoint.y) * 90 / Screen.height;
             ClampAngel = -yAngle;
             ClampAngel = Mathf.Clamp(ClampAngel, -60, 60);
-            rotationClamp = Quaternion.Euler(ClampAngel, xAngle, 5f);
+            rotationClamp = Quaternion.Euler(ClampAngel, xAngle, 4.5f);
 
 
             this.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, rotationClamp.eulerAngles.y, transform.rotation.eulerAngles.z);
