@@ -70,15 +70,15 @@ public class Character : MonoBehaviour
 
         if (other.gameObject.tag == "GermSlimeBullet" && health > 0)
         {
-            health -= PlayerPrefs.GetFloat("GermSlime_Attack");
-            CalculateHealthBar(PlayerPrefs.GetFloat("GermSlime_Attack"));
+            health -= 1;
+            CalculateHealthBar(1);
             audioData[0].Play();
             animatorController.SetBool("GetHit", true);
         }
         else if (other.gameObject.tag == "CuteVirusBullet" && health > 0)
         {
-            health -= PlayerPrefs.GetFloat("Virus_Attack")/2;
-            CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack")/2);
+            health -= PlayerPrefs.GetFloat("Virus_Attack")/4;
+            CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack")/4);
             audioData[0].Play();
             animatorController.SetBool("GetHit", true);
 
@@ -86,7 +86,7 @@ public class Character : MonoBehaviour
         else if (other.gameObject.tag == "BossVirusBullet" && health > 0)
         {
             health -= PlayerPrefs.GetFloat("Virus_Attack")*2;
-            CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") * 2);
+            CalculateHealthBar(PlayerPrefs.GetFloat("Virus_Attack") *2);
             audioData[0].Play();
             animatorController.SetBool("GetHit", true);
 

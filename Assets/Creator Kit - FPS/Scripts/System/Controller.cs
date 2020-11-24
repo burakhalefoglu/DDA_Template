@@ -100,14 +100,32 @@ public class Controller : MonoBehaviour
     }
 
     bool Isjump=false;
+    float footsteptime=0.3f;
     void Update()
     {
-        
-       
+
+        if (transform.hasChanged)
+        {
+            footsteptime -= Time.deltaTime;
+            transform.hasChanged = false;
+            Debug.Log("Yesss its move");
+        }
+        else
+        {
+            footsteptime = 0.3f;
+        }
+
+        if (footsteptime <= 0)
+        {
+            footsteptime = 0.3f;
+            PlayFootstep();
+        }
 
         bool wasGrounded = m_Grounded;
         bool loosedGrounding = false;
+
         
+
         //we define our own grounded and not use the Character controller one as the character controller can flicker
         //between grounded/not grounded on small step and the like. So we actually make the controller "not grounded" only
         //if the character controller reported not being grounded for at least .5 second;
@@ -127,6 +145,7 @@ public class Controller : MonoBehaviour
         {
             m_GroundedTimer = 0.0f;
             m_Grounded = true;
+
         }
 
         Speed = 0;
@@ -153,6 +172,7 @@ public class Controller : MonoBehaviour
 
             // Move around with WASD
             move = new Vector3(SimpleInput.GetAxis("Horizontal"), 0, SimpleInput.GetAxisRaw("Vertical"));
+
             if (move.sqrMagnitude > 1.0f)
                 move.Normalize();
 

@@ -27,6 +27,10 @@ public class LevelFinisher : MonoBehaviour
     AudioSource audioSource;
 
 
+    private void Awake()
+    {
+        charLevelRaising.UpdateCharLevel();
+    }
 
     private void Start()
     {
@@ -43,6 +47,7 @@ public class LevelFinisher : MonoBehaviour
         GameUI = GameObject.FindGameObjectWithTag("GameUI");
         MobileInput = GameObject.FindGameObjectWithTag("MobileInput");
         audioSource = GetComponent<AudioSource>();
+
 
 
     }
@@ -75,8 +80,6 @@ public class LevelFinisher : MonoBehaviour
         CalculatePoint();
 
         ShowFinishUi();
-
-        charLevelRaising.UpdateCharLevel();
 
         CalculateFinisUiValue();
 
