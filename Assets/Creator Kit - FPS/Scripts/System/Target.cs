@@ -31,7 +31,7 @@ public class Target : MonoBehaviour
 
     void Awake()
     {
-        Helpers.RecursiveLayerChange(transform, LayerMask.NameToLayer("Target"));
+      //  Helpers.RecursiveLayerChange(transform, LayerMask.NameToLayer("Target"));
         HealthBarPoint = 1;
 
     }

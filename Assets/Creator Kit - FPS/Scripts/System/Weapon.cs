@@ -264,10 +264,10 @@ public class Weapon : MonoBehaviour
             if (hit.collider.gameObject.layer == 10)
 
             {
+                Debug.Log(hit.collider.gameObject.name);
 
                 if (!hit.collider.gameObject.activeSelf)
                 {
-                    Debug.Log(hit.collider.gameObject.name);
                     return;
                 }
 
@@ -281,8 +281,6 @@ public class Weapon : MonoBehaviour
                 Fire();
                 hitcount++;
                 target = hit.collider.gameObject.GetComponent<Target>();
-                target.Got(damage);
-
                 if (PrefabRayTrail != null)
                 {
                     var pos = new Vector3[] { GetCorrectedMuzzlePlace(), hitPosition };
@@ -296,6 +294,13 @@ public class Weapon : MonoBehaviour
                         renderer = trail
                     });
                 }
+
+                if(hit.collider.gameObject.tag== "VirusDefence")
+                {
+                    return;
+                }
+
+                target.Got(damage);
 
             }
         }

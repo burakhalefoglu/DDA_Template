@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class ShootToPlayer_Virus : MonoBehaviour
 {
-    float shootFrequencyTime_Virus = 10;
-    float time = 0;
 
-    private Transform myTransform;
-    private Transform target;
     GameObject Player;
 
     [SerializeField]
@@ -17,62 +13,102 @@ public class ShootToPlayer_Virus : MonoBehaviour
     [SerializeField]
     float FollowingStepCount;
     float distance;
+    float time = 0;
+
+    Animator animator;
+    GameObject [] CuteVirusBullet;
 
     void Start()
     {
-        myTransform = this.gameObject.transform;
         Player = GameObject.FindGameObjectWithTag("Player");
-        shootFrequencyTime_Virus = Random.Range(3, 10);
-       
+        animator = GetComponent<Animator>();
+        CuteVirusBullet = GameObject.FindGameObjectsWithTag("CuteVirusBullet");
     }
 
 
     void Update()
     {
-        target = Player.transform;
-        myTransform.rotation = Quaternion.Slerp(myTransform.rotation,
-                                         Quaternion.LookRotation(target.position - myTransform.position),
-                                         rotationSpeed * Time.deltaTime);
+      
+        transform.rotation = Quaternion.Slerp(transform.rotation,
+                                                Quaternion.LookRotation(Player.transform.position - transform.position),
+                                                rotationSpeed * Time.deltaTime);
 
-        distance = Vector3.Distance(target.position, myTransform.position);
 
-        if (distance > 10)
+
+
+        distance = Vector3.Distance(Player.transform.position, transform.position);
+        if (distance > 60f)
         {
-            follow();
+            if (animator.GetBool("attackfollow") == true)
+            {
+                animator.SetBool("attackfollow", false);
+                animator.SetBool("attack", false);
+
+            }
+        }
+
+
+        if (distance > 5 && distance < 60f)
+        {
+            time += Time.deltaTime;
+            if (time <= 3f)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, FollowingStepCount);
+            }
+            else if (time > 3f && time<5f)
+            {
+                if (animator.GetBool("attackfollow") == true)
+                {
+                    animator.SetBool("attackfollow", false);
+                    animator.SetBool("attack", false);
+
+                }
+                this.gameObject.transform.GetChild(5).gameObject.SetActive(true);
+            }
+            else if (time > 5f)
+            {
+                time = 0;
+                this.gameObject.transform.GetChild(5).gameObject.SetActive(false);
+                if (animator.GetBool("attackfollow") == false)
+                {
+                    animator.SetBool("attackfollow", true);
+                    animator.SetBool("attack", false);
+                }
+
+            }
+
         }
 
 
         if (distance <= 10)
         {
-            ShootPlayer();
+            if (animator.GetBool("attack") == false)
+            {
+                animator.SetBool("attack", true);
+
+            }
+           
         }
 
 
     }
 
-    void ShootPlayer()
-    {
-        time += Time.deltaTime;
-        GameObject Virusbullet = ObjectPooling.SharedInstance.GetPooledVirusBullet();
 
-        if (time > shootFrequencyTime_Virus)
+    public void AttackStart()
+    {
+        for(int i =0; i< CuteVirusBullet.Length; i++)
         {
-            time = 0;
-
-                Virusbullet.SetActive(true);
-                Virusbullet.transform.position = this.gameObject.transform.position;
-                Virusbullet.tag = "CuteVirusBullet";
-
+            CuteVirusBullet[i].GetComponent<BoxCollider>().enabled = true;
         }
-
-       
     }
 
-    void follow()
+
+    public void AttackStop()
     {
-
-        myTransform.position = Vector3.MoveTowards(transform.position, target.transform.position, FollowingStepCount);
-
+        for (int i = 0; i < CuteVirusBullet.Length; i++)
+        {
+            CuteVirusBullet[i].GetComponent<BoxCollider>().enabled = false;
+        }
     }
 
 }

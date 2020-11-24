@@ -1,51 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
-using System.Data;
-using System.Data.SqlClient;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using UnityEngine;
-using System.Text;
 
 public class DataAccess : MonoBehaviour
 {
     GettingDatabaseParameters gettingDatabaseParameters;
-    SqlConnection conn;
+    MySqlConnection conn;
 
-    void Awake()
+    void Start()
     {
-        var encoding = Encoding.GetEncoding("UTF-8");
         gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
-        conn = new SqlConnection("Server=tcp:appneurondb.database.windows.net, 1433;Initial Catalog=appneuron;Persist Security Info=False;User ID=burak;Password=Developer123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
+        string server = "35.240.51.25";
+        string database = "test1";
+        string uid = "root";
+        string password = "Developer123";
+        string connectionString;
+
+        connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+        database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+        conn = new MySqlConnection(connectionString);
+        conn.Open();
+
 
     }
-
     public void verileriekle()
     {
+        MySqlCommand cmd = new MySqlCommand();
+        cmd.Connection = conn;
 
+        cmd.CommandText = "INSERT INTO users (devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel)" +
+                          " VALUES (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
 
-
-        using (var cmd = conn.CreateCommand())
-        {
-            cmd.CommandText = @"INSERT INTO users (devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel)
-                                VALUES (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
-
-            cmd.Parameters.AddWithValue("@devideid", PlayerPrefs.GetInt("DevideId"));
-            cmd.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
-            cmd.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
-            cmd.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
-            cmd.Parameters.AddWithValue("@isdead", gettingDatabaseParameters.IsDead());
-            cmd.Parameters.AddWithValue("@finishingtime", gettingDatabaseParameters.FinishingTime());
-            cmd.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetInt("DifficultyLevel"));
-            cmd.Parameters.AddWithValue("@currentlevel", PlayerPrefs.GetFloat("CurrentLevel"));
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-
-        }
-
-
+        cmd.Parameters.AddWithValue("@devideid", PlayerPrefs.GetInt("DevideId"));
+        cmd.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
+        cmd.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
+        cmd.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
+        cmd.Parameters.AddWithValue("@isdead", gettingDatabaseParameters.IsDead());
+        cmd.Parameters.AddWithValue("@finishingtime", gettingDatabaseParameters.FinishingTime());
+        cmd.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetInt("DifficultyLevel"));
+        cmd.Parameters.AddWithValue("@currentlevel", PlayerPrefs.GetFloat("CurrentLevel"));
+        cmd.ExecuteNonQuery();
+        cmd.Connection.Close();
+        Debug.Log("Done.");
     }
-
 
 
 }
