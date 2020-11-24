@@ -22,7 +22,7 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
     {
         myTransform = this.gameObject.transform;
         Player = GameObject.FindGameObjectWithTag("Player");
-        shootFrequencyTime = Random.Range(2, 7);
+        shootFrequencyTime = Random.Range(5,9);
 
     }
 

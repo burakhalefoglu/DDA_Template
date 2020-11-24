@@ -27,19 +27,18 @@ public class LevelFinisher : MonoBehaviour
     AudioSource audioSource;
 
 
-    private void Awake()
-    {
-        charLevelRaising.UpdateCharLevel();
-    }
 
     private void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player");
         character = player.GetComponent<Character>();
         boxCollider = this.gameObject.GetComponent<BoxCollider>();
         boxCollider.enabled = false;
 
         charLevelRaising = GetComponent<CharLevelRaising>();
+        charLevelRaising.UpdateCharLevel();
+
         listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
         character = player.GetComponent<Character>();
         dataAccess = this.gameObject.transform.GetChild(0).gameObject.GetComponent<DataAccess>();
@@ -134,6 +133,9 @@ public class LevelFinisher : MonoBehaviour
 
     public void SetUserDatas()
     {
+        listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
+        character = player.GetComponent<Character>();
+
         listeninCharBehavior.SetPlayerFinishHealth((int)character.GetPlayerHealth());
         listeninCharBehavior.SetPlayerTotalAttackCount((int)character.GetTotalAttack());
         listeninCharBehavior.SetPlayerTotalOnHit((int)character.GetTotalHit());

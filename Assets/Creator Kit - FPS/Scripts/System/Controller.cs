@@ -108,7 +108,7 @@ public class Controller : MonoBehaviour
         {
             footsteptime -= Time.deltaTime;
             transform.hasChanged = false;
-            Debug.Log("Yesss its move");
+
         }
         else
         {

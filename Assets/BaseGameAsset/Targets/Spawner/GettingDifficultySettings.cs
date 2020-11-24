@@ -11,7 +11,7 @@ public class GettingDifficultySettings : MonoBehaviour
     {
       
         currentlevel = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("Level" + currentlevel);
+
     }
 
     

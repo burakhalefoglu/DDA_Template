@@ -264,7 +264,7 @@ public class Weapon : MonoBehaviour
             if (hit.collider.gameObject.layer == 10)
 
             {
-                Debug.Log(hit.collider.gameObject.name);
+
 
                 if (!hit.collider.gameObject.activeSelf)
                 {
@@ -381,7 +381,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > .02f && newState != WeaponState.Reloading)
+        if (time > .1f && newState != WeaponState.Reloading)
         {
             ShootControl();
             time = 0;
