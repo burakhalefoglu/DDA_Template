@@ -10,7 +10,7 @@ public class FollowingEnemyTop : MonoBehaviour
     float rotationSpeed = 10;
 
     float maxdistance = 30;
-    float FollowingStepCount = 0.01f;
+    float FollowingStepCount = 0.03f;
 
     Animator animator;
 

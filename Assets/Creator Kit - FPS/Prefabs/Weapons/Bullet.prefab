@@ -12,15 +12,15 @@ GameObject:
   - component: {fileID: 1831887140511974925}
   - component: {fileID: 1831887140511974924}
   - component: {fileID: 1831887140511974920}
-  - component: {fileID: -8813587130420471372}
   - component: {fileID: 149149989}
-  m_Layer: 0
+  - component: {fileID: 7020001784575192830}
+  m_Layer: 10
   m_Name: Bullet
-  m_TagString: BossFlyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1831887140511974926
 Transform:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1831887140511974914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.4180455, y: 2.69, z: 37.921154}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,19 +98,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-8813587130420471372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831887140511974914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269dabe41dcafdf42bbc04cfcf047169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 20
 --- !u!135 &149149989
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -124,3 +111,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7020001784575192830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831887140511974914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbe12cd1b5e60049a676dec11bb16bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 20

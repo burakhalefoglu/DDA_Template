@@ -9,7 +9,7 @@ public class CuteBabyAttack : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    float maxdistance = 30;
+    float maxdistance = 20 ;
     float FollowingStepCount = 0.01f;
     float time = 3.1f;
     float timeToCollision = 0;

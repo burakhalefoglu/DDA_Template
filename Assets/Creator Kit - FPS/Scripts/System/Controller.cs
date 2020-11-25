@@ -112,12 +112,12 @@ public class Controller : MonoBehaviour
         }
         else
         {
-            footsteptime = 0.3f;
+            footsteptime = 0.5f;
         }
 
         if (footsteptime <= 0)
         {
-            footsteptime = 0.3f;
+            footsteptime = 0.5f;
             PlayFootstep();
         }
 

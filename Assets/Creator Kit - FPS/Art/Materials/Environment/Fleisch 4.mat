@@ -25,13 +25,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlbedoRamp1:
-        m_Texture: {fileID: 28014604174422466, guid: 7bee0602b861eb642a1d9d625f133427,
-          type: 2}
+        m_Texture: {fileID: 2800000, guid: 5579b63f9c00f8c44a13b016ceda685e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlbedoRamp2:
-        m_Texture: {fileID: 28014604174422466, guid: 7bee0602b861eb642a1d9d625f133427,
-          type: 2}
+        m_Texture: {fileID: 2800000, guid: 5579b63f9c00f8c44a13b016ceda685e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -102,9 +100,9 @@ Material:
     - _DstBlend: 0
     - _EdgeLength: 50
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0.695
     - _GlossyReflections: 1
-    - _Metallic: 0.27
+    - _Metallic: 0.228
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02

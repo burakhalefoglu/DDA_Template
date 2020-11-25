@@ -15,7 +15,7 @@ public class DataAccess : MonoBehaviour
         gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
 
         string server = "35.240.51.25";
-        string database = "test1";
+        string database = "appneuron";
         string uid = "root";
         string password = "Developer123";
         string connectionString;

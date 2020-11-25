@@ -48,7 +48,7 @@ public class ShootToPlayer_Virus : MonoBehaviour
         }
 
 
-        if (distance > 5 && distance < 60f)
+        if (distance > 4f && distance < 60f)
         {
             time += Time.deltaTime;
             if (time <= 3f)
@@ -80,7 +80,7 @@ public class ShootToPlayer_Virus : MonoBehaviour
         }
 
 
-        if (distance <= 10)
+        if (distance <= 4)
         {
             if (animator.GetBool("attack") == false)
             {

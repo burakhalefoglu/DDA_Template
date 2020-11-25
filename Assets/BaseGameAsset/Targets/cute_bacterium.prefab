@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 5536430946127005817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.251774, y: 2.72, z: 45.57127}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 250, y: 250, z: 250}
   m_Children:
   - {fileID: 3099211411265960749}
   m_Father: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
-  maxdistance: 75
+  maxdistance: 30
   FollowingStepCount: 0.4
 --- !u!114 &5536430946127005823
 MonoBehaviour:
