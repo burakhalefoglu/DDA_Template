@@ -19,13 +19,13 @@ public class CharLevelRaising : MonoBehaviour
             PlayerPrefs.SetFloat("CharLevel", 3);
 
         }
-        else if ((SceneManager.GetActiveScene().name) == "14")
+        else if ((SceneManager.GetActiveScene().name) == "11")
         {
             UpdateWork(200, 2f);
             PlayerPrefs.SetFloat("CharLevel", 4);
 
         }
-        else if ((SceneManager.GetActiveScene().name) == "18")
+        else if ((SceneManager.GetActiveScene().name) == "13")
         {
             UpdateWork(250, 2.5f);
             PlayerPrefs.SetFloat("CharLevel", 5);

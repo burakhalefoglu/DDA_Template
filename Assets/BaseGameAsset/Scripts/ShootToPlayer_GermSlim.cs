@@ -22,7 +22,7 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
     {
         myTransform = this.gameObject.transform;
         Player = GameObject.FindGameObjectWithTag("Player");
-        shootFrequencyTime = Random.Range(5,9);
+        shootFrequencyTime = Random.Range(1,3);
 
     }
 
@@ -38,13 +38,13 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
 
         distance = Vector3.Distance(target.position, myTransform.position);
 
-        if (distance > 10)
+        if (distance > 6)
         {
             follow();
         }
 
 
-        if (distance <= 10)
+        if (distance <= 12)
         {
             ShootPlayer();
         }

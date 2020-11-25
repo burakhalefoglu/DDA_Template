@@ -128,16 +128,16 @@ public class Target : MonoBehaviour
 
         if (tag == "Virus")
         {
-            return PlayerPrefs.GetFloat("Virus_Health");
+            return PlayerPrefs.GetFloat("Virus_Health")*2;
         }
         else if (tag == "GermSlim")
         {
-            return PlayerPrefs.GetFloat("GermSlime_Health");
+            return PlayerPrefs.GetFloat("GermSlime_Health")*2;
 
         }
         else if (tag == "GermSpike")
         {
-            return PlayerPrefs.GetFloat("GermSpike_Health");
+            return PlayerPrefs.GetFloat("GermSpike_Health")*2;
 
         }
         else if (tag == "BloodGuard")
@@ -179,12 +179,12 @@ public class Target : MonoBehaviour
 
         else if (tag == "CuteBaby")
         {
-            return 2;
+            return 4;
 
         }
         else
         {
-            return 1.0f;
+            return 2.0f;
         }
     }
 

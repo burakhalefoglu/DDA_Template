@@ -17,17 +17,17 @@ public class GettingDifficultySettings : MonoBehaviour
     
     void setVisibility(int currentlevel)
     {
-        if (currentlevel > 0 && currentlevel < 5)
+        if (currentlevel > 0 && currentlevel <= 3)
         {
             for (int i = 0; i < 3; i++)
                 this.gameObject.transform.GetChild(i).gameObject.SetActive(true);
         }
-        else if (currentlevel > 4 && currentlevel < 9)
+        else if (currentlevel > 3 && currentlevel <= 6)
         {
             for (int i = 0; i < 4; i++)
                 this.gameObject.transform.GetChild(i).gameObject.SetActive(true);
         }
-        else
+        else if(currentlevel>6)
         {
             for (int i = 0; i < 5; i++)
                 this.gameObject.transform.GetChild(i).gameObject.SetActive(true);
@@ -41,7 +41,7 @@ public class GettingDifficultySettings : MonoBehaviour
 
     void CalculateDesisity(int currentlevel)
     {
-        if (currentlevel > 0 && currentlevel < 5)
+        if (currentlevel > 0 && currentlevel <= 5)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -73,7 +73,7 @@ public class GettingDifficultySettings : MonoBehaviour
             }
                 
         }
-        else if (currentlevel > 4 && currentlevel < 9)
+        else if (currentlevel > 5 && currentlevel <= 8)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -115,7 +115,7 @@ public class GettingDifficultySettings : MonoBehaviour
                 
         }
 
-        else
+        else if (currentlevel > 8)
         {
             for (int i = 0; i < 5; i++)
             {
