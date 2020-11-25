@@ -48,6 +48,7 @@ namespace SimpleInputNamespace
 		private Vector2 m_value = Vector2.zero;
 		public Vector2 Value { get { return m_value; } }
 
+		SimpleInputDragListener eventReceiver;
 		private void Awake()
 		{
 			joystickTR = (RectTransform) transform;
@@ -79,7 +80,6 @@ namespace SimpleInputNamespace
 
 		private void Start()
 		{
-			SimpleInputDragListener eventReceiver;
 			if( !isDynamicJoystick )
 				eventReceiver = thumbTR.gameObject.AddComponent<SimpleInputDragListener>();
 			else
@@ -101,12 +101,18 @@ namespace SimpleInputNamespace
 			eventReceiver.Listener = this;
 		}
 
-		private void OnEnable()
+        public bool GetjoystickHeld()
+        {
+			return joystickHeld;
+		}
+
+        private void OnEnable()
 		{
 			xAxis.StartTracking();
 			yAxis.StartTracking();
 
 			SimpleInput.OnUpdate += OnUpdate;
+
 		}
 
 		private void OnDisable()
@@ -135,6 +141,7 @@ namespace SimpleInputNamespace
 				RectTransformUtility.ScreenPointToLocalPointInRectangle( joystickTR, eventData.position, eventData.pressEventCamera, out pointerInitialPos );
 		}
 
+	
 		public void OnDrag( PointerEventData eventData )
 		{
 			Vector2 pointerPos;
@@ -149,8 +156,21 @@ namespace SimpleInputNamespace
 			if( direction.sqrMagnitude > movementAreaRadiusSqr )
 			{
 				Vector2 directionNormalized = direction.normalized * movementAreaRadius;
-				if( canFollowPointer )
-					joystickTR.localPosition += (Vector3) ( direction - directionNormalized );
+				if( canFollowPointer && directionNormalized.x>0)
+                {
+					float PointRate;
+					PointRate = joystickTR.localPosition.x / Screen.width;
+
+					if (PointRate < -0.35f)
+                    {
+						joystickTR.localPosition += (Vector3)(direction - directionNormalized);
+					}
+
+				}
+                else
+                {
+					joystickTR.localPosition += (Vector3)(direction - directionNormalized);
+				}
 
 				direction = directionNormalized;
 			}
