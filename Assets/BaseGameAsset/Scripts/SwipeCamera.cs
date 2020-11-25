@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using SimpleInputNamespace;
 public class SwipeCamera : MonoBehaviour
 {
     Vector3 FirstPoint;
@@ -15,24 +15,58 @@ public class SwipeCamera : MonoBehaviour
     Vector3 CheckingPoint;
     Quaternion rotationClamp;
     float ClampAngel;
-
+    Joystick joystick;
+    int touchİndex;
 
     void Start()
     {
         xAngle = 0;
         yAngle = 0;
         this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0);
+        joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<Joystick>();
+
     }
 
     void Update()
     {
-          
+        
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount ==1)
         {
-             ControlTouchPos(Input.touchCount-1);
+            Debug.Log(Input.GetTouch(0).fingerId);
+
+            if (joystick.GetjoystickHeld() == false)
+            {
+                ControlTouchPos(0);
+
+                if (Input.GetTouch(0).fingerId == 0)
+                {
+                    touchİndex = 0;
+                }
+                else if (Input.GetTouch(0).fingerId == 1)
+                {
+                    touchİndex = 1;
+                }
+            }
+            else if (joystick.GetjoystickHeld() == true)
+            {
+                if (Input.GetTouch(0).fingerId == 0)
+                {
+                    touchİndex = 1;
+                }
+                else if (Input.GetTouch(0).fingerId == 1)
+                {
+                    touchİndex = 0;
+                }
+            }
 
         }
+
+        else if(Input.touchCount == 2)
+        { 
+               ControlTouchPos(touchİndex);
+        }
+
 
     }
 
