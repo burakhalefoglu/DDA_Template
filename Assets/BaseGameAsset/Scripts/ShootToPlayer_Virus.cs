@@ -10,16 +10,18 @@ public class ShootToPlayer_Virus : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    [SerializeField]
+ 
     float FollowingStepCount;
     float distance;
     float time = 0;
+    float Attacktime = 0;
 
     Animator animator;
     GameObject [] CuteVirusBullet;
 
     void Start()
     {
+        FollowingStepCount = PlayerPrefs.GetFloat("Walk_Speed");
         Player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         CuteVirusBullet = GameObject.FindGameObjectsWithTag("CuteVirusBullet");
@@ -37,7 +39,7 @@ public class ShootToPlayer_Virus : MonoBehaviour
 
 
         distance = Vector3.Distance(Player.transform.position, transform.position);
-        if (distance > 60f)
+        if (distance > 75f)
         {
             if (animator.GetBool("attackfollow") == true)
             {
@@ -79,14 +81,16 @@ public class ShootToPlayer_Virus : MonoBehaviour
 
         }
 
-
+        
         if (distance <= 4)
         {
-            if (animator.GetBool("attack") == false)
-            {
-                animator.SetBool("attack", true);
+            Attacktime += Time.deltaTime;
 
+            if (Attacktime > PlayerPrefs.GetFloat("Virus_Attack_Density"))
+            {
+                    animator.SetTrigger("attack");
             }
+          
            
         }
 

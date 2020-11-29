@@ -9,8 +9,8 @@ public class FollowingEnemyTop : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    float maxdistance = 30;
-    float FollowingStepCount = 0.03f;
+    float maxdistance = 75;
+    float FollowingStepCount;
 
     Animator animator;
 
@@ -28,7 +28,7 @@ public class FollowingEnemyTop : MonoBehaviour
         animator = GetComponent<Animator>();
         go  = GameObject.FindGameObjectWithTag("Player");
         enemyTopAttack = this.gameObject.GetComponent<EnemyTopAttack>();
-
+        FollowingStepCount = PlayerPrefs.GetFloat("Walk_Speed");
 
 
     }

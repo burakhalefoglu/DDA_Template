@@ -10,13 +10,9 @@ public class Character : MonoBehaviour
     float firstHealth;
     float health;
     float mashroomAttack = 1;
-    float bacteriumAttack = 1;
-    float HelloKittyAttack = 1;
-    float GermSpike = 5;
     float NewHealthRate = 1;
     float Point;
     int IsDead=0;
-    float EnemyTopAttackCount = 1;
     float time;
     int ClosestCheckPointIndex = 0;
 
@@ -28,7 +24,6 @@ public class Character : MonoBehaviour
     HealthBarHandler healthBarHandler;
     Controller controller;
     Text PointValue;
-    LevelFinisher levelFinisher;
     AudioSource [] audioData;
     GameObject DamageUi;
     Animator animatorController;
@@ -49,8 +44,6 @@ public class Character : MonoBehaviour
         firstHealth = PlayerPrefs.GetFloat("Player_Health");
         health = PlayerPrefs.GetFloat("Player_Health");
 
-
-        levelFinisher = GameObject.FindGameObjectWithTag("LevelFinisher").GetComponent<LevelFinisher>();
         PointValue.text = Point.ToString();
 
         audioData = GetComponents<AudioSource>();
@@ -70,8 +63,8 @@ public class Character : MonoBehaviour
 
         if (other.gameObject.tag == "GermSlimeBullet" && health > 0)
         {
-            health -= 5 ;
-            CalculateHealthBar(5);
+            health -= PlayerPrefs.GetFloat("GermSlime_Attack");
+            CalculateHealthBar(PlayerPrefs.GetFloat("GermSlime_Attack"));
             audioData[0].Play();
             animatorController.SetBool("GetHit", true);
         }
@@ -144,32 +137,32 @@ public class Character : MonoBehaviour
 
         if (collision.gameObject.tag == "bacterium" && health > 0)
         {
-            health -= bacteriumAttack;
-            CalculateHealthBar(bacteriumAttack);
+            health -= PlayerPrefs.GetFloat("CuteBacterium_Attack");
+            CalculateHealthBar(PlayerPrefs.GetFloat("CuteBacterium_Attack"));
             audioData[0].Play();
             animatorController.SetBool("GetHit", true);
 
         }
         else if (collision.gameObject.tag == "HelloKitty" && health > 0)
         {
-            health -= HelloKittyAttack;
-            CalculateHealthBar(HelloKittyAttack);
+            health -= PlayerPrefs.GetFloat("HelloKitty_Attack");
+            CalculateHealthBar(PlayerPrefs.GetFloat("HelloKitty_Attack"));
             audioData[0].Play();
             animatorController.SetBool("GetHit", true);
 
         }
         else if (collision.gameObject.tag == "GermSpike" && health > 0)
         {
-            health -= GermSpike;
-            CalculateHealthBar(GermSpike);
+            health -= PlayerPrefs.GetFloat("GermSpike_Attack");
+            CalculateHealthBar(PlayerPrefs.GetFloat("GermSpike_Attack"));
             audioData[0].Play();
             animatorController.SetBool("GetHit", true);
 
         }
         else if (collision.gameObject.tag == "EnemyTop" && health > 0)
         {
-            health -= EnemyTopAttackCount;
-            CalculateHealthBar(EnemyTopAttackCount);
+            health -= PlayerPrefs.GetFloat("EnemyTop_Attack");
+            CalculateHealthBar(PlayerPrefs.GetFloat("EnemyTop_Attack"));
             audioData[0].Play();
             animatorController.SetBool("GetHit",true);
 
@@ -204,6 +197,11 @@ public class Character : MonoBehaviour
     {
         return health;
     }
+    public float GetPlayerFirstHealth()
+    {
+        return firstHealth;
+    }
+
     public float GetTotalAttack()
     {
         return controller.GetTotalAttack();

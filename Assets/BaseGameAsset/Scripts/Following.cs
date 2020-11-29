@@ -12,7 +12,6 @@ public class Following : MonoBehaviour
     [SerializeField]
     float maxdistance;
 
-    [SerializeField]
     float FollowingStepCount;
     GameObject go;
 
@@ -26,7 +25,7 @@ public class Following : MonoBehaviour
     {
         go = GameObject.FindGameObjectWithTag("Player");
 
-
+        FollowingStepCount = PlayerPrefs.GetFloat("Walk_Speed");
 
 
     }

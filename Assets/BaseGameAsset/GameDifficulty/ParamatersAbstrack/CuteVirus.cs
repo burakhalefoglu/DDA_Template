@@ -10,7 +10,11 @@ namespace Assets.Creator_Kit___FPS.Scenes.BurakÇalışma.GameDifficulty.Paramat
     {
         int CuteVirusDifficultyOne { get; set; }
         int CuteVirusDifficultyTen { get; set; }
-        int CuteVirusLevel { get; set; }
-        int CuteVirusAttackFrequency { get; set; }
+        float CuteVirusAttack { get; set; }
+        float CuteVirusHealth { get; set; }
+        float virusAttackDensity { get; set; }
+        float virusWalkSpeed { get; set; }
+
+
     }
 }

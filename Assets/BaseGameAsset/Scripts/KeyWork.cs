@@ -5,11 +5,10 @@ using UnityEngine;
 public class KeyWork : MonoBehaviour
 {
     GameObject LevelFinisher;
-    BoxCollider boxCollider;
     void Start()
     {
         LevelFinisher = GameObject.FindGameObjectWithTag("LevelFinisher");
-        boxCollider = LevelFinisher.GetComponent<BoxCollider>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,9 +16,12 @@ public class KeyWork : MonoBehaviour
        bool charistrigger =other.gameObject.tag == "Player";
         if (charistrigger)
         {
-            boxCollider.enabled = true;
+            LevelFinisher.GetComponent<LevelFinisher>().GetAllDataAndFinish();
             GetComponent<AudioSource>().Play();
             Destroy(this.gameObject,1f);
+
+
         }
     }
+
 }

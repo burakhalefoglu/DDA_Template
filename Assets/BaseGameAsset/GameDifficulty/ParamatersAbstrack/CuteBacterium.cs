@@ -10,5 +10,8 @@ namespace Assets.Creator_Kit___FPS.Scenes.BurakÇalışma.GameDifficulty.Paramat
     {
         int CuteBacteriumDifficultyOne { get; set; }
         int CuteBacteriumDifficultyTen { get; set; }
+        float CuteBacteriumAttack { get; set; }
+        float CuteBacteriumHealth { get; set; }
+        float CuteBacteriumWalkSpeed { get; set; }
     }
 }

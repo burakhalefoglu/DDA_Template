@@ -128,18 +128,39 @@ public class Target : MonoBehaviour
 
         if (tag == "Virus")
         {
-            return PlayerPrefs.GetFloat("Virus_Health")*2;
+            return PlayerPrefs.GetFloat("Virus_Health");
         }
         else if (tag == "GermSlim")
         {
-            return PlayerPrefs.GetFloat("GermSlime_Health")*2;
+            return PlayerPrefs.GetFloat("GermSlime_Health");
 
         }
         else if (tag == "GermSpike")
         {
-            return PlayerPrefs.GetFloat("GermSpike_Health")*2;
+            return PlayerPrefs.GetFloat("GermSpike_Health");
 
         }
+        else if (tag == "bacterium")
+        {
+            return PlayerPrefs.GetFloat("CuteBacterium_Health");
+
+        }
+        else if (tag == "HelloKitty")
+        {
+            return PlayerPrefs.GetFloat("HelloKitty_Health");
+
+        }
+        else if (tag == "EnemyTop")
+        {
+            return PlayerPrefs.GetFloat("EnemyTop_Health");
+
+        }
+        else if (tag == "CuteBaby")
+        {
+            return PlayerPrefs.GetFloat("CuteBaby_Health");
+
+        }
+
         else if (tag == "BloodGuard")
         {
             return 10;
@@ -163,7 +184,6 @@ public class Target : MonoBehaviour
             return 55;
 
         }
-        
        
         else if (tag == "BossDomestos")
         {
@@ -171,15 +191,9 @@ public class Target : MonoBehaviour
 
         }
 
-         else if (tag == "BossFootMicrobe")
-         {
-            return 100;
-
-         }
-
-        else if (tag == "CuteBaby")
+        else if (tag == "BossFootMicrobe")
         {
-            return 4;
+            return 100;
 
         }
         else
@@ -193,3 +207,4 @@ public class Target : MonoBehaviour
         return m_CurrentHealth;
     }
 }
+ 

@@ -23,4 +23,31 @@ public class CalculatingDifficulty : MonoBehaviour, ICalculate
         return IncreaseAmount;
     }
   
+    public float CalculateAttackDensity(float diffiultyLevel)
+    {
+        return (UnityEngine.Random.Range(3.5f, 4.5f)) - (0.2f * diffiultyLevel);
+    }
+
+    public float CalculateAttackcount(float diffiultyLevel,int enemyMinAttack, int enemyMaxAttack, int IncreaseAmount)
+    {
+        return (UnityEngine.Random.Range(enemyMinAttack, enemyMaxAttack)) + (IncreaseAmount * diffiultyLevel);
+    }
+    
+
+    public float CalculateWalkSpeed(float diffiultyLevel)
+    {
+        if (diffiultyLevel > 4)
+        {
+            return 0.20f;
+        }
+        else if (diffiultyLevel > 8)
+        {
+            return 0.30f;
+        }
+        else
+        {
+            return 0.40f;
+
+        }
+    }
 }

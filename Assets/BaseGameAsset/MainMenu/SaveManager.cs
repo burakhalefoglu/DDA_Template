@@ -16,12 +16,15 @@ public class SaveManager : MonoBehaviour
         SaveCuteMushyParams();
         SaveCuteBacteriumParams();
         SaveHelloKittyParams();
+        SaveEnemyTopParams();
+        SaveCuteBabyParams();
 
         SavePlayerParams();
 
         SaveOtherParams();
         SaveLocationparams();
         KeyGenerator();
+
         PlayerPrefs.Save();
        
 
@@ -30,9 +33,9 @@ public class SaveManager : MonoBehaviour
     void KeyGenerator()
     {
         bool IsDevideId;
-        float DevideId = Random.Range(111111111, 999999999);
-        IsDevideId = PlayerPrefs.HasKey("GermSlime_Health");
-        CheckSaveSystemInt(IsDevideId, (int)DevideId, "DevideId");
+        int DevideId = Random.Range(111111111, 999999999);
+        IsDevideId = PlayerPrefs.HasKey("DevideId");
+        CheckSaveSystemInt(IsDevideId, DevideId, "DevideId");
     }
 
     void CheckSaveSystemFloat(bool checkPrefs, float playerPrefKey, string playerPrefName )
@@ -65,7 +68,7 @@ public class SaveManager : MonoBehaviour
         bool IsValidVirus_Health;
         bool IsValidVirus_Attack;
         bool IsValidVırus_Density;
-        bool IsValidVırus_Level;
+        bool IsValidVirus_Attack_Density;
 
         IsValidVirus_Health = PlayerPrefs.HasKey("Virus_Health");
         CheckSaveSystemFloat(IsValidVirus_Health, 10, "Virus_Health");
@@ -76,8 +79,8 @@ public class SaveManager : MonoBehaviour
         IsValidVırus_Density = PlayerPrefs.HasKey("Vırus_Density");
         CheckSaveSystemInt(IsValidVırus_Density, 1, "Vırus_Density");
 
-        IsValidVırus_Level = PlayerPrefs.HasKey("Vırus_Level");
-        CheckSaveSystemFloat(IsValidVırus_Level, 1, "Vırus_Level");
+        IsValidVirus_Attack_Density = PlayerPrefs.HasKey("Virus_Attack_Density");
+        CheckSaveSystemFloat(IsValidVirus_Attack_Density, 2, "Virus_Attack_Density");
 
 
     }
@@ -87,7 +90,8 @@ public class SaveManager : MonoBehaviour
         bool IsValidGermSlime_Health;
         bool IsValidGermSlime_Attack;
         bool IsValidGermSlime_Density;
-        bool IsValidGermSlime_Level;
+        bool IsValidGermSlime_Attack_Density;
+
 
 
         IsValidGermSlime_Health = PlayerPrefs.HasKey("GermSlime_Health");
@@ -99,8 +103,9 @@ public class SaveManager : MonoBehaviour
         IsValidGermSlime_Density = PlayerPrefs.HasKey("GermSlime_Density");
         CheckSaveSystemInt(IsValidGermSlime_Density, 1, "GermSlime_Density");
 
-        IsValidGermSlime_Level = PlayerPrefs.HasKey("GermSlime_Level");
-        CheckSaveSystemFloat(IsValidGermSlime_Level, 1, "GermSlime_Level");
+        IsValidGermSlime_Attack_Density = PlayerPrefs.HasKey("GermSlime_Attack_Density");
+        CheckSaveSystemFloat(IsValidGermSlime_Attack_Density, 2, "GermSlime_Attack_Density");
+
 
 
 
@@ -110,12 +115,17 @@ public class SaveManager : MonoBehaviour
     {
         bool IsValidGermSpike_Health;
         bool IsValidGermSpike_Density;
+        bool IsValidGermSpike_Attack;
 
         IsValidGermSpike_Health = PlayerPrefs.HasKey("GermSpike_Health");
         CheckSaveSystemFloat(IsValidGermSpike_Health, 10, "GermSpike_Health");
 
         IsValidGermSpike_Density = PlayerPrefs.HasKey("GermSpike_Density");
         CheckSaveSystemInt(IsValidGermSpike_Density, 1, "GermSpike_Density");
+
+        IsValidGermSpike_Attack = PlayerPrefs.HasKey("GermSpike_Attack");
+        CheckSaveSystemFloat(IsValidGermSpike_Attack, 1, "GermSpike_Attack");
+
 
 
     }
@@ -130,41 +140,75 @@ public class SaveManager : MonoBehaviour
 
     void SaveCuteBacteriumParams()
     {
+        bool IsValidCuteBacterium_Health;
         bool IsValidCuteBacterium_Density;
+        bool IsValidCuteBacterium_Attack;
+
+        IsValidCuteBacterium_Health = PlayerPrefs.HasKey("CuteBacterium_Health");
+        CheckSaveSystemFloat(IsValidCuteBacterium_Health, 10, "CuteBacterium_Health");
 
         IsValidCuteBacterium_Density = PlayerPrefs.HasKey("CuteBacterium_Density");
-        CheckSaveSystemInt(IsValidCuteBacterium_Density, 10, "CuteBacterium_Density");
+        CheckSaveSystemInt(IsValidCuteBacterium_Density, 1, "CuteBacterium_Density");
+
+        IsValidCuteBacterium_Attack = PlayerPrefs.HasKey("CuteBacterium_Attack");
+        CheckSaveSystemFloat(IsValidCuteBacterium_Attack, 1, "CuteBacterium_Attack");
+
+
+
     }
 
 
     void SaveHelloKittyParams()
     {
+        bool IsValidHelloKitty_Health;
         bool IsValidHelloKitty_Density;
+        bool IsValidHelloKitty_Attack;
+
+
+        IsValidHelloKitty_Health = PlayerPrefs.HasKey("HelloKitty_Health");
+        CheckSaveSystemFloat(IsValidHelloKitty_Health, 10, "HelloKitty_Health");
 
         IsValidHelloKitty_Density = PlayerPrefs.HasKey("HelloKitty_Density");
         CheckSaveSystemInt(IsValidHelloKitty_Density, 1, "HelloKitty_Density");
+
+        IsValidHelloKitty_Attack = PlayerPrefs.HasKey("HelloKitty_Attack");
+        CheckSaveSystemFloat(IsValidHelloKitty_Attack, 1, "HelloKitty_Attack");
+
     }
     
     void SaveEnemyTopParams()
     {
+        bool IsValidEnemyTop_Health;
         bool IsValidEnemyTop_Density;
+        bool IsValidEnemyTop_Attack;
+
+        IsValidEnemyTop_Health = PlayerPrefs.HasKey("EnemyTop_Health");
+        CheckSaveSystemFloat(IsValidEnemyTop_Health, 10, "EnemyTop_Health");
 
         IsValidEnemyTop_Density = PlayerPrefs.HasKey("EnemyTop_Density");
         CheckSaveSystemInt(IsValidEnemyTop_Density, 1, "EnemyTop_Density");
+
+        IsValidEnemyTop_Attack = PlayerPrefs.HasKey("EnemyTop_Attack");
+        CheckSaveSystemFloat(IsValidEnemyTop_Attack, 1, "EnemyTop_Attack");
+
     }
 
     void SaveCuteBabyParams()
     {
+
+        bool IsValidCuteBaby_Health;
         bool IsValidCuteBaby_Density;
         bool IsValidCuteBaby_Attack;
+
+        IsValidCuteBaby_Health = PlayerPrefs.HasKey("CuteBaby_Health");
+        CheckSaveSystemFloat(IsValidCuteBaby_Health, 10, "CuteBaby_Health");
 
         IsValidCuteBaby_Density = PlayerPrefs.HasKey("CuteBaby_Density");
         CheckSaveSystemInt(IsValidCuteBaby_Density, 1, "CuteBaby_Density");
 
-
-
         IsValidCuteBaby_Attack = PlayerPrefs.HasKey("CuteBaby_Attack");
-        CheckSaveSystemFloat(IsValidCuteBaby_Attack, 5, "CuteBaby_Attack");
+        CheckSaveSystemFloat(IsValidCuteBaby_Attack, 1, "CuteBaby_Attack");
+
     }
 
 
@@ -202,6 +246,8 @@ public class SaveManager : MonoBehaviour
         bool IsValidDifficultyLevelParam;
         bool IsValidLevelParam;
         bool IsValidPoint;
+        bool IsValidVirus_Walk_Speed;
+
 
         IsValidDifficultyLevelParam = PlayerPrefs.HasKey("DifficultyLevel");
         CheckSaveSystemInt(IsValidDifficultyLevelParam,1, "DifficultyLevel");
@@ -212,6 +258,8 @@ public class SaveManager : MonoBehaviour
         IsValidPoint = PlayerPrefs.HasKey("Point");
         CheckSaveSystemFloat(IsValidPoint, 0, "Point");
 
+        IsValidVirus_Walk_Speed = PlayerPrefs.HasKey("Walk_Speed");
+        CheckSaveSystemFloat(IsValidVirus_Walk_Speed, 0.2f, "Walk_Speed");
     }
 
     void SaveLocationparams()

@@ -10,5 +10,8 @@ namespace Assets.Creator_Kit___FPS.Scenes.BurakÇalışma.GameDifficulty.Paramat
     {
         int GermSpikeDifficultyOne { get; set; }
         int GermSpikeDifficultyTen { get; set; }
+        float GermSpikeAttack { get; set; }
+        float GermSpikeHealth { get; set; }
+        float GermSpikeWalkSpeed { get; set; }
     }
 }

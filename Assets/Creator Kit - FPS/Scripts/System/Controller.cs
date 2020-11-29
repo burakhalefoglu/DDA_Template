@@ -305,11 +305,11 @@ public class Controller : MonoBehaviour
     public void changeWeaponLeft()
     {
         ChangeWeapon(m_CurrentWeapon + 1);
-        TotalAttackCount++;
     }
     public float GetTotalAttack()
     {
-        return TotalAttackCount;
+        Weapon weapon = m_Weapons[m_CurrentWeapon].GetComponent<Weapon>();
+        return weapon.GetTotalAttackCount();
     }
     public float GetTotalHit()
     {

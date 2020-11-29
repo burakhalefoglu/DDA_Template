@@ -9,8 +9,8 @@ public class CuteBabyAttack : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    float maxdistance = 20 ;
-    float FollowingStepCount = 0.01f;
+    float maxdistance = 75   ;
+    float FollowingStepCount;
     float time = 3.1f;
     float timeToCollision = 0;
     float distance;
@@ -23,6 +23,7 @@ public class CuteBabyAttack : MonoBehaviour
         animator = GetComponent<Animator>();
         go = GameObject.FindGameObjectWithTag("Player");
         boxCollider = GameObject.FindGameObjectWithTag("CuteBabyBullet").GetComponent<BoxCollider>();
+        FollowingStepCount = PlayerPrefs.GetFloat("Walk_Speed");
     }
 
     // Update is called once per frame

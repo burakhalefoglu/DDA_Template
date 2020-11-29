@@ -12,7 +12,7 @@ public class ApproachingTheEnemy : MonoBehaviour
     [SerializeField]
     float maxdistance;
 
-    [SerializeField]
+
     float FollowingStepCount;
 
     [SerializeField]
@@ -37,7 +37,8 @@ public class ApproachingTheEnemy : MonoBehaviour
        go = GameObject.FindGameObjectWithTag("Player");
         shootingBossFly=GetComponent<ShootingBossFly>();
         LastPose = new Vector3();
-     
+        FollowingStepCount = PlayerPrefs.GetFloat("Walk_Speed");
+
     }
 
     void Update()

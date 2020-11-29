@@ -41,18 +41,9 @@ public class DataToScreen : MonoBehaviour
         if (time > 0.5f)
         {
             time = 0;
-            CalculateAllData();
             ScreenToData();
         }
        
-    }
-
-
-    void CalculateAllData()
-    {
-        levelFinisher.SetUserDatas();
-
-
     }
 
     void ScreenToData()

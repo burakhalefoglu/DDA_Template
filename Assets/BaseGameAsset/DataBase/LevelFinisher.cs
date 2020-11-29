@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class LevelFinisher : MonoBehaviour
 {
 
-    ListeninCharBehavior listeninCharBehavior;
     DataAccess dataAccess;
     BoxCollider boxCollider;
     GameObject FinishUI;
@@ -36,10 +35,6 @@ public class LevelFinisher : MonoBehaviour
         boxCollider = this.gameObject.GetComponent<BoxCollider>();
         boxCollider.enabled = false;
 
-        charLevelRaising = GetComponent<CharLevelRaising>();
-        charLevelRaising.UpdateCharLevel();
-
-        listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
         character = player.GetComponent<Character>();
         dataAccess = this.gameObject.transform.GetChild(0).gameObject.GetComponent<DataAccess>();
         PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
@@ -50,15 +45,17 @@ public class LevelFinisher : MonoBehaviour
 
 
     }
-    private void OnTriggerEnter(Collider other)
+    public void GetAllDataAndFinish()
     {
-        if (other.gameObject.tag == "Player")
-        {
+       
+            charLevelRaising = GetComponent<CharLevelRaising>();
+            charLevelRaising.UpdateCharLevel();
+
             PlayerPrefs.SetInt("IsDead", 0);
-            SaveUserDataForLevelfinish(other.gameObject);
+            SaveUserDataForLevelfinish(player);
             PauseGame();
 
-        }
+       
     }
     private void PauseGame()
     {
@@ -92,7 +89,6 @@ public class LevelFinisher : MonoBehaviour
     {
         player = other.gameObject;
 
-        SetUserDatas();
         dataAccess.verileriekle();
     }
 
@@ -117,7 +113,7 @@ public class LevelFinisher : MonoBehaviour
         FinalValue = GameObject.FindGameObjectWithTag("FinalValue");
 
         TargetDestroyedCount = FinalValue.transform.GetChild(0).GetComponent<Text>();
-        TargetDestroyedCount.text= listeninCharBehavior.GetPlayerTotalAttackCount().ToString();
+        TargetDestroyedCount.text= character.GetTotalAttack().ToString();
 
         FinalTimeCount = FinalValue.transform.GetChild(1).GetComponent<Text>();
         FinalTimeCount.text = this.gameObject.transform.GetChild(0).GetComponent<GettingDatabaseParameters>().FinishingTime().ToString();
@@ -131,14 +127,5 @@ public class LevelFinisher : MonoBehaviour
 
     }
 
-    public void SetUserDatas()
-    {
-        listeninCharBehavior = this.gameObject.transform.GetChild(0).gameObject.GetComponent<ListeninCharBehavior>();
-        character = player.GetComponent<Character>();
-
-        listeninCharBehavior.SetPlayerFinishHealth((int)character.GetPlayerHealth());
-        listeninCharBehavior.SetPlayerTotalAttackCount((int)character.GetTotalAttack());
-        listeninCharBehavior.SetPlayerTotalOnHit((int)character.GetTotalHit());
-        listeninCharBehavior.SetPlayerDeadInformation((int)character.GetPlayerDeadInformation());
-    }
+   
 }

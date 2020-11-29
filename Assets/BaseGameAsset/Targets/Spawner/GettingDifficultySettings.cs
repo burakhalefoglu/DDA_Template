@@ -180,7 +180,7 @@ public class GettingDifficultySettings : MonoBehaviour
             PlayerPrefs.SetFloat("LocX", location.x);
             PlayerPrefs.SetFloat("LocY", location.y);
             PlayerPrefs.SetFloat("LocZ", location.z);
-
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }

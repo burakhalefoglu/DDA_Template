@@ -99,7 +99,7 @@ public class Weapon : MonoBehaviour
     AudioSource m_Source;
 
     Vector3 m_ConvertedMuzzlePos;
-
+    float TotalAttackCount;
     class ActiveTrail
     {
         public LineRenderer renderer;
@@ -168,7 +168,10 @@ public class Weapon : MonoBehaviour
         
         m_ActiveTrails.Clear();
     }
-
+    public float GetTotalAttackCount()
+    {
+        return TotalAttackCount;
+    }
     public void Selected()
     {
         var ammoRemaining = m_Owner.GetAmmo(ammoType);
@@ -239,7 +242,7 @@ public class Weapon : MonoBehaviour
     Target target;
     void RaycastShot()
     {
-
+        TotalAttackCount++;
         //compute the ratio of our spread angle over the fov to know in viewport space what is the possible offset from center
         float spreadRatio = advancedSettings.spreadAngle / Controller.Instance.MainCamera.fieldOfView;
 
@@ -259,6 +262,7 @@ public class Weapon : MonoBehaviour
             if (hit.collider.gameObject.layer == 10)
 
             {
+                hitcount++;
                 Renderer renderer = hit.collider.GetComponentInChildren<Renderer>();
                 ImpactManager.Instance.PlayImpact(hit.point, hit.normal, renderer == null ? null : renderer.sharedMaterial);
 
@@ -275,7 +279,6 @@ public class Weapon : MonoBehaviour
                 Blood.transform.position = hit.point;
 
                 Fire();
-                hitcount++;
                 target = hit.collider.gameObject.GetComponent<Target>();
                 if (PrefabRayTrail != null)
                 {

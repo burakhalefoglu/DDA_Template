@@ -12,7 +12,6 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    [SerializeField]
     float FollowingStepCount;
     float shootFrequencyTime;
     float time = 0;
@@ -20,9 +19,10 @@ public class ShootToPlayer_GermSlim : MonoBehaviour
    
     void Start()
     {
+        FollowingStepCount = PlayerPrefs.GetFloat("Walk_Speed");
         myTransform = this.gameObject.transform;
         Player = GameObject.FindGameObjectWithTag("Player");
-        shootFrequencyTime = Random.Range(1,3);
+        shootFrequencyTime = PlayerPrefs.GetFloat("GermSlime_Attack_Density");
 
     }
 

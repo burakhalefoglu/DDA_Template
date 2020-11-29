@@ -11,7 +11,9 @@ namespace Assets.Creator_Kit___FPS.Scenes.BurakÇalışma.GameDifficulty.Paramat
 
         int GermSlimeDifficultyOne { get; set; }
         int GermSlimeDifficultyTen { get; set; }
-        int GermSlimeLevel { get; set; }
-        int GermSlimeAttackFrequency { get; set; }
+        float GermSlimeAttack { get; set; }
+        float GermSlimeHealth { get; set; }
+        float GermSlimeAttackDensity { get; set; }
+        float GermSlimeWalkSpeed { get; set; }
     }
 }

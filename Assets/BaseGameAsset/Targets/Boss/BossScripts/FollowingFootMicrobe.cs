@@ -12,8 +12,6 @@ public class FollowingFootMicrobe : MonoBehaviour
     [SerializeField]
     float maxdistance;
 
-    [SerializeField]
-
     float FollowingStepCount = 0.1f;
 
     bool IsAttack = false;
@@ -30,7 +28,7 @@ public class FollowingFootMicrobe : MonoBehaviour
 
     void Start()
     {
-        
+        FollowingStepCount = PlayerPrefs.GetFloat("Walk_Speed");
         animator = GetComponent<Animator>();
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         target = go.transform;

@@ -83,10 +83,7 @@ public class AskingServerDifficultyLevel: MonoBehaviour
             PlayerPrefs.SetInt("DifficultyLevel", 1);
             difficultyManager.CalculateDifficultyLevel();
 
-
         }
-
-       
         else
         {
             if (PlayerPrefs.GetFloat("Player_Flow") > 95)

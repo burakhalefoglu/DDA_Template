@@ -8,8 +8,8 @@ namespace SimpleInputNamespace
 	{
 		public enum MovementAxes { XandY, X, Y };
 
-		public SimpleInput.AxisInput xAxis = new SimpleInput.AxisInput( "Horizontal" );
-		public SimpleInput.AxisInput yAxis = new SimpleInput.AxisInput( "Vertical" );
+		public SimpleInput.AxisInput xAxis = new SimpleInput.AxisInput("Horizontal");
+		public SimpleInput.AxisInput yAxis = new SimpleInput.AxisInput("Vertical");
 
 		private RectTransform joystickTR;
 		private Graphic background;
@@ -51,17 +51,17 @@ namespace SimpleInputNamespace
 		SimpleInputDragListener eventReceiver;
 		private void Awake()
 		{
-			joystickTR = (RectTransform) transform;
+			joystickTR = (RectTransform)transform;
 			thumbTR = thumb.rectTransform;
 
 			Graphic bgGraphic = GetComponent<Graphic>();
-			if( bgGraphic )
+			if (bgGraphic)
 			{
 				background = bgGraphic;
 				background.raycastTarget = false;
 			}
 
-			if( isDynamicJoystick )
+			if (isDynamicJoystick)
 			{
 				//opacity = 0f;
 				thumb.raycastTarget = false;
@@ -80,14 +80,14 @@ namespace SimpleInputNamespace
 
 		private void Start()
 		{
-			if( !isDynamicJoystick )
+			if (!isDynamicJoystick)
 				eventReceiver = thumbTR.gameObject.AddComponent<SimpleInputDragListener>();
 			else
 			{
-				if( !dynamicJoystickMovementArea )
+				if (!dynamicJoystickMovementArea)
 				{
-					dynamicJoystickMovementArea = new GameObject( "Dynamic Joystick Movement Area", typeof( RectTransform ) ).GetComponent<RectTransform>();
-					dynamicJoystickMovementArea.SetParent( thumb.canvas.transform, false );
+					dynamicJoystickMovementArea = new GameObject("Dynamic Joystick Movement Area", typeof(RectTransform)).GetComponent<RectTransform>();
+					dynamicJoystickMovementArea.SetParent(thumb.canvas.transform, false);
 					dynamicJoystickMovementArea.SetAsFirstSibling();
 					dynamicJoystickMovementArea.anchorMin = Vector2.zero;
 					dynamicJoystickMovementArea.anchorMax = Vector2.one;
@@ -101,12 +101,12 @@ namespace SimpleInputNamespace
 			eventReceiver.Listener = this;
 		}
 
-        public bool GetjoystickHeld()
-        {
+		public bool GetjoystickHeld()
+		{
 			return joystickHeld;
 		}
 
-        private void OnEnable()
+		private void OnEnable()
 		{
 			xAxis.StartTracking();
 			yAxis.StartTracking();
@@ -117,7 +117,7 @@ namespace SimpleInputNamespace
 
 		private void OnDisable()
 		{
-			OnPointerUp( null );
+			OnPointerUp(null);
 
 			xAxis.StopTracking();
 			yAxis.StopTracking();
@@ -125,51 +125,51 @@ namespace SimpleInputNamespace
 			SimpleInput.OnUpdate -= OnUpdate;
 		}
 
-		public void OnPointerDown( PointerEventData eventData )
+		public void OnPointerDown(PointerEventData eventData)
 		{
 			joystickHeld = true;
 
-			if( isDynamicJoystick )
+			if (isDynamicJoystick)
 			{
 				pointerInitialPos = Vector2.zero;
 
 				Vector3 joystickPos;
-				RectTransformUtility.ScreenPointToWorldPointInRectangle( dynamicJoystickMovementArea, eventData.position, eventData.pressEventCamera, out joystickPos );
-				joystickTR.position = joystickPos;
+				RectTransformUtility.ScreenPointToWorldPointInRectangle(dynamicJoystickMovementArea, eventData.position, eventData.pressEventCamera, out joystickPos);
+				//joystickTR.position = joystickPos;
 			}
 			else
-				RectTransformUtility.ScreenPointToLocalPointInRectangle( joystickTR, eventData.position, eventData.pressEventCamera, out pointerInitialPos );
+				RectTransformUtility.ScreenPointToLocalPointInRectangle(joystickTR, eventData.position, eventData.pressEventCamera, out pointerInitialPos);
 		}
 
-	
-		public void OnDrag( PointerEventData eventData )
+
+		public void OnDrag(PointerEventData eventData)
 		{
 			Vector2 pointerPos;
-			RectTransformUtility.ScreenPointToLocalPointInRectangle( joystickTR, eventData.position, eventData.pressEventCamera, out pointerPos );
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(joystickTR, eventData.position, eventData.pressEventCamera, out pointerPos);
 
 			Vector2 direction = pointerPos - pointerInitialPos;
-			if( movementAxes == MovementAxes.X )
+			if (movementAxes == MovementAxes.X)
 				direction.y = 0f;
-			else if( movementAxes == MovementAxes.Y )
+			else if (movementAxes == MovementAxes.Y)
 				direction.x = 0f;
 
-			if( direction.sqrMagnitude > movementAreaRadiusSqr )
+			if (direction.sqrMagnitude > movementAreaRadiusSqr)
 			{
 				Vector2 directionNormalized = direction.normalized * movementAreaRadius;
-				if( canFollowPointer && directionNormalized.x>0)
-                {
+				if (canFollowPointer && directionNormalized.x > 0)
+				{
 					float PointRate;
-					PointRate = joystickTR.localPosition.x / Screen.width;
+                    PointRate = joystickTR.localPosition.x / Screen.width;
 
-					if (PointRate < -0.35f)
+                    if (PointRate < -0.35f)
                     {
-						joystickTR.localPosition += (Vector3)(direction - directionNormalized);
-					}
+                        //joystickTR.localPosition += (Vector3)(direction - directionNormalized);
+                    }
 
-				}
-                else
-                {
-					joystickTR.localPosition += (Vector3)(direction - directionNormalized);
+                }
+				else
+				{
+					//joystickTR.localPosition += (Vector3)(direction - directionNormalized);
 				}
 
 				direction = directionNormalized;
@@ -183,13 +183,13 @@ namespace SimpleInputNamespace
 			yAxis.value = m_value.y;
 		}
 
-		public void OnPointerUp( PointerEventData eventData )
+		public void OnPointerUp(PointerEventData eventData)
 		{
 			joystickHeld = false;
 			m_value = Vector2.zero;
 
 			thumbTR.localPosition = Vector3.zero;
-			if( !isDynamicJoystick && canFollowPointer )
+			if (!isDynamicJoystick && canFollowPointer)
 				joystickTR.anchoredPosition = joystickInitialPos;
 
 			xAxis.value = 0f;
@@ -198,7 +198,7 @@ namespace SimpleInputNamespace
 
 		private void OnUpdate()
 		{
-			if( !isDynamicJoystick )
+			if (!isDynamicJoystick)
 				return;
 
 			//if( joystickHeld )
@@ -210,7 +210,7 @@ namespace SimpleInputNamespace
 			c.a = opacity;
 			thumb.color = c;
 
-			if( background )
+			if (background)
 			{
 				c = background.color;
 				c.a = opacity;
