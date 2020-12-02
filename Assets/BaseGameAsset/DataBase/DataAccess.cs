@@ -24,12 +24,13 @@ public class DataAccess : MonoBehaviour
         database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
         conn = new MySqlConnection(connectionString);
-        conn.Open();
+
 
 
     }
     public void verileriekle()
     {
+		conn.Open();
         MySqlCommand cmd = new MySqlCommand();
         cmd.Connection = conn;
 

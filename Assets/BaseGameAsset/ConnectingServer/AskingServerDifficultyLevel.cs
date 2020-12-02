@@ -71,18 +71,20 @@ public class AskingServerDifficultyLevel: MonoBehaviour
     public  void SetManualDDA()
     {
 
-        if (SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            return;
-        }
-
-        int DifficultyLevel;
         if (PlayerPrefs.GetFloat("CurrentLevel") == 1f)
         {
             difficultyManager = GetComponent<DifficultyManager>();
             PlayerPrefs.SetInt("DifficultyLevel", 1);
             difficultyManager.CalculateDifficultyLevel();
 
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        int DifficultyLevel;
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            return;
         }
         else
         {

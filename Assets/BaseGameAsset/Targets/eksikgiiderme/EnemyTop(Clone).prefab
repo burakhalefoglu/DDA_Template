@@ -83,7 +83,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 7417569079969404743}
   m_AABB:
     m_Center: {x: 0.000094939256, y: 0.0024268988, z: -0.00006364635}
-    m_Extent: {x: 0.003171839, y: 0.0024312746, z: 0.0018147965}
+    m_Extent: {x: 0.002, y: 0.002, z: 0.002}
   m_DirtyAABB: 0
 --- !u!1 &7417569079430863760
 GameObject:
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 7417569079936636340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3950596, y: 0.110000014, z: 3.726884}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 7417569079430863759}
   - {fileID: 7417569079268012565}
@@ -269,7 +269,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &7417569079936636338
 CapsuleCollider:
