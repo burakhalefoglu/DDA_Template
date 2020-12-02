@@ -193,10 +193,10 @@ RectTransform:
   m_Father: {fileID: 4208635390585061919}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000011444092}
-  m_SizeDelta: {x: 996.2902, y: 844.0084}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -1200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4846108085078729071
 CanvasRenderer:
@@ -283,7 +283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12.889}
+  m_AnchoredPosition: {x: 0, y: -12.888977}
   m_SizeDelta: {x: 0.00012207031, y: -154.2229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1995245514920538285
@@ -731,7 +731,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 47.97586
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1294,7 +1294,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 45.922638
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1533,8 +1533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetDestroyed: {fileID: 5967329045041400440}
-  Penalty: {fileID: 0}
-  TimeSpent: {fileID: 0}
   FinalTime: {fileID: 4970308333444288362}
   FinalScore: {fileID: 3777866564406933039}
 --- !u!1 &8328922489166926238

@@ -8,13 +8,11 @@ public class LevelFinisher : MonoBehaviour
 {
 
     DataAccess dataAccess;
-    BoxCollider boxCollider;
     GameObject FinishUI;
     GameObject player;
     Character character;
     CharLevelRaising charLevelRaising;
     GameObject FinalValue;
-    GameObject PauseMenu;
     GameObject GameUI;
     GameObject MobileInput;
 
@@ -32,12 +30,9 @@ public class LevelFinisher : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
         character = player.GetComponent<Character>();
-        boxCollider = this.gameObject.GetComponent<BoxCollider>();
-        boxCollider.enabled = false;
 
         character = player.GetComponent<Character>();
         dataAccess = this.gameObject.transform.GetChild(0).gameObject.GetComponent<DataAccess>();
-        PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         GameUI = GameObject.FindGameObjectWithTag("GameUI");
         MobileInput = GameObject.FindGameObjectWithTag("MobileInput");
         audioSource = GetComponent<AudioSource>();
@@ -53,20 +48,10 @@ public class LevelFinisher : MonoBehaviour
 
             PlayerPrefs.SetInt("IsDead", 0);
             SaveUserDataForLevelfinish(player);
-            PauseGame();
 
        
     }
-    private void PauseGame()
-    {
-        PauseMenu.transform.GetChild(0).gameObject.SetActive(true);
-        PauseMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
 
-        GameUI.SetActive(false);
-        MobileInput.SetActive(false);
-        audioSource.Play();
-        Time.timeScale = 0;
-    }
 
 
     public void SaveUserDataForLevelfinish(GameObject player)
@@ -104,25 +89,31 @@ public class LevelFinisher : MonoBehaviour
 
     void ShowFinishUi()
     {
-        FinishUI = GameObject.FindGameObjectWithTag("SucceesLevel");
+        FinishUI = GameObject.FindGameObjectWithTag("PauseMenu");
         FinishUI.transform.GetChild(0).gameObject.SetActive(true);
+        FinishUI.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+
+        GameUI.SetActive(false);
+        MobileInput.SetActive(false);
+        audioSource.Play();
+        Time.timeScale = 0.1f;
     }
 
     void CalculateFinisUiValue()
     {
-        FinalValue = GameObject.FindGameObjectWithTag("FinalValue");
+     //   FinalValue = GameObject.FindGameObjectWithTag("FinalValue");
 
-        TargetDestroyedCount = FinalValue.transform.GetChild(0).GetComponent<Text>();
-        TargetDestroyedCount.text= character.GetTotalAttack().ToString();
+        //TargetDestroyedCount = FinalValue.transform.GetChild(0).GetComponent<Text>();
+        //TargetDestroyedCount.text= character.GetTotalAttack().ToString();
 
-        FinalTimeCount = FinalValue.transform.GetChild(1).GetComponent<Text>();
-        FinalTimeCount.text = this.gameObject.transform.GetChild(0).GetComponent<GettingDatabaseParameters>().FinishingTime().ToString();
+        //FinalTimeCount = FinalValue.transform.GetChild(1).GetComponent<Text>();
+        //FinalTimeCount.text = this.gameObject.transform.GetChild(0).GetComponent<GettingDatabaseParameters>().FinishingTime().ToString();
 
-        FinalScoreCount = FinalValue.transform.GetChild(2).GetComponent<Text>();
-        FinalScoreCount.text = character.Getpoint().ToString();
+        //FinalScoreCount = FinalValue.transform.GetChild(2).GetComponent<Text>();
+        //FinalScoreCount.text = character.Getpoint().ToString();
 
-        CharLevel = FinalValue.transform.GetChild(3).GetComponent<Text>();
-        CharLevel.text = PlayerPrefs.GetFloat("CharLevel").ToString();
+        //CharLevel = FinalValue.transform.GetChild(3).GetComponent<Text>();
+        //CharLevel.text = PlayerPrefs.GetFloat("CharLevel").ToString();
 
 
     }

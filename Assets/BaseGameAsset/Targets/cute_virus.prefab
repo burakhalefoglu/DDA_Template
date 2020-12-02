@@ -504,7 +504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
-  FollowingStepCount: 0.3
 --- !u!114 &3347609730703185813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,7 +1054,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 3031329836159435523}
   m_AABB:
     m_Center: {x: 0.0010723313, y: 0.008840181, z: -0.0013384931}
-    m_Extent: {x: 0.019668072, y: 0.018784828, z: 0.017861279}
+    m_Extent: {x: 0.1, y: 0.1, z: 0.1}
   m_DirtyAABB: 0
 --- !u!1 &4208683929567574260
 GameObject:

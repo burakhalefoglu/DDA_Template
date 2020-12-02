@@ -189,7 +189,7 @@ public class Character : MonoBehaviour
 
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
-        Time.timeScale = 0;
+        Time.timeScale = 0.1f;
     }
 
 
