@@ -15,19 +15,21 @@ public class Character : MonoBehaviour
     int IsDead=0;
     float time;
     int ClosestCheckPointIndex = 0;
+    bool heartAttackStart;
 
     GameObject PointValueObject;
     GameObject PauseMenu;
     GameObject GameUI;
     GameObject MobileInput;
     GameObject HealthBar;
+    GameObject DamageUi;
+    DataAccess dataAccess;
+
     HealthBarHandler healthBarHandler;
     Controller controller;
     Text PointValue;
     AudioSource [] audioData;
-    GameObject DamageUi;
     Animator animatorController;
-    bool heartAttackStart;
 
     private void Start()
     {
@@ -39,7 +41,7 @@ public class Character : MonoBehaviour
         MobileInput = GameObject.FindGameObjectWithTag("MobileInput");
         HealthBar = GameObject.FindGameObjectWithTag("HealthBar");
         healthBarHandler = HealthBar.GetComponent<HealthBarHandler>();
-
+        dataAccess = GameObject.FindGameObjectWithTag("LevelFinisher").transform.GetChild(0).GetComponent<DataAccess>();
         controller = GetComponent<Controller>();
         firstHealth = PlayerPrefs.GetFloat("Player_Health");
         health = PlayerPrefs.GetFloat("Player_Health");
@@ -183,10 +185,9 @@ public class Character : MonoBehaviour
 
     private void PauseGame()
     {
+        dataAccess.verileriekle();
         PauseMenu.transform.GetChild(0).gameObject.SetActive(true);
-        PauseMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-
-
+        PauseMenu.transform.GetChild(0).GetChild(0).GetChild(2).gameObject.SetActive(true);
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
         Time.timeScale = 0.1f;

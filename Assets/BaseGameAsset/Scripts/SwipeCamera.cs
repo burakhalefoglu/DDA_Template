@@ -33,7 +33,6 @@ public class SwipeCamera : MonoBehaviour
 
         if (Input.touchCount ==1)
         {
-            Debug.Log(Input.GetTouch(0).fingerId);
 
             if (joystick.GetjoystickHeld() == false)
             {

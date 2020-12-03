@@ -91,8 +91,7 @@ public class LevelFinisher : MonoBehaviour
     {
         FinishUI = GameObject.FindGameObjectWithTag("PauseMenu");
         FinishUI.transform.GetChild(0).gameObject.SetActive(true);
-        FinishUI.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-
+        FinishUI.transform.GetChild(0).GetChild(0).GetChild(3).gameObject.SetActive(true);
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
         audioSource.Play();
