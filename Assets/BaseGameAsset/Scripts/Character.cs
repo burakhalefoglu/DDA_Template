@@ -187,12 +187,13 @@ public class Character : MonoBehaviour
     {
         dataAccess.verileriekle();
         PauseMenu.transform.GetChild(0).gameObject.SetActive(true);
+        PauseMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         PauseMenu.transform.GetChild(0).GetChild(0).GetChild(2).gameObject.SetActive(true);
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
         Time.timeScale = 0.1f;
     }
-
+    
 
     public float GetPlayerHealth()
     {

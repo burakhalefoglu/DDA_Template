@@ -39,7 +39,7 @@ public class ShootToPlayer_Virus : MonoBehaviour
 
 
         distance = Vector3.Distance(Player.transform.position, transform.position);
-        if (distance > 75f)
+        if (distance > 50f)
         {
             if (animator.GetBool("attackfollow") == true)
             {

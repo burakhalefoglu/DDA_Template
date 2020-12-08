@@ -1,54 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 using UnityEngine;
-
+using UnityEngine.Networking;
 public class DataAccess : MonoBehaviour
 {
     GettingDatabaseParameters gettingDatabaseParameters;
-    MySqlConnection conn;
 
     void Start()
     {
         gettingDatabaseParameters = GetComponent<GettingDatabaseParameters>();
-
-        string server = "35.240.51.25";
-        string database = "appneuron";
-        string uid = "root";
-        string password = "Developer123";
-        string connectionString;
-
-        connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-        database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-        conn = new MySqlConnection(connectionString);
-
-
-
     }
+
+
     public void verileriekle()
     {
-		conn.Open();
-        MySqlCommand cmd = new MySqlCommand();
-        cmd.Connection = conn;
+        StartCoroutine(ConnectServer());
 
-        cmd.CommandText = "INSERT INTO users (devideid,remaininghealth,attackspeed,hitrate,isdead,finishingtime,currentdifficulty,currentlevel)" +
-                          " VALUES (@devideid,@remaininghealth,@attackspeed,@hitrate,@isdead,@finishingtime,@currentdifficulty,@currentlevel)";
-
-        cmd.Parameters.AddWithValue("@devideid", PlayerPrefs.GetInt("DevideId"));
-        cmd.Parameters.AddWithValue("@remaininghealth", gettingDatabaseParameters.RemainingHealth());
-        cmd.Parameters.AddWithValue("@attackspeed", gettingDatabaseParameters.AttackSpeed());
-        cmd.Parameters.AddWithValue("@hitrate", gettingDatabaseParameters.HitRate());
-        cmd.Parameters.AddWithValue("@isdead", gettingDatabaseParameters.IsDead());
-        cmd.Parameters.AddWithValue("@finishingtime", gettingDatabaseParameters.FinishingTime());
-        cmd.Parameters.AddWithValue("@currentdifficulty", PlayerPrefs.GetInt("DifficultyLevel"));
-        cmd.Parameters.AddWithValue("@currentlevel", PlayerPrefs.GetFloat("CurrentLevel"));
-        cmd.ExecuteNonQuery();
-        cmd.Connection.Close();
-        Debug.Log("Done.");
     }
+
+
+    IEnumerator ConnectServer()
+    {
+        WWWForm DataForm = new WWWForm();
+        DataForm.AddField("devideid", PlayerPrefs.GetInt("DevideId"));
+        DataForm.AddField("remaininghealth", gettingDatabaseParameters.RemainingHealth().ToString());
+        DataForm.AddField("attackspeed", gettingDatabaseParameters.AttackSpeed().ToString());
+        DataForm.AddField("hitrate", gettingDatabaseParameters.HitRate().ToString());
+        DataForm.AddField("isdead", gettingDatabaseParameters.IsDead().ToString());
+        DataForm.AddField("finishingtime", gettingDatabaseParameters.FinishingTime().ToString());
+        DataForm.AddField("currentdifficulty", PlayerPrefs.GetInt("DifficultyLevel").ToString());
+        DataForm.AddField("currentlevel", PlayerPrefs.GetFloat("CurrentLevel").ToString());
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://mydataacess.000webhostapp.com/davranisdata.php", DataForm))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("Form upload complete!");
+            }
+
+
+
+        }
+    }
+
 
 
 }

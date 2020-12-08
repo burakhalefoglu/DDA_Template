@@ -12,15 +12,11 @@ public class LevelFinisher : MonoBehaviour
     GameObject player;
     Character character;
     CharLevelRaising charLevelRaising;
-    GameObject FinalValue;
+   
     GameObject GameUI;
     GameObject MobileInput;
 
 
-    Text TargetDestroyedCount;
-    Text FinalTimeCount;
-    Text FinalScoreCount;
-    Text CharLevel;
     AudioSource audioSource;
 
 
@@ -29,8 +25,6 @@ public class LevelFinisher : MonoBehaviour
     {
 
         player = GameObject.FindGameObjectWithTag("Player");
-        character = player.GetComponent<Character>();
-
         character = player.GetComponent<Character>();
         dataAccess = this.gameObject.transform.GetChild(0).gameObject.GetComponent<DataAccess>();
         GameUI = GameObject.FindGameObjectWithTag("GameUI");
@@ -42,7 +36,7 @@ public class LevelFinisher : MonoBehaviour
     }
     public void GetAllDataAndFinish()
     {
-       
+            ShowFinishUi();
             charLevelRaising = GetComponent<CharLevelRaising>();
             charLevelRaising.UpdateCharLevel();
 
@@ -59,8 +53,6 @@ public class LevelFinisher : MonoBehaviour
 
 
         CalculatePoint();
-
-        ShowFinishUi();
 
         CalculateFinisUiValue();
 
@@ -91,11 +83,12 @@ public class LevelFinisher : MonoBehaviour
     {
         FinishUI = GameObject.FindGameObjectWithTag("PauseMenu");
         FinishUI.transform.GetChild(0).gameObject.SetActive(true);
+        FinishUI.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         FinishUI.transform.GetChild(0).GetChild(0).GetChild(3).gameObject.SetActive(true);
         GameUI.SetActive(false);
         MobileInput.SetActive(false);
         audioSource.Play();
-        Time.timeScale = 0.1f;
+        Time.timeScale = 0.01f;
     }
 
     void CalculateFinisUiValue()

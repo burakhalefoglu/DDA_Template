@@ -59,11 +59,11 @@ public class DifficultyManager : MonoBehaviour
         int GermSpikeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSpikeIncreaseAmount, difficultyParametersCharLevelOne.GermSpikeDifficultyOne);
         PlayerPrefs.SetInt("GermSpike_Density", GermSpikeCount);
 
-        float AttackGermSpike_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
+        float AttackGermSpike_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("GermSpike_Health", AttackGermSpike_Health);
         PlayerPrefs.SetFloat("GermSpike_Attack", AttackGermSpike_Health);
 
-        float AttackCuteBacterium_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2,1);
+        float AttackCuteBacterium_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("CuteBacterium_Health", AttackCuteBacterium_Health);
         PlayerPrefs.SetFloat("CuteBacterium_Attack", AttackCuteBacterium_Health);
 
@@ -115,17 +115,17 @@ public class DifficultyManager : MonoBehaviour
         int GermSlimeCount = calculatingDifficulty.CalculateEnemyCount(PlayerPrefs.GetInt("DifficultyLevel"), GermSlimeIncreaseAmount, difficultyParametersCharLevelTwo.GermSlimeDifficultyOne);
         PlayerPrefs.SetInt("GermSlime_Density", GermSlimeCount);
 
-        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 3);
+        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
         PlayerPrefs.SetFloat("GermSlime_Health", AttackGermSlime_Health);
         PlayerPrefs.SetFloat("GermSlime_Attack", AttackGermSlime_Health);
 
 
-        float AttackGermSpike_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2,1);
+        float AttackGermSpike_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("GermSpike_Health", AttackGermSpike_Health);
         PlayerPrefs.SetFloat("GermSpike_Attack", AttackGermSpike_Health);
 
 
-        float AttackCuteBacterium_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2,1);
+        float AttackCuteBacterium_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("CuteBacterium_Health", AttackCuteBacterium_Health);
         PlayerPrefs.SetFloat("CuteBacterium_Attack", AttackCuteBacterium_Health);
     }
@@ -189,23 +189,23 @@ public class DifficultyManager : MonoBehaviour
         PlayerPrefs.SetFloat("Virus_Attack_Density", AttackDensisity);
         PlayerPrefs.SetFloat("GermSlime_Attack_Density", AttackDensisity);
 
-        float AttackVirus = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 3);
+        float AttackVirus = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
         PlayerPrefs.SetFloat("Virus_Health", AttackVirus);
         PlayerPrefs.SetFloat("Virus_Attack", AttackVirus);
 
-        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 3);
+        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
         PlayerPrefs.SetFloat("GermSlime_Health", AttackGermSlime_Health);
         PlayerPrefs.SetFloat("GermSlime_Attack", AttackGermSlime_Health);
 
-        float AttackHelloKitty_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 2, 3, 1);
+        float AttackHelloKitty_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("HelloKitty_Health", AttackHelloKitty_Health);
         PlayerPrefs.SetFloat("HelloKitty_Attack", AttackHelloKitty_Health);
 
-        float AttackEnemyTop_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2,1);
+        float AttackEnemyTop_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("EnemyTop_Health", AttackEnemyTop_Health);
         PlayerPrefs.SetFloat("EnemyTop_Attack", AttackEnemyTop_Health);
 
-        float AttackCuteBaby_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2,1);
+        float AttackCuteBaby_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("CuteBaby_Health", AttackCuteBaby_Health);
         PlayerPrefs.SetFloat("CuteBaby_Attack", AttackCuteBaby_Health);
 
@@ -272,24 +272,24 @@ public class DifficultyManager : MonoBehaviour
         PlayerPrefs.SetFloat("Virus_Attack_Density", AttackDensisity);
         PlayerPrefs.SetFloat("GermSlime_Attack_Density", AttackDensisity);
 
-        float AttackVirus = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 3);
+        float AttackVirus = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
         PlayerPrefs.SetFloat("Virus_Health", AttackVirus);
         PlayerPrefs.SetFloat("Virus_Attack", AttackVirus);
 
 
-        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 3);
+        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
         PlayerPrefs.SetFloat("GermSlime_Health", AttackGermSlime_Health);
         PlayerPrefs.SetFloat("GermSlime_Attack", AttackGermSlime_Health);
 
-        float AttackHelloKitty_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 2, 3, 1);
+        float AttackHelloKitty_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("HelloKitty_Health", AttackHelloKitty_Health);
         PlayerPrefs.SetFloat("HelloKitty_Attack", AttackHelloKitty_Health);
 
-        float AttackEnemyTop_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
+        float AttackEnemyTop_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("EnemyTop_Health", AttackEnemyTop_Health);
         PlayerPrefs.SetFloat("EnemyTop_Attack", AttackEnemyTop_Health);
 
-        float AttackCuteBaby_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
+        float AttackCuteBaby_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 2);
         PlayerPrefs.SetFloat("CuteBaby_Health", AttackCuteBaby_Health);
         PlayerPrefs.SetFloat("CuteBaby_Attack", AttackCuteBaby_Health);
 
@@ -353,23 +353,23 @@ public class DifficultyManager : MonoBehaviour
         PlayerPrefs.SetFloat("Virus_Attack_Density", AttackDensisity);
         PlayerPrefs.SetFloat("GermSlime_Attack_Density", AttackDensisity);
 
-        float AttackVirus = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel") ,1, 2, 3);
+        float AttackVirus = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 2);
         PlayerPrefs.SetFloat("Virus_Health", AttackVirus);
         PlayerPrefs.SetFloat("Virus_Attack", AttackVirus);
 
-        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel") ,1, 2, 3);
+        float AttackGermSlime_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 2);
         PlayerPrefs.SetFloat("GermSlime_Health", AttackGermSlime_Health);
         PlayerPrefs.SetFloat("GermSlime_Attack", AttackGermSlime_Health);
 
-        float AttackHelloKitty_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 2, 3, 1);
+        float AttackHelloKitty_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 3);
         PlayerPrefs.SetFloat("HelloKitty_Health", AttackHelloKitty_Health);
         PlayerPrefs.SetFloat("HelloKitty_Attack", AttackHelloKitty_Health);
 
-        float AttackEnemyTop_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
+        float AttackEnemyTop_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 3);
         PlayerPrefs.SetFloat("EnemyTop_Health", AttackEnemyTop_Health);
         PlayerPrefs.SetFloat("EnemyTop_Attack", AttackEnemyTop_Health);
 
-        float AttackCuteBaby_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 2, 1);
+        float AttackCuteBaby_Health = calculatingDifficulty.CalculateAttackcount(PlayerPrefs.GetInt("DifficultyLevel"), 1, 3, 3);
         PlayerPrefs.SetFloat("CuteBaby_Health", AttackCuteBaby_Health);
         PlayerPrefs.SetFloat("CuteBaby_Attack", AttackCuteBaby_Health);
     }

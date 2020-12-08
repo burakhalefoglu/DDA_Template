@@ -6,14 +6,16 @@ public class ResumePauseExit : MonoBehaviour
 {
    public void ResumePause()
     {
-        if (Time.timeScale == 0.1f)
+        if (Time.timeScale == 0.001f)
         {
+            this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
             Time.timeScale = 1f;
         }
 
-        else if (Time.timeScale == 1f)
+        else 
         {
-            Time.timeScale = 0.1f;
+            this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+            Time.timeScale = 0.001f;
         }
 
    }

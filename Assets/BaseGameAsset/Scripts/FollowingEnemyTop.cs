@@ -9,7 +9,7 @@ public class FollowingEnemyTop : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 10;
 
-    float maxdistance = 75;
+    float maxdistance = 50;
     float FollowingStepCount;
 
     Animator animator;

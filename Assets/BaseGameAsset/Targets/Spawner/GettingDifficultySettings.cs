@@ -7,18 +7,13 @@ using UnityEngine.UI;
 public class GettingDifficultySettings : MonoBehaviour
 {
     int currentlevel;
-    //Siinecek...//
-    GameObject DataToScreen;
+
 
 
 
     void Start()
     {
-        DataToScreen = GameObject.FindGameObjectWithTag("DataToScreen");
         currentlevel = SceneManager.GetActiveScene().buildIndex;
-        DataToScreen.transform.GetChild(0).GetChild(1).GetChild(25).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("DifficultyLevel").ToString();
-        DataToScreen.transform.GetChild(0).GetChild(1).GetChild(26).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CurrentLevel").ToString();
-
     }
 
 
@@ -43,7 +38,6 @@ public class GettingDifficultySettings : MonoBehaviour
     }
 
 
-    // DataToScreen.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().text=
 
     void CalculateDesisity(int currentlevel)
     {
@@ -60,7 +54,6 @@ public class GettingDifficultySettings : MonoBehaviour
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
 
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("CuteMushy_Density").ToString();
 
                         }
                         break;
@@ -70,10 +63,7 @@ public class GettingDifficultySettings : MonoBehaviour
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
                             
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(5).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("CuteBacterium_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(6).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Health").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(7).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Attack").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(9).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
+                     
 
                         }
                         break;
@@ -82,12 +72,6 @@ public class GettingDifficultySettings : MonoBehaviour
                         for (int j = 0; j < childcount; j++)
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
-
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(10).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("CuteBacterium_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(11).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Health").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(12).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Attack").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(14).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
-
 
                         }
                         break;
@@ -111,7 +95,6 @@ public class GettingDifficultySettings : MonoBehaviour
                             {
                                 this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
 
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("CuteMushy_Density").ToString();
 
                             }
 
@@ -122,12 +105,6 @@ public class GettingDifficultySettings : MonoBehaviour
                             {
                                 this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
 
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(5).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("CuteBacterium_Density").ToString();
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(6).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Health").ToString();
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(7).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Attack").ToString();
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(9).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
-
-
                             }
                             break;
 
@@ -137,11 +114,6 @@ public class GettingDifficultySettings : MonoBehaviour
                             {
                                 this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
 
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(10).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("CuteBacterium_Density").ToString();
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(11).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Health").ToString();
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(12).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBacterium_Attack").ToString();
-                                DataToScreen.transform.GetChild(0).GetChild(1).GetChild(14).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
-
                             }
                             break;
 
@@ -150,12 +122,6 @@ public class GettingDifficultySettings : MonoBehaviour
                                 for (int j = 0; j < childcount; j++)
                                 {
                                     this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
-
-                                    DataToScreen.transform.GetChild(0).GetChild(1).GetChild(15).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("GermSlime_Density").ToString();
-                                    DataToScreen.transform.GetChild(0).GetChild(1).GetChild(16).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("GermSlime_Health").ToString();
-                                    DataToScreen.transform.GetChild(0).GetChild(1).GetChild(17).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("GermSlime_Attack").ToString();
-                                    DataToScreen.transform.GetChild(0).GetChild(1).GetChild(18).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("GermSlime_Attack_Density").ToString();
-                                    DataToScreen.transform.GetChild(0).GetChild(1).GetChild(19).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
 
 
                                 }
@@ -182,10 +148,6 @@ public class GettingDifficultySettings : MonoBehaviour
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
 
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("EnemyTop_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("EnemyTop_Health").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("EnemyTop_Attack").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
 
                         }
                         break;
@@ -195,10 +157,6 @@ public class GettingDifficultySettings : MonoBehaviour
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
 
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(5).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("HelloKitty_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(6).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("HelloKitty_Health").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(7).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("HelloKitty_Attack").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(9).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
                         }
                         break;
                     case 2:
@@ -206,11 +164,6 @@ public class GettingDifficultySettings : MonoBehaviour
                         for (int j = 0; j < childcount; j++)
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
-
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(10).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("CuteBaby_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(11).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBaby_Health").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(12).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("CuteBaby_Attack").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(14).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
 
                                     
                         }
@@ -222,11 +175,6 @@ public class GettingDifficultySettings : MonoBehaviour
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
 
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(15).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("GermSlime_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(16).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("GermSlime_Health").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(17).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("GermSlime_Attack").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(18).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("GermSlime_Attack_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(19).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
 
 
                         }
@@ -236,13 +184,6 @@ public class GettingDifficultySettings : MonoBehaviour
                         for (int j = 0; j < childcount; j++)
                         {
                             this.gameObject.transform.GetChild(i).GetChild(j).gameObject.SetActive(true);
-
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(20).gameObject.GetComponent<Text>().text = PlayerPrefs.GetInt("Vırus_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(21).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Virus_Health").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(22).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Virus_Attack").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(23).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Virus_Attack_Density").ToString();
-                            DataToScreen.transform.GetChild(0).GetChild(1).GetChild(24).gameObject.GetComponent<Text>().text = PlayerPrefs.GetFloat("Walk_Speed").ToString();
-
 
                         }
                         break;

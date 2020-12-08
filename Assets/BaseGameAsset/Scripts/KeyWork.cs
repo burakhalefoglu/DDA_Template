@@ -8,20 +8,11 @@ public class KeyWork : MonoBehaviour
     void Start()
     {
         LevelFinisher = GameObject.FindGameObjectWithTag("LevelFinisher");
-
+        LevelFinisher.GetComponent<LevelFinisher>().GetAllDataAndFinish();
+        GetComponent<AudioSource>().Play();
+        Destroy(this.gameObject, 2f);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-       bool charistrigger =other.gameObject.tag == "Player";
-        if (charistrigger)
-        {
-            LevelFinisher.GetComponent<LevelFinisher>().GetAllDataAndFinish();
-            GetComponent<AudioSource>().Play();
-            Destroy(this.gameObject,1f);
-
-
-        }
-    }
+   
 
 }

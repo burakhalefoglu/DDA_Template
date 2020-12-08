@@ -36,11 +36,11 @@ public class CalculatingDifficulty : MonoBehaviour, ICalculate
 
     public float CalculateWalkSpeed(float diffiultyLevel)
     {
-        if (diffiultyLevel > 4)
+        if (diffiultyLevel < 3)
         {
             return 0.20f;
         }
-        else if (diffiultyLevel > 8)
+        else if (diffiultyLevel < 6)
         {
             return 0.30f;
         }

@@ -23,6 +23,7 @@ public class CharLevelRaising : MonoBehaviour
         {
             UpdateWork(200, 2f);
             PlayerPrefs.SetFloat("CharLevel", 4);
+            ShowSurvey();
         }
         else if ((SceneManager.GetActiveScene().name) == "12")
         {
@@ -38,4 +39,12 @@ public class CharLevelRaising : MonoBehaviour
         PlayerPrefs.SetFloat("CharAttackDamage", CharAttackDamage);
     }
 
+
+
+    void ShowSurvey()
+    {
+
+
+
+    }
 }
